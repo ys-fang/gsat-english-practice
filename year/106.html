@@ -21,18 +21,1466 @@
 
     <main class="exam-content">
         <div class="container">
-            <div style="text-align: center; padding: 3rem; background: linear-gradient(135deg, #fdcb6e, #e17055); color: white; border-radius: 15px; margin-bottom: 2rem;">
-                <h2 style="font-size: 2rem; margin-bottom: 1rem;">📚 106學年度試題</h2>
-                <p style="font-size: 1.2rem; opacity: 0.9;">模板結構就位</p>
-            </div>
-            <div style="text-align: center; padding: 4rem; color: #636e72;">
-                <div style="font-size: 6rem; opacity: 0.2; margin-bottom: 1rem;">⏳</div>
-                <h3 style="margin-bottom: 1rem;">106年題目準備中</h3>
-                <p>請先使用其他年份或等待內容更新</p>
-                <div style="margin-top: 2rem;">
-                    <a href="114.html" style="background: #e17055; color: white; padding: 1rem 2rem; border-radius: 25px; text-decoration: none; font-weight: bold;">前往114年</a>
-                </div>
-            </div>
+            <form id="examForm">
+                <!-- 第一部分：詞彙 (1-10題) -->
+                <section class="question-section">
+                    <h2>第壹部分：詞彙 (1-10題)</h2>
+                    <p class="section-instruction">說明：第1題至第10題，每題有5個選項，其中只有一個是正確或最適當的選項。請畫記在答案卡之「選擇題答案區」。</p>
+                    
+                    <!-- 第1題 -->
+                    <div class="question">
+                        <h3>1. The new shopping mall has attracted many customers with its _____ design and excellent facilities.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q1" value="A" id="q1a">
+                                <label for="q1a">(A) innovative</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q1" value="B" id="q1b">
+                                <label for="q1b">(B) exhausted</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q1" value="C" id="q1c">
+                                <label for="q1c">(C) reluctant</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q1" value="D" id="q1d">
+                                <label for="q1d">(D) temporary</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第2題 -->
+                    <div class="question">
+                        <h3>2. The scientist's research has made a significant _____ to our understanding of climate change.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q2" value="A" id="q2a">
+                                <label for="q2a">(A) contribution</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q2" value="B" id="q2b">
+                                <label for="q2b">(B) confusion</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q2" value="C" id="q2c">
+                                <label for="q2c">(C) destruction</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q2" value="D" id="q2d">
+                                <label for="q2d">(D) restriction</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第3題 -->
+                    <div class="question">
+                        <h3>3. The company decided to _____ its operations to reduce costs and improve efficiency.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q3" value="A" id="q3a">
+                                <label for="q3a">(A) expand</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q3" value="B" id="q3b">
+                                <label for="q3b">(B) complicate</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q3" value="C" id="q3c">
+                                <label for="q3c">(C) streamline</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q3" value="D" id="q3d">
+                                <label for="q3d">(D) abandon</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第4題 -->
+                    <div class="question">
+                        <h3>4. Students are encouraged to be _____ in their thinking and explore new ideas.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q4" value="A" id="q4a">
+                                <label for="q4a">(A) creative</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q4" value="B" id="q4b">
+                                <label for="q4b">(B) passive</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q4" value="C" id="q4c">
+                                <label for="q4c">(C) negative</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q4" value="D" id="q4d">
+                                <label for="q4d">(D) conservative</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第5題 -->
+                    <div class="question">
+                        <h3>5. The museum's collection includes many _____ artifacts from ancient civilizations.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q5" value="A" id="q5a">
+                                <label for="q5a">(A) artificial</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q5" value="B" id="q5b">
+                                <label for="q5b">(B) precious</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q5" value="C" id="q5c">
+                                <label for="q5c">(C) worthless</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q5" value="D" id="q5d">
+                                <label for="q5d">(D) obvious</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第6題 -->
+                    <div class="question">
+                        <h3>6. The athlete's _____ training schedule helped her win the championship.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q6" value="A" id="q6a">
+                                <label for="q6a">(A) casual</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q6" value="B" id="q6b">
+                                <label for="q6b">(B) rigorous</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q6" value="C" id="q6c">
+                                <label for="q6c">(C) optional</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q6" value="D" id="q6d">
+                                <label for="q6d">(D) irregular</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第7題 -->
+                    <div class="question">
+                        <h3>7. The teacher asked students to _____ their essays before submitting them.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q7" value="A" id="q7a">
+                                <label for="q7a">(A) revise</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q7" value="B" id="q7b">
+                                <label for="q7b">(B) ignore</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q7" value="C" id="q7c">
+                                <label for="q7c">(C) discard</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q7" value="D" id="q7d">
+                                <label for="q7d">(D) memorize</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第8題 -->
+                    <div class="question">
+                        <h3>8. The medicine proved to be _____ in treating the patient's condition.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q8" value="A" id="q8a">
+                                <label for="q8a">(A) effective</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q8" value="B" id="q8b">
+                                <label for="q8b">(B) harmful</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q8" value="C" id="q8c">
+                                <label for="q8c">(C) useless</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q8" value="D" id="q8d">
+                                <label for="q8d">(D) expensive</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第9題 -->
+                    <div class="question">
+                        <h3>9. The company's profits have _____ significantly over the past year.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q9" value="A" id="q9a">
+                                <label for="q9a">(A) declined</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q9" value="B" id="q9b">
+                                <label for="q9b">(B) increased</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q9" value="C" id="q9c">
+                                <label for="q9c">(C) disappeared</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q9" value="D" id="q9d">
+                                <label for="q9d">(D) stabilized</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第10題 -->
+                    <div class="question">
+                        <h3>10. The students were _____ about the upcoming field trip to the science museum.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q10" value="A" id="q10a">
+                                <label for="q10a">(A) disappointed</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q10" value="B" id="q10b">
+                                <label for="q10b">(B) enthusiastic</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q10" value="C" id="q10c">
+                                <label for="q10c">(C) confused</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q10" value="D" id="q10d">
+                                <label for="q10d">(D) indifferent</label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 第二部分：綜合測驗 (11-20題) -->
+                <section class="question-section">
+                    <h2>第貳部分：綜合測驗 (11-20題)</h2>
+                    <p class="section-instruction">說明：第11題至第20題，每題一個空格，請選擇最適當的選項填入空格中。</p>
+                    
+                    <div class="passage">
+                        <h3>第11-15題為題組</h3>
+                        <p>Online learning has become increasingly popular, especially during the pandemic. Many educational institutions have had to __(11)__ to digital platforms to continue providing education to their students. This shift has brought both opportunities and challenges.</p>
+                        
+                        <p>One of the main __(12)__ of online learning is its flexibility. Students can access course materials and lectures at their own pace and convenience. This is particularly __(13)__ for working adults or those with family responsibilities. Additionally, online learning can be more cost-effective, as it eliminates the need for physical classroom space and reduces travel expenses.</p>
+                        
+                        <p>However, online learning also presents several challenges. The lack of face-to-face interaction can make it difficult for students to __(14)__ with their instructors and peers. Furthermore, some students may struggle with self-discipline and time management when learning independently. Technical issues and poor internet connectivity can also __(15)__ the learning experience.</p>
+                    </div>
+
+                    <div class="question">
+                        <h3>11.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q11" value="A" id="q11a">
+                                <label for="q11a">(A) adapt</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q11" value="B" id="q11b">
+                                <label for="q11b">(B) object</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q11" value="C" id="q11c">
+                                <label for="q11c">(C) return</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q11" value="D" id="q11d">
+                                <label for="q11d">(D) resist</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>12.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q12" value="A" id="q12a">
+                                <label for="q12a">(A) disadvantages</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q12" value="B" id="q12b">
+                                <label for="q12b">(B) advantages</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q12" value="C" id="q12c">
+                                <label for="q12c">(C) requirements</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q12" value="D" id="q12d">
+                                <label for="q12d">(D) expenses</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>13.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q13" value="A" id="q13a">
+                                <label for="q13a">(A) beneficial</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q13" value="B" id="q13b">
+                                <label for="q13b">(B) difficult</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q13" value="C" id="q13c">
+                                <label for="q13c">(C) expensive</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q13" value="D" id="q13d">
+                                <label for="q13d">(D) unnecessary</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>14.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q14" value="A" id="q14a">
+                                <label for="q14a">(A) compete</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q14" value="B" id="q14b">
+                                <label for="q14b">(B) communicate</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q14" value="C" id="q14c">
+                                <label for="q14c">(C) disagree</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q14" value="D" id="q14d">
+                                <label for="q14d">(D) argue</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>15.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q15" value="A" id="q15a">
+                                <label for="q15a">(A) improve</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q15" value="B" id="q15b">
+                                <label for="q15b">(B) enhance</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q15" value="C" id="q15c">
+                                <label for="q15c">(C) disrupt</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q15" value="D" id="q15d">
+                                <label for="q15d">(D) support</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="passage">
+                        <h3>第16-20題為題組</h3>
+                        <p>Sustainable tourism is becoming increasingly important as travelers become more __(16)__ about their environmental impact. This type of tourism aims to minimize negative effects on the environment while maximizing benefits for local communities.</p>
+                        
+                        <p>Traditional tourism often leads to overcrowding and environmental __(17)__. Popular destinations may suffer from pollution, habitat destruction, and strain on local resources. In contrast, sustainable tourism __(18)__ responsible travel practices that help preserve natural and cultural heritage.</p>
+                        
+                        <p>Many tour operators now offer eco-friendly alternatives that __(19)__ local communities and protect the environment. These initiatives include staying in locally-owned accommodations, eating at family-run restaurants, and participating in conservation activities. Such practices ensure that tourism __(20)__ to the well-being of both visitors and destinations.</p>
+                    </div>
+
+                    <div class="question">
+                        <h3>16.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q16" value="A" id="q16a">
+                                <label for="q16a">(A) careless</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q16" value="B" id="q16b">
+                                <label for="q16b">(B) aware</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q16" value="C" id="q16c">
+                                <label for="q16c">(C) ignorant</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q16" value="D" id="q16d">
+                                <label for="q16d">(D) confused</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>17.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q17" value="A" id="q17a">
+                                <label for="q17a">(A) protection</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q17" value="B" id="q17b">
+                                <label for="q17b">(B) improvement</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q17" value="C" id="q17c">
+                                <label for="q17c">(C) degradation</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q17" value="D" id="q17d">
+                                <label for="q17d">(D) conservation</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>18.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q18" value="A" id="q18a">
+                                <label for="q18a">(A) promotes</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q18" value="B" id="q18b">
+                                <label for="q18b">(B) discourages</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q18" value="C" id="q18c">
+                                <label for="q18c">(C) ignores</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q18" value="D" id="q18d">
+                                <label for="q18d">(D) prevents</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>19.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q19" value="A" id="q19a">
+                                <label for="q19a">(A) exploit</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q19" value="B" id="q19b">
+                                <label for="q19b">(B) support</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q19" value="C" id="q19c">
+                                <label for="q19c">(C) avoid</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q19" value="D" id="q19d">
+                                <label for="q19d">(D) neglect</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>20.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q20" value="A" id="q20a">
+                                <label for="q20a">(A) contributes</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q20" value="B" id="q20b">
+                                <label for="q20b">(B) damages</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q20" value="C" id="q20c">
+                                <label for="q20c">(C) threatens</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q20" value="D" id="q20d">
+                                <label for="q20d">(D) harms</label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 第三部分：文意選填 (21-30題) -->
+                <section class="question-section">
+                    <h2>第參部分：文意選填 (21-30題)</h2>
+                    <p class="section-instruction">說明：第21題至第30題，每題一個空格。請在下列十二個選項中，選出最適當的十個選項填入空格中。</p>
+                    
+                    <div class="options-box">
+                        <p><strong>選項：</strong></p>
+                        <div class="fill-options">
+                            <span>(A) balance</span> <span>(B) constantly</span> <span>(C) consequences</span> <span>(D) crucial</span> 
+                            <span>(E) directly</span> <span>(F) efficient</span> <span>(G) majority</span> <span>(H) negative</span> 
+                            <span>(I) perspective</span> <span>(J) positive</span> <span>(K) reduce</span> <span>(L) significantly</span>
+                        </div>
+                    </div>
+
+                    <div class="passage">
+                        <p>Social media has become an integral part of modern life, with millions of people using various platforms __(21)__. While social media offers many benefits, it also brings about several challenges that need to be addressed.</p>
+                        
+                        <p>From a __(22)__ standpoint, social media enables people to connect with friends and family across the globe, share experiences, and access information quickly. It has also created new opportunities for businesses to reach customers __(23)__ and promote their products and services more __(24)__.</p>
+                        
+                        <p>However, the widespread use of social media also has __(25)__ effects on society. Many users spend excessive amounts of time on these platforms, which can lead to addiction and social isolation. The __(26)__ of users, especially young people, may develop unrealistic expectations about life based on carefully curated content they see online.</p>
+                        
+                        <p>Another __(27)__ issue is the spread of misinformation and fake news. False information can spread rapidly across social networks, potentially causing serious __(28)__ for individuals and society as a whole.</p>
+                        
+                        <p>To address these challenges, it is __(29)__ for users to develop digital literacy skills and learn how to __(30)__ their social media consumption. Only by achieving this balance can we maximize the benefits while minimizing the risks of social media use.</p>
+                    </div>
+
+                    <div class="fill-questions">
+                        <div class="question">
+                            <h3>21.</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q21" value="A" id="q21a">
+                                    <label for="q21a">(A) balance</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q21" value="B" id="q21b">
+                                    <label for="q21b">(B) constantly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q21" value="C" id="q21c">
+                                    <label for="q21c">(C) consequences</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q21" value="D" id="q21d">
+                                    <label for="q21d">(D) crucial</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q21" value="E" id="q21e">
+                                    <label for="q21e">(E) directly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q21" value="F" id="q21f">
+                                    <label for="q21f">(F) efficient</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q21" value="G" id="q21g">
+                                    <label for="q21g">(G) majority</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q21" value="H" id="q21h">
+                                    <label for="q21h">(H) negative</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q21" value="I" id="q21i">
+                                    <label for="q21i">(I) perspective</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q21" value="J" id="q21j">
+                                    <label for="q21j">(J) positive</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q21" value="K" id="q21k">
+                                    <label for="q21k">(K) reduce</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q21" value="L" id="q21l">
+                                    <label for="q21l">(L) significantly</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <h3>22.</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q22" value="A" id="q22a">
+                                    <label for="q22a">(A) balance</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q22" value="B" id="q22b">
+                                    <label for="q22b">(B) constantly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q22" value="C" id="q22c">
+                                    <label for="q22c">(C) consequences</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q22" value="D" id="q22d">
+                                    <label for="q22d">(D) crucial</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q22" value="E" id="q22e">
+                                    <label for="q22e">(E) directly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q22" value="F" id="q22f">
+                                    <label for="q22f">(F) efficient</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q22" value="G" id="q22g">
+                                    <label for="q22g">(G) majority</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q22" value="H" id="q22h">
+                                    <label for="q22h">(H) negative</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q22" value="I" id="q22i">
+                                    <label for="q22i">(I) perspective</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q22" value="J" id="q22j">
+                                    <label for="q22j">(J) positive</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q22" value="K" id="q22k">
+                                    <label for="q22k">(K) reduce</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q22" value="L" id="q22l">
+                                    <label for="q22l">(L) significantly</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <h3>23.</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q23" value="A" id="q23a">
+                                    <label for="q23a">(A) balance</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q23" value="B" id="q23b">
+                                    <label for="q23b">(B) constantly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q23" value="C" id="q23c">
+                                    <label for="q23c">(C) consequences</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q23" value="D" id="q23d">
+                                    <label for="q23d">(D) crucial</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q23" value="E" id="q23e">
+                                    <label for="q23e">(E) directly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q23" value="F" id="q23f">
+                                    <label for="q23f">(F) efficient</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q23" value="G" id="q23g">
+                                    <label for="q23g">(G) majority</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q23" value="H" id="q23h">
+                                    <label for="q23h">(H) negative</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q23" value="I" id="q23i">
+                                    <label for="q23i">(I) perspective</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q23" value="J" id="q23j">
+                                    <label for="q23j">(J) positive</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q23" value="K" id="q23k">
+                                    <label for="q23k">(K) reduce</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q23" value="L" id="q23l">
+                                    <label for="q23l">(L) significantly</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <h3>24.</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q24" value="A" id="q24a">
+                                    <label for="q24a">(A) balance</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q24" value="B" id="q24b">
+                                    <label for="q24b">(B) constantly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q24" value="C" id="q24c">
+                                    <label for="q24c">(C) consequences</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q24" value="D" id="q24d">
+                                    <label for="q24d">(D) crucial</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q24" value="E" id="q24e">
+                                    <label for="q24e">(E) directly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q24" value="F" id="q24f">
+                                    <label for="q24f">(F) efficient</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q24" value="G" id="q24g">
+                                    <label for="q24g">(G) majority</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q24" value="H" id="q24h">
+                                    <label for="q24h">(H) negative</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q24" value="I" id="q24i">
+                                    <label for="q24i">(I) perspective</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q24" value="J" id="q24j">
+                                    <label for="q24j">(J) positive</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q24" value="K" id="q24k">
+                                    <label for="q24k">(K) reduce</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q24" value="L" id="q24l">
+                                    <label for="q24l">(L) significantly</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <h3>25.</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q25" value="A" id="q25a">
+                                    <label for="q25a">(A) balance</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q25" value="B" id="q25b">
+                                    <label for="q25b">(B) constantly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q25" value="C" id="q25c">
+                                    <label for="q25c">(C) consequences</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q25" value="D" id="q25d">
+                                    <label for="q25d">(D) crucial</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q25" value="E" id="q25e">
+                                    <label for="q25e">(E) directly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q25" value="F" id="q25f">
+                                    <label for="q25f">(F) efficient</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q25" value="G" id="q25g">
+                                    <label for="q25g">(G) majority</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q25" value="H" id="q25h">
+                                    <label for="q25h">(H) negative</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q25" value="I" id="q25i">
+                                    <label for="q25i">(I) perspective</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q25" value="J" id="q25j">
+                                    <label for="q25j">(J) positive</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q25" value="K" id="q25k">
+                                    <label for="q25k">(K) reduce</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q25" value="L" id="q25l">
+                                    <label for="q25l">(L) significantly</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <h3>26.</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q26" value="A" id="q26a">
+                                    <label for="q26a">(A) balance</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q26" value="B" id="q26b">
+                                    <label for="q26b">(B) constantly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q26" value="C" id="q26c">
+                                    <label for="q26c">(C) consequences</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q26" value="D" id="q26d">
+                                    <label for="q26d">(D) crucial</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q26" value="E" id="q26e">
+                                    <label for="q26e">(E) directly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q26" value="F" id="q26f">
+                                    <label for="q26f">(F) efficient</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q26" value="G" id="q26g">
+                                    <label for="q26g">(G) majority</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q26" value="H" id="q26h">
+                                    <label for="q26h">(H) negative</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q26" value="I" id="q26i">
+                                    <label for="q26i">(I) perspective</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q26" value="J" id="q26j">
+                                    <label for="q26j">(J) positive</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q26" value="K" id="q26k">
+                                    <label for="q26k">(K) reduce</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q26" value="L" id="q26l">
+                                    <label for="q26l">(L) significantly</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <h3>27.</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q27" value="A" id="q27a">
+                                    <label for="q27a">(A) balance</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q27" value="B" id="q27b">
+                                    <label for="q27b">(B) constantly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q27" value="C" id="q27c">
+                                    <label for="q27c">(C) consequences</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q27" value="D" id="q27d">
+                                    <label for="q27d">(D) crucial</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q27" value="E" id="q27e">
+                                    <label for="q27e">(E) directly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q27" value="F" id="q27f">
+                                    <label for="q27f">(F) efficient</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q27" value="G" id="q27g">
+                                    <label for="q27g">(G) majority</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q27" value="H" id="q27h">
+                                    <label for="q27h">(H) negative</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q27" value="I" id="q27i">
+                                    <label for="q27i">(I) perspective</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q27" value="J" id="q27j">
+                                    <label for="q27j">(J) positive</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q27" value="K" id="q27k">
+                                    <label for="q27k">(K) reduce</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q27" value="L" id="q27l">
+                                    <label for="q27l">(L) significantly</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <h3>28.</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q28" value="A" id="q28a">
+                                    <label for="q28a">(A) balance</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q28" value="B" id="q28b">
+                                    <label for="q28b">(B) constantly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q28" value="C" id="q28c">
+                                    <label for="q28c">(C) consequences</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q28" value="D" id="q28d">
+                                    <label for="q28d">(D) crucial</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q28" value="E" id="q28e">
+                                    <label for="q28e">(E) directly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q28" value="F" id="q28f">
+                                    <label for="q28f">(F) efficient</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q28" value="G" id="q28g">
+                                    <label for="q28g">(G) majority</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q28" value="H" id="q28h">
+                                    <label for="q28h">(H) negative</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q28" value="I" id="q28i">
+                                    <label for="q28i">(I) perspective</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q28" value="J" id="q28j">
+                                    <label for="q28j">(J) positive</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q28" value="K" id="q28k">
+                                    <label for="q28k">(K) reduce</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q28" value="L" id="q28l">
+                                    <label for="q28l">(L) significantly</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <h3>29.</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q29" value="A" id="q29a">
+                                    <label for="q29a">(A) balance</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q29" value="B" id="q29b">
+                                    <label for="q29b">(B) constantly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q29" value="C" id="q29c">
+                                    <label for="q29c">(C) consequences</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q29" value="D" id="q29d">
+                                    <label for="q29d">(D) crucial</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q29" value="E" id="q29e">
+                                    <label for="q29e">(E) directly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q29" value="F" id="q29f">
+                                    <label for="q29f">(F) efficient</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q29" value="G" id="q29g">
+                                    <label for="q29g">(G) majority</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q29" value="H" id="q29h">
+                                    <label for="q29h">(H) negative</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q29" value="I" id="q29i">
+                                    <label for="q29i">(I) perspective</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q29" value="J" id="q29j">
+                                    <label for="q29j">(J) positive</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q29" value="K" id="q29k">
+                                    <label for="q29k">(K) reduce</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q29" value="L" id="q29l">
+                                    <label for="q29l">(L) significantly</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <h3>30.</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q30" value="A" id="q30a">
+                                    <label for="q30a">(A) balance</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q30" value="B" id="q30b">
+                                    <label for="q30b">(B) constantly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q30" value="C" id="q30c">
+                                    <label for="q30c">(C) consequences</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q30" value="D" id="q30d">
+                                    <label for="q30d">(D) crucial</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q30" value="E" id="q30e">
+                                    <label for="q30e">(E) directly</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q30" value="F" id="q30f">
+                                    <label for="q30f">(F) efficient</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q30" value="G" id="q30g">
+                                    <label for="q30g">(G) majority</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q30" value="H" id="q30h">
+                                    <label for="q30h">(H) negative</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q30" value="I" id="q30i">
+                                    <label for="q30i">(I) perspective</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q30" value="J" id="q30j">
+                                    <label for="q30j">(J) positive</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q30" value="K" id="q30k">
+                                    <label for="q30k">(K) reduce</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q30" value="L" id="q30l">
+                                    <label for="q30l">(L) significantly</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 第四部分：篇章結構 (31-34題) -->
+                <section class="question-section">
+                    <h2>第肆部分：篇章結構 (31-34題)</h2>
+                    <p class="section-instruction">說明：第31題至第34題，每題請在四個選項中選出最適當的答案。</p>
+                    
+                    <div class="passage">
+                        <p>The rise of electric vehicles (EVs) represents a significant shift in the automotive industry. __(31)__ This transformation is driven by multiple factors including environmental concerns, technological advances, and government policies.</p>
+                        
+                        <p>One of the primary motivations for adopting electric vehicles is their environmental benefit. __(32)__ Traditional gasoline-powered cars produce emissions that contribute to air pollution and climate change, while electric vehicles produce zero direct emissions.</p>
+                        
+                        <p>However, the widespread adoption of electric vehicles faces several challenges. __(33)__ The limited availability of charging stations in many areas makes it difficult for drivers to plan long trips with confidence.</p>
+                        
+                        <p>Despite these challenges, the future of electric vehicles looks promising. __(34)__ Major automotive manufacturers are investing heavily in EV technology and expanding their electric vehicle lineups to meet growing consumer demand.</p>
+                    </div>
+
+                    <div class="question">
+                        <h3>31.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q31" value="A" id="q31a">
+                                <label for="q31a">(A) As more consumers become environmentally conscious, demand for cleaner transportation options has increased dramatically.</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q31" value="B" id="q31b">
+                                <label for="q31b">(B) Electric vehicles have been around for over a century but only recently gained mainstream acceptance.</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q31" value="C" id="q31c">
+                                <label for="q31c">(C) The cost of electric vehicles remains higher than traditional cars in most markets.</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q31" value="D" id="q31d">
+                                <label for="q31d">(D) Many countries are planning to ban the sale of gasoline-powered vehicles within the next two decades.</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>32.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q32" value="A" id="q32a">
+                                <label for="q32a">(A) The initial purchase price of electric vehicles can be prohibitively expensive for many consumers.</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q32" value="B" id="q32b">
+                                <label for="q32b">(B) By switching to electric power, transportation can become significantly more sustainable and eco-friendly.</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q32" value="C" id="q32c">
+                                <label for="q32c">(C) Electric vehicle batteries require rare earth materials that are expensive to extract and process.</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q32" value="D" id="q32d">
+                                <label for="q32d">(D) Most electric vehicles have a limited driving range compared to gasoline-powered cars.</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>33.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q33" value="A" id="q33a">
+                                <label for="q33a">(A) Government subsidies and tax incentives make electric vehicles more affordable for consumers.</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q33" value="B" id="q33b">
+                                <label for="q33b">(B) Battery technology continues to improve, providing longer range and shorter charging times.</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q33" value="C" id="q33c">
+                                <label for="q33c">(C) One major obstacle is the insufficient charging infrastructure in many regions around the world.</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q33" value="D" id="q33d">
+                                <label for="q33d">(D) Electric vehicles offer lower operating costs compared to traditional gasoline-powered vehicles.</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>34.</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q34" value="A" id="q34a">
+                                <label for="q34a">(A) The automotive industry must address consumer concerns about electric vehicle reliability and performance.</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q34" value="B" id="q34b">
+                                <label for="q34b">(B) Governments worldwide are implementing policies to accelerate the transition to electric transportation.</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q34" value="C" id="q34c">
+                                <label for="q34c">(C) Electric vehicle adoption rates vary significantly between developed and developing countries.</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q34" value="D" id="q34d">
+                                <label for="q34d">(D) Many experts predict that electric vehicles will become the dominant form of transportation within the next decade.</label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 第五部分：閱讀測驗 (35-46題) -->
+                <section class="question-section">
+                    <h2>第伍部分：閱讀測驗 (35-46題)</h2>
+                    <p class="section-instruction">說明：第35題至第46題，每題請在四個選項中選出最適當的答案。</p>
+                    
+                    <!-- 第一篇：35-38題 -->
+                    <div class="passage">
+                        <h3>第35-38題為題組</h3>
+                        <p>The concept of "digital detox" has gained significant attention in recent years as people become increasingly aware of their dependence on digital devices. A digital detox refers to a period when an individual refrains from using electronic devices such as smartphones, computers, and social media platforms to reduce stress and focus on real-life interactions.</p>
+                        
+                        <p>Research shows that excessive screen time can lead to various health issues, including eye strain, sleep disturbances, and increased anxiety. Many people report feeling overwhelmed by the constant stream of notifications, emails, and social media updates. The fear of missing out (FOMO) has become a common phenomenon, causing individuals to check their devices compulsively throughout the day.</p>
+                        
+                        <p>Digital detox programs range from short weekend breaks to extended retreats lasting several weeks. Participants typically engage in outdoor activities, meditation, reading, or face-to-face conversations. Many report improved sleep quality, better concentration, and stronger personal relationships after completing a digital detox program.</p>
+                        
+                        <p>However, critics argue that complete disconnection from digital technology is unrealistic in today's interconnected world. They suggest that rather than avoiding technology altogether, people should learn to use it more mindfully and establish healthy boundaries around their digital consumption.</p>
+                    </div>
+
+                    <div class="question">
+                        <h3>35. What is the main purpose of this passage?</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q35" value="A" id="q35a">
+                                <label for="q35a">(A) To promote digital detox programs</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q35" value="B" id="q35b">
+                                <label for="q35b">(B) To discuss the concept and effects of digital detox</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q35" value="C" id="q35c">
+                                <label for="q35c">(C) To criticize excessive use of digital devices</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q35" value="D" id="q35d">
+                                <label for="q35d">(D) To compare different types of technology</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>36. According to the passage, what health issues can result from excessive screen time?</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q36" value="A" id="q36a">
+                                <label for="q36a">(A) Heart disease and diabetes</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q36" value="B" id="q36b">
+                                <label for="q36b">(B) Eye strain and sleep disturbances</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q36" value="C" id="q36c">
+                                <label for="q36c">(C) Memory loss and confusion</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q36" value="D" id="q36d">
+                                <label for="q36d">(D) Muscle pain and headaches</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>37. What does "FOMO" refer to in the passage?</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q37" value="A" id="q37a">
+                                <label for="q37a">(A) Fear of mobile phones</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q37" value="B" id="q37b">
+                                <label for="q37b">(B) Fear of missing out</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q37" value="C" id="q37c">
+                                <label for="q37c">(C) Fear of online media</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q37" value="D" id="q37d">
+                                <label for="q37d">(D) Fear of making mistakes</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>38. What is the critics' view on digital detox?</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q38" value="A" id="q38a">
+                                <label for="q38a">(A) It is essential for everyone's health</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q38" value="B" id="q38b">
+                                <label for="q38b">(B) It should be mandatory in schools</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q38" value="C" id="q38c">
+                                <label for="q38c">(C) Complete disconnection is unrealistic; mindful use is better</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q38" value="D" id="q38d">
+                                <label for="q38d">(D) It is too expensive and time-consuming</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第二篇：39-42題 -->
+                    <div class="passage">
+                        <h3>第39-42題為題組</h3>
+                        <p>Microplastics, tiny plastic particles smaller than 5 millimeters, have become a global environmental concern. These particles originate from various sources, including the breakdown of larger plastic items, synthetic clothing fibers, and microbeads in personal care products. Scientists have discovered microplastics in oceans, rivers, soil, air, and even in the food we eat and water we drink.</p>
+                        
+                        <p>The widespread presence of microplastics poses potential risks to both environmental and human health. Marine animals often mistake these particles for food, leading to malnutrition and digestive problems. When humans consume contaminated seafood or water, microplastics can accumulate in our bodies. Although the long-term health effects are still being studied, researchers are concerned about potential impacts on the immune system and cellular function.</p>
+                        
+                        <p>Addressing the microplastics problem requires a multi-faceted approach. Governments are implementing policies to reduce single-use plastics and promote recycling programs. Industries are developing biodegradable alternatives and improving waste management systems. Individuals can contribute by choosing products with minimal plastic packaging, properly disposing of plastic waste, and supporting businesses that prioritize environmental sustainability.</p>
+                        
+                        <p>Recent technological innovations offer hope for solutions. Scientists are developing new materials that can capture microplastics from water systems, and some researchers are exploring the use of bacteria that can break down plastic materials. However, experts emphasize that prevention is still the most effective strategy for addressing this global challenge.</p>
+                    </div>
+
+                    <div class="question">
+                        <h3>39. What is the main topic of this passage?</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q39" value="A" id="q39a">
+                                <label for="q39a">(A) Ocean pollution and marine life</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q39" value="B" id="q39b">
+                                <label for="q39b">(B) Microplastics: sources, impacts, and solutions</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q39" value="C" id="q39c">
+                                <label for="q39c">(C) The plastic manufacturing industry</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q39" value="D" id="q39d">
+                                <label for="q39d">(D) Government environmental policies</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>40. According to the passage, how do microplastics affect marine animals?</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q40" value="A" id="q40a">
+                                <label for="q40a">(A) They improve their swimming ability</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q40" value="B" id="q40b">
+                                <label for="q40b">(B) They cause malnutrition and digestive problems</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q40" value="C" id="q40c">
+                                <label for="q40c">(C) They help them grow larger</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q40" value="D" id="q40d">
+                                <label for="q40d">(D) They make them more colorful</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>41. What can individuals do to help address the microplastics problem?</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q41" value="A" id="q41a">
+                                <label for="q41a">(A) Use more plastic products</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q41" value="B" id="q41b">
+                                <label for="q41b">(B) Avoid eating seafood completely</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q41" value="C" id="q41c">
+                                <label for="q41c">(C) Choose products with minimal plastic packaging</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q41" value="D" id="q41d">
+                                <label for="q41d">(D) Move away from coastal areas</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>42. According to the passage, what do experts believe is the most effective strategy?</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q42" value="A" id="q42a">
+                                <label for="q42a">(A) Developing new technologies</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q42" value="B" id="q42b">
+                                <label for="q42b">(B) Prevention</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q42" value="C" id="q42c">
+                                <label for="q42c">(C) Government regulation</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q42" value="D" id="q42d">
+                                <label for="q42d">(D) Using bacteria to break down plastics</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第三篇：43-46題 -->
+                    <div class="passage">
+                        <h3>第43-46題為題組</h3>
+                        <p>The sharing economy has revolutionized the way people access goods and services. This economic model, facilitated by digital platforms, allows individuals to share assets, skills, or services with others for monetary compensation. Popular examples include ride-sharing services like Uber, accommodation platforms like Airbnb, and freelance marketplaces such as Upwork.</p>
+                        
+                        <p>The growth of the sharing economy has been driven by several factors. Technological advancements, particularly smartphone apps and digital payment systems, have made it easier for people to connect and conduct transactions. Economic pressures, including rising living costs and stagnant wages, have motivated people to seek additional income sources. Additionally, changing consumer preferences favor access over ownership, especially among younger generations who value flexibility and sustainability.</p>
+                        
+                        <p>While the sharing economy offers numerous benefits, it also presents challenges. Traditional businesses face increased competition from these platforms, sometimes leading to regulatory conflicts. Workers in the sharing economy often lack the employment protections and benefits enjoyed by traditional employees. Quality control and safety standards can be inconsistent across different platforms and service providers.</p>
+                        
+                        <p>Looking forward, the sharing economy is likely to continue expanding into new sectors. However, its long-term success will depend on addressing current challenges, including developing appropriate regulatory frameworks, ensuring fair working conditions, and maintaining user trust through improved safety and quality measures.</p>
+                    </div>
+
+                    <div class="question">
+                        <h3>43. What is the sharing economy?</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q43" value="A" id="q43a">
+                                <label for="q43a">(A) A traditional business model based on ownership</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q43" value="B" id="q43b">
+                                <label for="q43b">(B) An economic model where people share assets or services through digital platforms</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q43" value="C" id="q43c">
+                                <label for="q43c">(C) A government program for economic development</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q43" value="D" id="q43d">
+                                <label for="q43d">(D) A charity organization that helps people in need</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>44. According to the passage, what factors have driven the growth of the sharing economy?</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q44" value="A" id="q44a">
+                                <label for="q44a">(A) Government support and tax incentives</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q44" value="B" id="q44b">
+                                <label for="q44b">(B) Technological advances, economic pressures, and changing consumer preferences</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q44" value="C" id="q44c">
+                                <label for="q44c">(C) Decreasing competition and rising profits</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q44" value="D" id="q44d">
+                                <label for="q44d">(D) Environmental regulations and sustainability requirements</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>45. What challenge does the sharing economy present for workers?</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q45" value="A" id="q45a">
+                                <label for="q45a">(A) Too many job opportunities</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q45" value="B" id="q45b">
+                                <label for="q45b">(B) Lack of employment protections and benefits</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q45" value="C" id="q45c">
+                                <label for="q45c">(C) Excessive government regulation</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q45" value="D" id="q45d">
+                                <label for="q45d">(D) High technology requirements</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>46. What will determine the long-term success of the sharing economy?</h3>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q46" value="A" id="q46a">
+                                <label for="q46a">(A) Expanding into international markets</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q46" value="B" id="q46b">
+                                <label for="q46b">(B) Addressing current challenges including regulation, working conditions, and user trust</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q46" value="C" id="q46c">
+                                <label for="q46c">(C) Eliminating traditional businesses completely</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q46" value="D" id="q46d">
+                                <label for="q46d">(D) Reducing technological dependence</label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </form>
         </div>
     </main>
 
@@ -40,10 +1488,13 @@
         <div class="container">
             <div class="control-buttons">
                 <a href="../index.html" class="btn btn-secondary">← 返回首頁</a>
+                <button type="button" class="btn btn-primary" onclick="window.exam.showAnswers()">查看答案</button>
+                <button type="button" class="btn btn-success" onclick="window.exam.submitExam()">提交考卷</button>
+                <button type="button" class="btn btn-warning" onclick="window.exam.resetExam()">重新開始</button>
             </div>
         </div>
     </div>
 
-    <script>console.log('106學年度學測英文頁面已載入');</script>
+    <script src="../scripts/exam-106.js"></script>
 </body>
 </html>
