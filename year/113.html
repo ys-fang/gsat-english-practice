@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>113學年度學測英文 - 互動練習</title>
+    <link rel="stylesheet" href="../styles/common.css">
+</head>
+<body>
+    <header class="exam-header">
+        <div class="container">
+            <div class="exam-info">
+                <div class="exam-title">113學年度學科能力測驗 - 英文考科</div>
+                <div class="timer" id="timer">100:00</div>
+                <div class="score-display" id="currentScore" style="display: none;">
+                    得分：<span id="scoreValue">0</span>/72
+                </div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="exam-content">
+        <div class="container">
+            <form id="examForm">
+                <!-- 第壹部分、選擇題 -->
+                <section class="section">
+                    <h2 class="section-title">第壹部分、選擇題 (占62分)<br>一、詞彙題 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第1題至第10題為單選題，每題1分。</p>
+
+                    <div class="question">
+                        <div class="question-number">1</div>
+                        <div class="question-text">
+                            People who desire a ______ figure should exercise regularly and maintain healthy eating habits.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q1" value="A">
+                                <span class="option-text">(A) spicy</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="B">
+                                <span class="option-text">(B) slender</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="C">
+                                <span class="option-text">(C) slight</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="D">
+                                <span class="option-text">(D) slippery</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">2</div>
+                        <div class="question-text">
+                            Watching the sun ______ from a sea of clouds is a must-do activity for all visitors to Ali Mountain.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q2" value="A">
+                                <span class="option-text">(A) emerging</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="B">
+                                <span class="option-text">(B) flashing</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="C">
+                                <span class="option-text">(C) rushing</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="D">
+                                <span class="option-text">(D) floating</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">3</div>
+                        <div class="question-text">
+                            Do you know what time the next bus is ______? I've been waiting here for more than 30 minutes.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q3" value="A">
+                                <span class="option-text">(A) apt</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="B">
+                                <span class="option-text">(B) due</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="C">
+                                <span class="option-text">(C) bound</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="D">
+                                <span class="option-text">(D) docked</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">4</div>
+                        <div class="question-text">
+                            The roasting heat and high ______ made me feel hot and sticky, no matter what I did to cool off.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q4" value="A">
+                                <span class="option-text">(A) density</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="B">
+                                <span class="option-text">(B) humidity</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="C">
+                                <span class="option-text">(C) circulation</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="D">
+                                <span class="option-text">(D) atmosphere</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">5</div>
+                        <div class="question-text">
+                            Artwork created by truly great artists such as Picasso and Monet will no doubt ______ the test of time.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q5" value="A">
+                                <span class="option-text">(A) stay</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="B">
+                                <span class="option-text">(B) take</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="C">
+                                <span class="option-text">(C) serve</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="D">
+                                <span class="option-text">(D) stand</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">6</div>
+                        <div class="question-text">
+                            In some countries, military service is ______ for men only; women do not have to serve in the military.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q6" value="A">
+                                <span class="option-text">(A) forceful</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="B">
+                                <span class="option-text">(B) realistic</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="C">
+                                <span class="option-text">(C) compulsory</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="D">
+                                <span class="option-text">(D) distinctive</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">7</div>
+                        <div class="question-text">
+                            The team complained that its leader always took the ______ for all the hard work done by the team members.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q7" value="A">
+                                <span class="option-text">(A) advantage</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="B">
+                                <span class="option-text">(B) revenge</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="C">
+                                <span class="option-text">(C) remedy</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="D">
+                                <span class="option-text">(D) credit</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">8</div>
+                        <div class="question-text">
+                            Located at the center of the city, the business hotel ______ not only good service but also convenient public transport.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q8" value="A">
+                                <span class="option-text">(A) proposes</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="B">
+                                <span class="option-text">(B) contains</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="C">
+                                <span class="option-text">(C) promises</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="D">
+                                <span class="option-text">(D) confirms</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">9</div>
+                        <div class="question-text">
+                            As blood supplies have fallen to a critically low level, many hospitals are making an ______ for the public to donate blood.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q9" value="A">
+                                <span class="option-text">(A) appeal</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="B">
+                                <span class="option-text">(B) approach</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="C">
+                                <span class="option-text">(C) operation</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="D">
+                                <span class="option-text">(D) observation</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">10</div>
+                        <div class="question-text">
+                            David felt disappointed when he found out that he could not choose his study partners, but would be ______ placed in a study group.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q10" value="A">
+                                <span class="option-text">(A) eligibly</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q10" value="B">
+                                <span class="option-text">(B) randomly</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q10" value="C">
+                                <span class="option-text">(C) apparently</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q10" value="D">
+                                <span class="option-text">(D) consequently</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 二、綜合測驗 -->
+                <section class="section">
+                    <h2 class="section-title">二、綜合測驗 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第11題至第20題為單選題，每題1分。</p>
+
+                    <h3 class="passage-title">第11至15題為題組</h3>
+                    <div class="passage-content">
+                        <p>Mystery shoppers are paid consumers who are hired to shop in stores and collect data. They are sent to a wide variety of service-based businesses, including stores, restaurants, and banks—potentially anywhere customers are served. Sometimes referred to as secret shoppers, mystery shoppers <strong>11</strong> regular customers to purchase items, eat in restaurants, make inquiries, or return items. They grade and report on the quality of products, customer service, and environment of the stores <strong>12</strong> they are assigned.</p>
+                        
+                        <p>When evaluating a business, mystery shoppers have to follow certain standard procedures to avoid <strong>13</strong>. They are often given a checklist that provides directions on what to observe or look out for to ensure consistency. Sometimes these shoppers collect data about their "normal" observations, such as cleanliness of the store or timeliness of the service. They may also pretend to be <strong>14</strong> customers, arguing with a salesperson without a good reason. With the data they collect, mystery shoppers can identify areas for <strong>15</strong> and thereby help enhance the quality of products and services. In this way, these secret shoppers may help a business gain a competitive edge.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">11</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q11" value="A">
+                                <span class="option-text">(A) call for</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q11" value="B">
+                                <span class="option-text">(B) pose as</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q11" value="C">
+                                <span class="option-text">(C) attend to</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q11" value="D">
+                                <span class="option-text">(D) engage in</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">12</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q12" value="A">
+                                <span class="option-text">(A) in that</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q12" value="B">
+                                <span class="option-text">(B) with which</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q12" value="C">
+                                <span class="option-text">(C) for that</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q12" value="D">
+                                <span class="option-text">(D) to which</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">13</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q13" value="A">
+                                <span class="option-text">(A) keen competitions</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q13" value="B">
+                                <span class="option-text">(B) financial hardship</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q13" value="C">
+                                <span class="option-text">(C) racial conflicts</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q13" value="D">
+                                <span class="option-text">(D) personal bias</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">14</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q14" value="A">
+                                <span class="option-text">(A) difficult</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q14" value="B">
+                                <span class="option-text">(B) potential</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q14" value="C">
+                                <span class="option-text">(C) constant</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q14" value="D">
+                                <span class="option-text">(D) anonymous</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">15</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q15" value="A">
+                                <span class="option-text">(A) distribution</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q15" value="B">
+                                <span class="option-text">(B) expectation</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q15" value="C">
+                                <span class="option-text">(C) improvement</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q15" value="D">
+                                <span class="option-text">(D) management</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <h3 class="passage-title">第16至20題為題組</h3>
+                    <div class="passage-content">
+                        <p>The modern worker rolls out of bed, groans, and turns off an alarm clock before reluctantly getting up for the day's work. But how did people get to work on time before alarm clocks were widely used?</p>
+                        
+                        <p>During the second Industrial Age, people toiled at unusual hours in mines or factories and often had to get up for work early in the morning. They <strong>16</strong> alarm clocks because adjustable alarms had been invented by the mid-19th century. But the new device was still relatively expensive and unreliable. British workers thus relied on a human alarm clock known as a "knocker-up." <strong>17</strong> sticks or pea shooters, the human alarms would tour the streets, tap on windows, or blast them with dried peas, trying to wake paying customers in time for work.</p>
+                        
+                        <p>Whether they wielded rods or pea shooters, knockers-up became <strong>18</strong> throughout the United Kingdom. Every morning, these people, often older in age, were seen in big streets and small alleys, waking up their customers professionally. They usually would not leave people's houses until they were sure their customers were awake.</p>
+                        
+                        <p>While the practice continued in some parts of the country until the 1970s, it <strong>19</strong> as alarm clocks became more widespread and affordable. Today, beeping alarm clocks and smartphones that play morning music are surely simpler and more convenient. However, they cannot <strong>20</strong> the personal attention coming from the distinctive tap of a pea shooter.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">16</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q16" value="A">
+                                <span class="option-text">(A) must be using</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q16" value="B">
+                                <span class="option-text">(B) could have used</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q16" value="C">
+                                <span class="option-text">(C) had hardly used</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q16" value="D">
+                                <span class="option-text">(D) were mostly using</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">17</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q17" value="A">
+                                <span class="option-text">(A) Aimed at</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q17" value="B">
+                                <span class="option-text">(B) Trained for</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q17" value="C">
+                                <span class="option-text">(C) Equipped with</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q17" value="D">
+                                <span class="option-text">(D) Exhausted by</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">18</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q18" value="A">
+                                <span class="option-text">(A) familiar presences</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q18" value="B">
+                                <span class="option-text">(B) distant memories</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q18" value="C">
+                                <span class="option-text">(C) vague images</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q18" value="D">
+                                <span class="option-text">(D) public eyesores</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">19</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q19" value="A">
+                                <span class="option-text">(A) remained</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q19" value="B">
+                                <span class="option-text">(B) dismissed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q19" value="C">
+                                <span class="option-text">(C) revised</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q19" value="D">
+                                <span class="option-text">(D) declined</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">20</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q20" value="A">
+                                <span class="option-text">(A) forget</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q20" value="B">
+                                <span class="option-text">(B) change</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q20" value="C">
+                                <span class="option-text">(C) match</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q20" value="D">
+                                <span class="option-text">(D) regret</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 三、文意選填 -->
+                <section class="section">
+                    <h2 class="section-title">三、文意選填 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第21題至第30題為單選題，每題1分。</p>
+
+                    <h3 class="passage-title">第21至30題為題組</h3>
+                    <div class="passage-content">
+                        <p>On a hilltop overlooking the 2011-tsunami hit Otsuchi Town in northeastern Japan, there is a white phone booth standing all alone in the wind. The lonely "wind phone" serves to connect family members to their <strong>21</strong> loved ones who died in the tsunami that claimed 18,000 lives. People come to speak to those they have lost, to say the words they never got to say on that <strong>22</strong> day.</p>
+                        
+                        <p>The idea for the wind phone was first <strong>23</strong> by a Japanese garden designer named Itaru Sasaki, who was grieving over the death of his cousin in 2010, before the tsunami. Feeling that he needed a private space to help him navigate through the <strong>24</strong>, Sasaki positioned a booth where he could "speak" to the dead relative. The booth he built <strong>25</strong> only an old dial phone with a disconnected phone line. When he stepped into the booth, he could pick up the phone to call his cousin, telling him how he was, and how he missed him. Sasaki stated in an interview: "Because my thoughts couldn't be <strong>26</strong> through a regular phone line, I wanted them to be carried on the wind." Hence, the wind phone allows Sasaki to create a one-way conversation with deep, soulful personal meaning, and renders the grieving process more <strong>27</strong> for him.</p>
+                        
+                        <p>Sasaki opened his wind phone to the public in 2011, after the devastating tsunami. News about the phone gradually spread, and the booth has become a <strong>28</strong> between the living and the dead. Phones resembling the wind phone have since been built around the world. Some were even set up to allow people to call their loved ones lost in the COVID-19 pandemic.</p>
+                        
+                        <p>Grieving is a natural <strong>29</strong> for coping with loss of a loved one, and people grieve in various ways. For those who speak into the wind phone, <strong>30</strong> is always there: They believe that their messages will—through some unknown way—reach the deceased.</p>
+                    </div>
+
+                    <div class="fill-options">
+                        <p style="margin-bottom: 1rem; font-weight: bold;">選項：</p>
+                        <div class="option-grid">
+                            <span>(A) passed on</span>
+                            <span>(B) bridge</span>
+                            <span>(C) sorrow</span>
+                            <span>(D) hope</span>
+                            <span>(E) departed</span>
+                            <span>(F) mechanism</span>
+                            <span>(G) housed</span>
+                            <span>(H) manageable</span>
+                            <span>(I) fateful</span>
+                            <span>(J) brought forth</span>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">21</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q21" value="A">
+                                <span class="option-text">(A) passed on</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q21" value="B">
+                                <span class="option-text">(B) bridge</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q21" value="C">
+                                <span class="option-text">(C) sorrow</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q21" value="D">
+                                <span class="option-text">(D) hope</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q21" value="E">
+                                <span class="option-text">(E) departed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q21" value="F">
+                                <span class="option-text">(F) mechanism</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q21" value="G">
+                                <span class="option-text">(G) housed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q21" value="H">
+                                <span class="option-text">(H) manageable</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q21" value="I">
+                                <span class="option-text">(I) fateful</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q21" value="J">
+                                <span class="option-text">(J) brought forth</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">22</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q22" value="A">
+                                <span class="option-text">(A) passed on</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="B">
+                                <span class="option-text">(B) bridge</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="C">
+                                <span class="option-text">(C) sorrow</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="D">
+                                <span class="option-text">(D) hope</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="E">
+                                <span class="option-text">(E) departed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="F">
+                                <span class="option-text">(F) mechanism</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="G">
+                                <span class="option-text">(G) housed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="H">
+                                <span class="option-text">(H) manageable</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="I">
+                                <span class="option-text">(I) fateful</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="J">
+                                <span class="option-text">(J) brought forth</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">23</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q23" value="A">
+                                <span class="option-text">(A) passed on</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="B">
+                                <span class="option-text">(B) bridge</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="C">
+                                <span class="option-text">(C) sorrow</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="D">
+                                <span class="option-text">(D) hope</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="E">
+                                <span class="option-text">(E) departed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="F">
+                                <span class="option-text">(F) mechanism</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="G">
+                                <span class="option-text">(G) housed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="H">
+                                <span class="option-text">(H) manageable</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="I">
+                                <span class="option-text">(I) fateful</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="J">
+                                <span class="option-text">(J) brought forth</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">24</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q24" value="A">
+                                <span class="option-text">(A) passed on</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q24" value="B">
+                                <span class="option-text">(B) bridge</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q24" value="C">
+                                <span class="option-text">(C) sorrow</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q24" value="D">
+                                <span class="option-text">(D) hope</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q24" value="E">
+                                <span class="option-text">(E) departed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q24" value="F">
+                                <span class="option-text">(F) mechanism</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q24" value="G">
+                                <span class="option-text">(G) housed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q24" value="H">
+                                <span class="option-text">(H) manageable</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q24" value="I">
+                                <span class="option-text">(I) fateful</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q24" value="J">
+                                <span class="option-text">(J) brought forth</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">25</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q25" value="A">
+                                <span class="option-text">(A) passed on</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q25" value="B">
+                                <span class="option-text">(B) bridge</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q25" value="C">
+                                <span class="option-text">(C) sorrow</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q25" value="D">
+                                <span class="option-text">(D) hope</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q25" value="E">
+                                <span class="option-text">(E) departed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q25" value="F">
+                                <span class="option-text">(F) mechanism</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q25" value="G">
+                                <span class="option-text">(G) housed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q25" value="H">
+                                <span class="option-text">(H) manageable</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q25" value="I">
+                                <span class="option-text">(I) fateful</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q25" value="J">
+                                <span class="option-text">(J) brought forth</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">26</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q26" value="A">
+                                <span class="option-text">(A) passed on</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q26" value="B">
+                                <span class="option-text">(B) bridge</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q26" value="C">
+                                <span class="option-text">(C) sorrow</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q26" value="D">
+                                <span class="option-text">(D) hope</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q26" value="E">
+                                <span class="option-text">(E) departed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q26" value="F">
+                                <span class="option-text">(F) mechanism</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q26" value="G">
+                                <span class="option-text">(G) housed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q26" value="H">
+                                <span class="option-text">(H) manageable</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q26" value="I">
+                                <span class="option-text">(I) fateful</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q26" value="J">
+                                <span class="option-text">(J) brought forth</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">27</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q27" value="A">
+                                <span class="option-text">(A) passed on</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q27" value="B">
+                                <span class="option-text">(B) bridge</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q27" value="C">
+                                <span class="option-text">(C) sorrow</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q27" value="D">
+                                <span class="option-text">(D) hope</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q27" value="E">
+                                <span class="option-text">(E) departed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q27" value="F">
+                                <span class="option-text">(F) mechanism</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q27" value="G">
+                                <span class="option-text">(G) housed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q27" value="H">
+                                <span class="option-text">(H) manageable</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q27" value="I">
+                                <span class="option-text">(I) fateful</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q27" value="J">
+                                <span class="option-text">(J) brought forth</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">28</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q28" value="A">
+                                <span class="option-text">(A) passed on</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q28" value="B">
+                                <span class="option-text">(B) bridge</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q28" value="C">
+                                <span class="option-text">(C) sorrow</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q28" value="D">
+                                <span class="option-text">(D) hope</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q28" value="E">
+                                <span class="option-text">(E) departed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q28" value="F">
+                                <span class="option-text">(F) mechanism</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q28" value="G">
+                                <span class="option-text">(G) housed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q28" value="H">
+                                <span class="option-text">(H) manageable</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q28" value="I">
+                                <span class="option-text">(I) fateful</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q28" value="J">
+                                <span class="option-text">(J) brought forth</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">29</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q29" value="A">
+                                <span class="option-text">(A) passed on</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q29" value="B">
+                                <span class="option-text">(B) bridge</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q29" value="C">
+                                <span class="option-text">(C) sorrow</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q29" value="D">
+                                <span class="option-text">(D) hope</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q29" value="E">
+                                <span class="option-text">(E) departed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q29" value="F">
+                                <span class="option-text">(F) mechanism</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q29" value="G">
+                                <span class="option-text">(G) housed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q29" value="H">
+                                <span class="option-text">(H) manageable</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q29" value="I">
+                                <span class="option-text">(I) fateful</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q29" value="J">
+                                <span class="option-text">(J) brought forth</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">30</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q30" value="A">
+                                <span class="option-text">(A) passed on</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q30" value="B">
+                                <span class="option-text">(B) bridge</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q30" value="C">
+                                <span class="option-text">(C) sorrow</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q30" value="D">
+                                <span class="option-text">(D) hope</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q30" value="E">
+                                <span class="option-text">(E) departed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q30" value="F">
+                                <span class="option-text">(F) mechanism</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q30" value="G">
+                                <span class="option-text">(G) housed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q30" value="H">
+                                <span class="option-text">(H) manageable</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q30" value="I">
+                                <span class="option-text">(I) fateful</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q30" value="J">
+                                <span class="option-text">(J) brought forth</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 四、篇章結構 -->
+                <section class="section">
+                    <h2 class="section-title">四、篇章結構 (占8分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第31題至第34題為單選題，每題2分。</p>
+
+                    <h3 class="passage-title">第31至34題為題組</h3>
+                    <div class="passage-content">
+                        <p>While Dr. Weinstein, a surgeon at Dartmouth College, was trying to lift a heavy box, he twisted his back. The pain was agonizing. The surgeon could not sit, and when he lay down he could barely get up. So he decided to go out for a run. He took an aspirin, iced the injured area, and off he went. When he returned, he felt "pretty good."</p>
+                        
+                        <p><strong>31</strong> When people have sprained a muscle or tendon, they are usually advised not to go right back to exercising until the pain goes away. But Dr. Weinstein says that approach is outdated and counterproductive. In fact, when active people consult him, he usually tells them to just keep exercising.</p>
+                        
+                        <p>Dr. Weinstein is not alone in his treatment of sports injury, but the specific advice can differ from specialist to specialist. <strong>32</strong> They nevertheless caution that a cutback may be necessary, such as running shorter distances or going more slowly. Others say the patients may need to engage in sports outside of their usual, main sport (that is, to cross-train), at least some of the time. Still others say the safest thing to do is cross-train all the time until the pain is gone. <strong>33</strong> Their consensus, however, is that unless the injury involves something as serious as a broken bone or a ripped muscle, moderate exercise can actually speed healing.</p>
+                        
+                        <p><strong>34</strong> Thus, more and more patients are now advised to keep moving despite the pain. The rule of thumb, however, is to see a doctor first and get an accurate diagnosis. If a serious injury is ruled out and the pain is not getting worse after exercising, then the exercise "makes a lot of sense."</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">31</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q31" value="A">
+                                <span class="option-text">(A) For example, an injured runner might end up cycling and swimming instead of running.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q31" value="B">
+                                <span class="option-text">(B) Over time, researchers have come to realize the importance of exercising when injured.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q31" value="C">
+                                <span class="option-text">(C) Many suggest that most patients can continue with the sport they love.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q31" value="D">
+                                <span class="option-text">(D) This seems to run counter to the common practice.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">32</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q32" value="A">
+                                <span class="option-text">(A) For example, an injured runner might end up cycling and swimming instead of running.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q32" value="B">
+                                <span class="option-text">(B) Over time, researchers have come to realize the importance of exercising when injured.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q32" value="C">
+                                <span class="option-text">(C) Many suggest that most patients can continue with the sport they love.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q32" value="D">
+                                <span class="option-text">(D) This seems to run counter to the common practice.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">33</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q33" value="A">
+                                <span class="option-text">(A) For example, an injured runner might end up cycling and swimming instead of running.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q33" value="B">
+                                <span class="option-text">(B) Over time, researchers have come to realize the importance of exercising when injured.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q33" value="C">
+                                <span class="option-text">(C) Many suggest that most patients can continue with the sport they love.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q33" value="D">
+                                <span class="option-text">(D) This seems to run counter to the common practice.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">34</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q34" value="A">
+                                <span class="option-text">(A) For example, an injured runner might end up cycling and swimming instead of running.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q34" value="B">
+                                <span class="option-text">(B) Over time, researchers have come to realize the importance of exercising when injured.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q34" value="C">
+                                <span class="option-text">(C) Many suggest that most patients can continue with the sport they love.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q34" value="D">
+                                <span class="option-text">(D) This seems to run counter to the common practice.</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 五、閱讀測驗 -->
+                <section class="section">
+                    <h2 class="section-title">五、閱讀測驗 (占24分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第35題至第46題為單選題，每題2分。</p>
+
+                    <h3 class="passage-title">第35至38題為題組</h3>
+                    <div class="passage-content">
+                        <p>One fine morning in 1941, Swiss engineer George de Mestral went for a walk in the woods with his dog. Upon their return home, he found a lot of burrs (from plants) stuck to the dog's fur and his pants. He immediately rushed to his microscope and examined the burrs attached on his pants—feeling a lightbulb moment coming on.</p>
+                        
+                        <p>Upon closer examination, de Mestral observed that the burrs, which appeared straight to the naked eye, actually contained many small hooks that clung firmly to the loops in the fabric of his pants. He determined that if he could recreate the same thing, making hooks-and-loops that bind to each other firmly, he could produce a strong fastener with many uses.</p>
+                        
+                        <p>De Mestral's first challenge was finding a fabric for a strong bonding system. He first tried cotton, but it proved too soft and could not withstand repeated openings and closures. After years of research and testing, he learned that synthetics worked best and eventually settled on heat-treated nylon, a strong and durable substance. By 1955, he had completed an improved version of the product, with each square inch of material containing 300 hooks, which made it stay fastened and yet easy enough to pull apart when needed. Named "Velcro," from the French words velours (velvet) and crochet (hook), the new product received a patent from the Swiss government in 1955. De Mestral thus began mass-producing Velcro, opening plants in Europe and eventually into Canada and the United States.</p>
+                        
+                        <p>Initially Velcro did not fare well. As most fashion critics considered it ugly and cheap-looking, the use of Velcro was limited to athletic equipment. In the early 1960s, the product received a huge boost in popularity when NASA began using it in a lot of equipment that went into space along with astronauts. Today, de Mestral's design is found almost everywhere: clothing and footwear, toys, airline seat cushions, blood pressure cuffs and surgeons' gowns. Most impressively, the magical fastener was used in the first human artificial heart transplantation to hold together parts of the device.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">35</div>
+                        <div class="question-text">Which of the following pictures shows de Mestral's invention?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q35" value="A">
+                                <span class="option-text">(A) [Picture showing buttons]</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q35" value="B">
+                                <span class="option-text">(B) [Picture showing velcro strips]</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q35" value="C">
+                                <span class="option-text">(C) [Picture showing safety pins]</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q35" value="D">
+                                <span class="option-text">(D) [Picture showing zipper]</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">36</div>
+                        <div class="question-text">What does the author mean by "a lightbulb moment" in the first paragraph?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q36" value="A">
+                                <span class="option-text">(A) A blessing in disguise.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q36" value="B">
+                                <span class="option-text">(B) A happy ending.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q36" value="C">
+                                <span class="option-text">(C) An unpredictable future.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q36" value="D">
+                                <span class="option-text">(D) A sudden inspiration.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">37</div>
+                        <div class="question-text">Which of the following statements about Velcro is true?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q37" value="A">
+                                <span class="option-text">(A) It has been a market favorite since its first appearance.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q37" value="B">
+                                <span class="option-text">(B) Cotton was not durable enough to be used as its materials.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q37" value="C">
+                                <span class="option-text">(C) It was given a French name because it was first produced in France.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q37" value="D">
+                                <span class="option-text">(D) The design was intended to look as shiny and smooth as velvet.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">38</div>
+                        <div class="question-text">Which of the following fields is NOT mentioned for Velcro uses in the passage?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q38" value="A">
+                                <span class="option-text">(A) Civil engineering.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q38" value="B">
+                                <span class="option-text">(B) Aerospace industry.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q38" value="C">
+                                <span class="option-text">(C) Medical technology.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q38" value="D">
+                                <span class="option-text">(D) Sports and recreation.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <h3 class="passage-title">第39至42題為題組</h3>
+                    <div class="passage-content">
+                        <p>Thomas Moran, a famous painter in the 19th century, played an important role in the establishment of American national parks. His vivid paintings brought the splendor of the extraordinary landscapes before the eyes of American people, thus setting the stage for the regions to be widely recognized and officially established as national parks.</p>
+                        
+                        <p>Moran came to the United States at age 7 with his family and settled in Philadelphia. They came from northwest England, the blackened heart of the Industrial Revolution: Its main street was "a dark, unattractive hole" and the river running through it was a string of dirty water. That was all the nature that Moran knew. Moran began painting by age 15, inspired by the landscape paintings of the British master J.M.W. Turner. There was plenty of landscape for him to paint in America, much different from his hometown. Showing great talent in painting, Moran was soon hired as an illustrator at Scribner's Monthly, and later appointed chief illustrator by age 34. In 1871, he was appointed to illustrate The Wonders of Yellowstone, a story by Nathaniel P. Langford, who had participated in an expedition to Yellowstone. Captivated by the utterly fantastic sights Langford described, Moran became eager to see this odd territory for himself.</p>
+                        
+                        <p>In 1871 Moran joined the first US government survey of the Yellowstone region with photographer William Henry Jackson. For two weeks he filled his sketchbook with the landscape's most stunning sights. Moran's watercolors—the first color renderings of the area—as well as Jackson's photos and the survey results were presented to the Congress. His powerful images of Yellowstone fired the imagination of Congress members. In March 1872, lawmakers officially made Yellowstone a national park, the world's first.</p>
+                        
+                        <p>Before Moran arrived, Yellowstone in the popular imagination was a harsh, wild place with hot water and steam coming out of hellish holes in the ground. Since the painter's work appeared, Yellowstone National Park has come to be known as a picturesque wonderland. By the time Moran died, he had painted a dozen other areas that would become national parks or monuments.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">39</div>
+                        <div class="question-text">What can we learn from the passage?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q39" value="A">
+                                <span class="option-text">(A) How national parks around the world were established.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q39" value="B">
+                                <span class="option-text">(B) How Yellowstone's natural features were formed.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q39" value="C">
+                                <span class="option-text">(C) Why Moran's family moved to the United States.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q39" value="D">
+                                <span class="option-text">(D) Why Moran started painting Yellowstone.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">40</div>
+                        <div class="question-text">Why does the author use "the blackened heart" in paragraph 2 to describe Moran's hometown?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q40" value="A">
+                                <span class="option-text">(A) The place was severely polluted.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q40" value="B">
+                                <span class="option-text">(B) The town was filled with darkened holes.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q40" value="C">
+                                <span class="option-text">(C) There were many evil-hearted industry owners.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q40" value="D">
+                                <span class="option-text">(D) The laborers mostly wore dark and dirty uniforms.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">41</div>
+                        <div class="question-text">Which of the following statements is true about the Yellowstone National Park?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q41" value="A">
+                                <span class="option-text">(A) Its establishment was proposed by Langford.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q41" value="B">
+                                <span class="option-text">(B) Americans knew little about its beauty before the 1870s.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q41" value="C">
+                                <span class="option-text">(C) The government project was started due to its rich natural resources.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q41" value="D">
+                                <span class="option-text">(D) It was the only national park established because of Moran's works.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">42</div>
+                        <div class="question-text">What can be inferred from the passage?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q42" value="A">
+                                <span class="option-text">(A) Scribner's Monthly was a magazine promoting national parks.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q42" value="B">
+                                <span class="option-text">(B) Moran had visited Yellowstone before he started painting its landscapes.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q42" value="C">
+                                <span class="option-text">(C) Color photos were not common when Moran started painting Yellowstone.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q42" value="D">
+                                <span class="option-text">(D) Watercolor was the most popular form of landscape painting in the 19th century.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <h3 class="passage-title">第43至46題為題組</h3>
+                    <div class="passage-content">
+                        <p>In 2020, Petur Oddsson, a power station worker in Iceland, was struck by a 60,000-volt current. The electrical shock burned almost half of his body and melted layers of his skin off. Such deep and extensive burns can be fatal. But Oddsson's life was saved by a creative invention: transplanting codfish skins onto human bodies.</p>
+                        
+                        <p>A triumph for medical technology, Oddsson's fish skin transplantation was actually part of the astonishing achievement of "100% Fish," an ambitious task in promoting environmental efficiency. The Icelandic project, from which this pioneering procedure emerged, strives for making a fundamental change in the marine industry. It aims to encourage full utilization of each fish caught, and to strengthen innovation in seafood products.</p>
+                        
+                        <p>Reducing waste of fish catch has become a serious issue today, when many countries are faced with food crises. According to a 2003 study, about 60% of a codfish caught in Iceland was lost or wasted during the production process for human consumption. Under the guidance of 100% Fish, however, Icelanders are now using almost 95% of a cod. Cod skin, for example, is made into calcium supplement and energy drinks, and even as material for skin transplantation as in Oddsson's case. Dried fish heads and spines are exported to West Africa, where they are used as the base of a protein-rich soup. Other groundbreaking products, including Omega-3 capsules, cold virus pretreatment sprays, and dog snacks are made from what was once cod catch detritus.</p>
+                        
+                        <p>The Icelandic success is accomplished largely through cooperative efforts across various industries. 100% Fish takes the initiative to show seafood companies the importance of collaboration, and facilitate valuable connections between fishing companies and other participants of the project, including academia, start-ups, and research and development teams. By sharing knowledge and information, the different sectors are able to come up with improved processing and handling, through which creation of various innovative products was made possible. The project not only helps Icelanders to get 30% more value from each cod than most developed countries, but also provides an effective model to promote resource efficiency worldwide.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">43</div>
+                        <div class="question-text">What is the primary goal of 100% Fish?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q43" value="A">
+                                <span class="option-text">(A) To advance ocean technology.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q43" value="B">
+                                <span class="option-text">(B) To reduce food crises worldwide.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q43" value="C">
+                                <span class="option-text">(C) To enhance cross-industry cooperation.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q43" value="D">
+                                <span class="option-text">(D) To make the most of marine resources.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">44</div>
+                        <div class="question-text">What does "this pioneering procedure" in the second paragraph refer to?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q44" value="A">
+                                <span class="option-text">(A) 100% Fish's mission.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q44" value="B">
+                                <span class="option-text">(B) Oddsson's skin transplant.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q44" value="C">
+                                <span class="option-text">(C) A fundamental change in seafood business.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q44" value="D">
+                                <span class="option-text">(D) A new approach to protect the environment.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">45</div>
+                        <div class="question-text">Which of the following is true according to the passage?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q45" value="A">
+                                <span class="option-text">(A) Iceland has increased their fish catch by 30% in the last 20 years.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q45" value="B">
+                                <span class="option-text">(B) Petur Oddsson was an important member of the Icelandic project.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q45" value="C">
+                                <span class="option-text">(C) Cross-field collaboration has proved to be very fruitful for 100% Fish.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q45" value="D">
+                                <span class="option-text">(D) 100% Fish is a big international enterprise marketing seafood products.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">46</div>
+                        <div class="question-text">Here is a sentence: "Almost nothing of a fish is left for the trash bin."<br>Which paragraph is most suitable to have it as the final sentence?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q46" value="A">
+                                <span class="option-text">(A) Paragraph 1.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q46" value="B">
+                                <span class="option-text">(B) Paragraph 2.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q46" value="C">
+                                <span class="option-text">(C) Paragraph 3.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q46" value="D">
+                                <span class="option-text">(D) Paragraph 4.</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 第貳部分、混合題 -->
+                <section class="section">
+                    <h2 class="section-title">第貳部分、混合題 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：本部分共有1題組，每一子題配分標於題末。限在答題卷標示題號的作答區內作答，並以規定用筆作答。</p>
+
+                    <h3 class="passage-title">第47至50題為題組</h3>
+                    <div class="passage-content">
+                        <p>Many animals are known to live and move in groups to secure food and avoid predators. Over the years, people have been curious about the way they deal with disturbances arising from the environment, and the operations underlying their responses as a group. Studies on jackdaws and turtle ants may provide some insights into the issue.</p>
+                        
+                        <div class="mixed-question-layout">
+                            <div class="column">
+                                <p><strong>Jackdaws</strong> are birds in the crow family often found in the English countryside. They are highly social birds and often travel in large flocks. Normally, the birds enjoy a smooth flight together as a group when "commuting" between two locations, such as from their nesting site to their feeding ground. However, if a predator (such as a fox) is present, the pattern of their flight will change immediately. Instead of paying attention to all the other members and following the group pattern, they now focus only on the birds within a fixed distance from them, based on information coming from other members. By doing so, the flock members are able to keep a safe distance between themselves, and thus avoid crashing into each other while they flee from the predator.</p>
+                            </div>
+                            <div class="column">
+                                <p><strong>Turtle ants</strong> often live in the cavities of dead branches in American forests. They have evolved search strategies to link their food source to their nests. They travel entirely along tree branches and vines, laying down trails of pheromone (a chemical substance) behind them so that other ants can follow. The trails connect the ants' colonies and sources of food, forming a sort of communication network. However, since these trails can easily be broken by wind or rain, the ants have to find new paths to get around the broken points and reestablish the network. Often they have to work together to explore alternative routes many times before they finally settle on the most efficient one. By working collectively, the ants are able to improve the efficiency of their network and adapt to their ever-changing environment.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question mixed-question">
+                        <div class="question-number">47-48</div>
+                        <div class="question-text">下列簡短敘述摘記上方文章重點。請從文章中找出最適當的單詞（word）填入下列句子空格中，並視句型結構需要做適當的字形變化，使句子語意完整、語法正確，並符合全文文意。每格限填一個單詞（word）。（填充，4分）</div>
+                        <div class="mixed-answer-area">
+                            <p>Studies show that animals like jackdaws and turtle ants are able to use <input type="text" name="q47" class="fill-blank" placeholder="47"> intelligence in both solving problems and <input type="text" name="q48" class="fill-blank" placeholder="48"> to new challenging environment.</p>
+                        </div>
+                    </div>
+
+                    <div class="question mixed-question">
+                        <div class="question-number">49</div>
+                        <div class="question-text">From (A) to (F) below, choose the ONES that are true for both jackdaws and turtle ants.（多選題，4分）</div>
+                        <div class="options multiple-choice">
+                            <label class="option">
+                                <input type="checkbox" name="q49" value="A">
+                                <span class="option-text">(A) They have special strategies to locate food sources.</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q49" value="B">
+                                <span class="option-text">(B) They have complex interactions led by a leader.</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q49" value="C">
+                                <span class="option-text">(C) They share information with their group members.</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q49" value="D">
+                                <span class="option-text">(D) They establish rules to stay away from enemies.</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q49" value="E">
+                                <span class="option-text">(E) They change their nesting sites from time to time.</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q49" value="F">
+                                <span class="option-text">(F) They show behavior governed by a unique system of communication.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question mixed-question">
+                        <div class="question-number">50</div>
+                        <div class="question-text">What is the "disturbance" for jackdaws mentioned in the passage?（簡答，2分）</div>
+                        <div class="mixed-answer-area">
+                            <textarea name="q50" rows="2" placeholder="請在此輸入答案..."></textarea>
+                        </div>
+                    </div>
+                </section>
+            </form>
+        </div>
+    </main>
+
+    <div class="controls">
+        <div class="container">
+            <div class="control-buttons">
+                <a href="../index.html" class="btn btn-secondary">← 返回首頁</a>
+                <button type="button" class="btn btn-primary" id="checkAnswers">檢查答案</button>
+                <button type="button" class="btn btn-success" id="submitExam" style="display: none;">提交試卷</button>
+            </div>
+            <div class="stats" id="statsArea" style="display: none;">
+                <div class="stat-item">
+                    <span class="stat-label">答題進度</span>
+                    <span class="stat-value" id="progressText">0/46</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">正確題數</span>
+                    <span class="stat-value" id="correctCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">目前得分</span>
+                    <span class="stat-value" id="scoreText">0/72</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/exam-113.js"></script>
+</body>
+</html>

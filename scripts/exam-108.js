@@ -1,0 +1,1 @@
+class Exam108{constructor(){console.log('108學年度學測英文頁面已載入')}}new Exam108();

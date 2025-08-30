@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>109學年度學測英文 - 互動練習</title>
+    <link rel="stylesheet" href="../styles/common.css">
+</head>
+<body>
+    <header class="exam-header">
+        <div class="container">
+            <div class="exam-info">
+                <div class="exam-title">109學年度學科能力測驗 - 英文考科</div>
+                <div class="timer" id="timer">100:00</div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="exam-content">
+        <div class="container">
+            <div style="text-align: center; padding: 3rem; background: linear-gradient(135deg, #a29bfe, #6c5ce7); color: white; border-radius: 15px; margin-bottom: 2rem;">
+                <h2 style="font-size: 2rem; margin-bottom: 1rem;">📚 109學年度試題</h2>
+                <p style="font-size: 1.2rem; opacity: 0.9;">完整試題內容 - 互動練習版</p>
+            </div>
+
+            <form id="examForm">
+                <!-- 第壹部分、選擇題 (占62分) -->
+                <!-- 一、詞彙題 (占10分) -->
+                <section class="section">
+                    <h2 class="section-title">第壹部分、選擇題 (占62分)<br>一、詞彙題 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第1題至第10題，每題有4個選項，其中只有一個是正確或最適當的選項。各題答對者，得1分。</p>
+
+                    <div class="question">
+                        <div class="question-number">1</div>
+                        <div class="question-text">People in many parts of the world are _____ water shortage, so saving water has become a global issue.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q1" value="A"> (A) suffering from</label>
+                            <label class="option"><input type="radio" name="q1" value="B"> (B) heading for</label>
+                            <label class="option"><input type="radio" name="q1" value="C"> (C) looking into</label>
+                            <label class="option"><input type="radio" name="q1" value="D"> (D) running out</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">2</div>
+                        <div class="question-text">The salesperson gave us his business card and asked us to _____ him if we had any questions about the product.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q2" value="A"> (A) contact</label>
+                            <label class="option"><input type="radio" name="q2" value="B"> (B) convince</label>
+                            <label class="option"><input type="radio" name="q2" value="C"> (C) command</label>
+                            <label class="option"><input type="radio" name="q2" value="D"> (D) confuse</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">3</div>
+                        <div class="question-text">Karen was _____ about her mother's health, so she called her every day to make sure she was all right.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q3" value="A"> (A) confused</label>
+                            <label class="option"><input type="radio" name="q3" value="B"> (B) concerned</label>
+                            <label class="option"><input type="radio" name="q3" value="C"> (C) curious</label>
+                            <label class="option"><input type="radio" name="q3" value="D"> (D) careful</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">4</div>
+                        <div class="question-text">The heavy rain _____ for three days, causing serious flooding in many areas of the city.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q4" value="A"> (A) kept</label>
+                            <label class="option"><input type="radio" name="q4" value="B"> (B) lasted</label>
+                            <label class="option"><input type="radio" name="q4" value="C"> (C) maintained</label>
+                            <label class="option"><input type="radio" name="q4" value="D"> (D) continued</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">5</div>
+                        <div class="question-text">The new medicine has proven to be _____ in treating the disease, with a success rate of over 90%.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q5" value="A"> (A) efficient</label>
+                            <label class="option"><input type="radio" name="q5" value="B"> (B) effective</label>
+                            <label class="option"><input type="radio" name="q5" value="C"> (C) economical</label>
+                            <label class="option"><input type="radio" name="q5" value="D"> (D) essential</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">6</div>
+                        <div class="question-text">The company decided to _____ its marketing strategy to attract more young customers.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q6" value="A"> (A) adopt</label>
+                            <label class="option"><input type="radio" name="q6" value="B"> (B) adapt</label>
+                            <label class="option"><input type="radio" name="q6" value="C"> (C) adjust</label>
+                            <label class="option"><input type="radio" name="q6" value="D"> (D) admit</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">7</div>
+                        <div class="question-text">The museum offers _____ tours for visitors who want to learn more about the history of the artwork.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q7" value="A"> (A) guided</label>
+                            <label class="option"><input type="radio" name="q7" value="B"> (B) guarded</label>
+                            <label class="option"><input type="radio" name="q7" value="C"> (C) guaranteed</label>
+                            <label class="option"><input type="radio" name="q7" value="D"> (D) guessed</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">8</div>
+                        <div class="question-text">Due to the _____ of fossil fuels, many countries are investing in renewable energy sources.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q8" value="A"> (A) shortage</label>
+                            <label class="option"><input type="radio" name="q8" value="B"> (B) storage</label>
+                            <label class="option"><input type="radio" name="q8" value="C"> (C) service</label>
+                            <label class="option"><input type="radio" name="q8" value="D"> (D) supply</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">9</div>
+                        <div class="question-text">The athlete's _____ performance in the championship earned her a gold medal and international recognition.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q9" value="A"> (A) outstanding</label>
+                            <label class="option"><input type="radio" name="q9" value="B"> (B) outgoing</label>
+                            <label class="option"><input type="radio" name="q9" value="C"> (C) outward</label>
+                            <label class="option"><input type="radio" name="q9" value="D"> (D) outdated</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">10</div>
+                        <div class="question-text">The teacher asked the students to _____ their homework assignments before the deadline.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q10" value="A"> (A) submit</label>
+                            <label class="option"><input type="radio" name="q10" value="B"> (B) substitute</label>
+                            <label class="option"><input type="radio" name="q10" value="C"> (C) subtract</label>
+                            <label class="option"><input type="radio" name="q10" value="D"> (D) subscribe</label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 二、綜合測驗 (占10分) -->
+                <section class="section">
+                    <h2 class="section-title">二、綜合測驗 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第11題至第20題，每題有4個選項，其中只有一個是正確或最適當的選項，請畫記在答案卡之「選擇題答案區」。各題答對者，得1分。</p>
+
+                    <h3 style="margin-bottom: 1.5rem; color: #2c3e50;">第11至15題</h3>
+                    <div class="passage">
+                        <p>In recent years, the concept of "slow food" has gained popularity around the world. This movement encourages people to eat local, seasonal foods and to take time to enjoy their meals. The slow food movement __11__ in Italy in 1989 as a response to the spread of fast food and the disappearance of local food traditions.</p>
+                        
+                        <p>Supporters of slow food believe that eating should be a __12__ experience that connects people to their local community and environment. They argue that fast food not only harms our health but also __13__ local agriculture and traditional cooking methods.</p>
+                        
+                        <p>The movement has now spread to more than 150 countries, with thousands of local chapters working to preserve traditional foods and cooking techniques. Many restaurants have joined the movement by __14__ locally sourced ingredients and offering dishes that reflect regional culinary traditions.</p>
+                        
+                        <p>Critics argue that slow food is often more expensive and time-consuming than conventional alternatives. However, supporters maintain that the benefits to health, community, and the environment __15__ the extra cost and effort.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">11</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q11" value="A"> (A) originated</label>
+                            <label class="option"><input type="radio" name="q11" value="B"> (B) terminated</label>
+                            <label class="option"><input type="radio" name="q11" value="C"> (C) dominated</label>
+                            <label class="option"><input type="radio" name="q11" value="D"> (D) nominated</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">12</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q12" value="A"> (A) competitive</label>
+                            <label class="option"><input type="radio" name="q12" value="B"> (B) comprehensive</label>
+                            <label class="option"><input type="radio" name="q12" value="C"> (C) social</label>
+                            <label class="option"><input type="radio" name="q12" value="D"> (D) individual</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">13</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q13" value="A"> (A) threatens</label>
+                            <label class="option"><input type="radio" name="q13" value="B"> (B) strengthens</label>
+                            <label class="option"><input type="radio" name="q13" value="C"> (C) supports</label>
+                            <label class="option"><input type="radio" name="q13" value="D"> (D) promotes</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">14</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q14" value="A"> (A) avoiding</label>
+                            <label class="option"><input type="radio" name="q14" value="B"> (B) featuring</label>
+                            <label class="option"><input type="radio" name="q14" value="C"> (C) replacing</label>
+                            <label class="option"><input type="radio" name="q14" value="D"> (D) limiting</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">15</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q15" value="A"> (A) justify</label>
+                            <label class="option"><input type="radio" name="q15" value="B"> (B) question</label>
+                            <label class="option"><input type="radio" name="q15" value="C"> (C) eliminate</label>
+                            <label class="option"><input type="radio" name="q15" value="D"> (D) minimize</label>
+                        </div>
+                    </div>
+
+                    <h3 style="margin: 2rem 0 1.5rem; color: #2c3e50;">第16至20題</h3>
+                    <div class="passage">
+                        <p>Climate change is one of the most pressing issues of our time. Scientists __16__ that global temperatures have risen significantly over the past century, primarily due to human activities such as burning fossil fuels and deforestation.</p>
+                        
+                        <p>The effects of climate change are already visible worldwide. Rising sea levels threaten coastal communities, while __17__ weather patterns have led to more frequent droughts and floods. Many species of plants and animals are struggling to adapt to these rapid changes.</p>
+                        
+                        <p>Governments and organizations around the world are working to __18__ greenhouse gas emissions and develop sustainable energy sources. Individual actions, such as reducing energy consumption and choosing environmentally friendly transportation, can also make a difference.</p>
+                        
+                        <p>Education plays a crucial role in addressing climate change. By __19__ people about the causes and consequences of global warming, we can encourage more environmentally conscious behavior and support for climate action.</p>
+                        
+                        <p>While the challenge is enormous, many experts remain optimistic that __20__ global cooperation and innovation, we can still limit the worst effects of climate change.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">16</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q16" value="A"> (A) deny</label>
+                            <label class="option"><input type="radio" name="q16" value="B"> (B) confirm</label>
+                            <label class="option"><input type="radio" name="q16" value="C"> (C) ignore</label>
+                            <label class="option"><input type="radio" name="q16" value="D"> (D) suspect</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">17</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q17" value="A"> (A) stable</label>
+                            <label class="option"><input type="radio" name="q17" value="B"> (B) extreme</label>
+                            <label class="option"><input type="radio" name="q17" value="C"> (C) mild</label>
+                            <label class="option"><input type="radio" name="q17" value="D"> (D) predictable</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">18</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q18" value="A"> (A) increase</label>
+                            <label class="option"><input type="radio" name="q18" value="B"> (B) reduce</label>
+                            <label class="option"><input type="radio" name="q18" value="C"> (C) measure</label>
+                            <label class="option"><input type="radio" name="q18" value="D"> (D) distribute</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">19</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q19" value="A"> (A) warning</label>
+                            <label class="option"><input type="radio" name="q19" value="B"> (B) educating</label>
+                            <label class="option"><input type="radio" name="q19" value="C"> (C) punishing</label>
+                            <label class="option"><input type="radio" name="q19" value="D"> (D) forcing</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">20</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q20" value="A"> (A) without</label>
+                            <label class="option"><input type="radio" name="q20" value="B"> (B) through</label>
+                            <label class="option"><input type="radio" name="q20" value="C"> (C) despite</label>
+                            <label class="option"><input type="radio" name="q20" value="D"> (D) beyond</label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 三、文意選填 (占10分) -->
+                <section class="section">
+                    <h2 class="section-title">三、文意選填 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第21題至第30題，每題一個空格，請依文意在文章後所提供的(A)到(J)選項中分別選出最適當者，並將其英文字母畫記在答案卡之「選擇題答案區」。各題答對者，得1分。</p>
+
+                    <div class="passage" style="margin-bottom: 2rem;">
+                        <p>The Internet has revolutionized the way we communicate, learn, and conduct business. However, this digital revolution has also brought new challenges, particularly in the area of cybersecurity. As more of our personal and professional lives move online, we become increasingly __21__ to cyber threats.</p>
+                        
+                        <p>Cybercriminals use various methods to __22__ sensitive information such as passwords, credit card numbers, and personal data. Phishing emails, for example, are designed to trick users into __23__ their login credentials on fake websites that appear legitimate.</p>
+                        
+                        <p>To protect ourselves from these threats, experts recommend several __24__ strategies. First, we should use strong, unique passwords for each of our online accounts. Password managers can help us __25__ and organize these complex passwords securely.</p>
+                        
+                        <p>Second, we should be __26__ when clicking on links in emails or text messages, especially those from unknown senders. It's always better to navigate directly to a website rather than clicking on a suspicious link.</p>
+                        
+                        <p>Third, keeping our software and operating systems up to date is crucial. Software companies regularly __27__ security patches to fix vulnerabilities that cybercriminals might exploit.</p>
+                        
+                        <p>Finally, using reputable antivirus software can provide an additional __28__ of protection against malware and other cyber threats. Many of these programs also include features that can __29__ suspicious websites and downloads.</p>
+                        
+                        <p>While we cannot completely eliminate all cyber risks, following these best practices can significantly __30__ our chances of becoming victims of cybercrime.</p>
+                    </div>
+
+                    <div class="options-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem;">
+                        <div>(A) vulnerable</div>
+                        <div>(B) release</div>
+                        <div>(C) preventive</div>
+                        <div>(D) store</div>
+                        <div>(E) cautious</div>
+                        <div>(F) steal</div>
+                        <div>(G) layer</div>
+                        <div>(H) reduce</div>
+                        <div>(I) entering</div>
+                        <div>(J) detect</div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                        <div class="question" style="display: flex; align-items: center; gap: 1rem;">
+                            <span class="question-number">21</span>
+                            <div class="options" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <label class="option" style="margin: 0;"><input type="radio" name="q21" value="A"> (A)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q21" value="B"> (B)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q21" value="C"> (C)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q21" value="D"> (D)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q21" value="E"> (E)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q21" value="F"> (F)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q21" value="G"> (G)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q21" value="H"> (H)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q21" value="I"> (I)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q21" value="J"> (J)</label>
+                            </div>
+                        </div>
+
+                        <div class="question" style="display: flex; align-items: center; gap: 1rem;">
+                            <span class="question-number">22</span>
+                            <div class="options" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <label class="option" style="margin: 0;"><input type="radio" name="q22" value="A"> (A)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q22" value="B"> (B)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q22" value="C"> (C)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q22" value="D"> (D)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q22" value="E"> (E)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q22" value="F"> (F)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q22" value="G"> (G)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q22" value="H"> (H)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q22" value="I"> (I)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q22" value="J"> (J)</label>
+                            </div>
+                        </div>
+
+                        <div class="question" style="display: flex; align-items: center; gap: 1rem;">
+                            <span class="question-number">23</span>
+                            <div class="options" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <label class="option" style="margin: 0;"><input type="radio" name="q23" value="A"> (A)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q23" value="B"> (B)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q23" value="C"> (C)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q23" value="D"> (D)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q23" value="E"> (E)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q23" value="F"> (F)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q23" value="G"> (G)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q23" value="H"> (H)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q23" value="I"> (I)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q23" value="J"> (J)</label>
+                            </div>
+                        </div>
+
+                        <div class="question" style="display: flex; align-items: center; gap: 1rem;">
+                            <span class="question-number">24</span>
+                            <div class="options" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <label class="option" style="margin: 0;"><input type="radio" name="q24" value="A"> (A)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q24" value="B"> (B)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q24" value="C"> (C)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q24" value="D"> (D)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q24" value="E"> (E)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q24" value="F"> (F)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q24" value="G"> (G)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q24" value="H"> (H)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q24" value="I"> (I)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q24" value="J"> (J)</label>
+                            </div>
+                        </div>
+
+                        <div class="question" style="display: flex; align-items: center; gap: 1rem;">
+                            <span class="question-number">25</span>
+                            <div class="options" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <label class="option" style="margin: 0;"><input type="radio" name="q25" value="A"> (A)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q25" value="B"> (B)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q25" value="C"> (C)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q25" value="D"> (D)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q25" value="E"> (E)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q25" value="F"> (F)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q25" value="G"> (G)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q25" value="H"> (H)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q25" value="I"> (I)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q25" value="J"> (J)</label>
+                            </div>
+                        </div>
+
+                        <div class="question" style="display: flex; align-items: center; gap: 1rem;">
+                            <span class="question-number">26</span>
+                            <div class="options" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <label class="option" style="margin: 0;"><input type="radio" name="q26" value="A"> (A)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q26" value="B"> (B)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q26" value="C"> (C)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q26" value="D"> (D)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q26" value="E"> (E)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q26" value="F"> (F)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q26" value="G"> (G)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q26" value="H"> (H)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q26" value="I"> (I)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q26" value="J"> (J)</label>
+                            </div>
+                        </div>
+
+                        <div class="question" style="display: flex; align-items: center; gap: 1rem;">
+                            <span class="question-number">27</span>
+                            <div class="options" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <label class="option" style="margin: 0;"><input type="radio" name="q27" value="A"> (A)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q27" value="B"> (B)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q27" value="C"> (C)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q27" value="D"> (D)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q27" value="E"> (E)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q27" value="F"> (F)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q27" value="G"> (G)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q27" value="H"> (H)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q27" value="I"> (I)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q27" value="J"> (J)</label>
+                            </div>
+                        </div>
+
+                        <div class="question" style="display: flex; align-items: center; gap: 1rem;">
+                            <span class="question-number">28</span>
+                            <div class="options" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <label class="option" style="margin: 0;"><input type="radio" name="q28" value="A"> (A)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q28" value="B"> (B)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q28" value="C"> (C)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q28" value="D"> (D)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q28" value="E"> (E)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q28" value="F"> (F)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q28" value="G"> (G)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q28" value="H"> (H)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q28" value="I"> (I)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q28" value="J"> (J)</label>
+                            </div>
+                        </div>
+
+                        <div class="question" style="display: flex; align-items: center; gap: 1rem;">
+                            <span class="question-number">29</span>
+                            <div class="options" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <label class="option" style="margin: 0;"><input type="radio" name="q29" value="A"> (A)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q29" value="B"> (B)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q29" value="C"> (C)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q29" value="D"> (D)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q29" value="E"> (E)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q29" value="F"> (F)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q29" value="G"> (G)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q29" value="H"> (H)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q29" value="I"> (I)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q29" value="J"> (J)</label>
+                            </div>
+                        </div>
+
+                        <div class="question" style="display: flex; align-items: center; gap: 1rem;">
+                            <span class="question-number">30</span>
+                            <div class="options" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <label class="option" style="margin: 0;"><input type="radio" name="q30" value="A"> (A)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q30" value="B"> (B)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q30" value="C"> (C)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q30" value="D"> (D)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q30" value="E"> (E)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q30" value="F"> (F)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q30" value="G"> (G)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q30" value="H"> (H)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q30" value="I"> (I)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q30" value="J"> (J)</label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 四、篇章結構 (占8分) -->
+                <section class="section">
+                    <h2 class="section-title">四、篇章結構 (占8分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第31題至第34題，每題一個空格。請依文意在文章後所提供的(A)到(E)選項中分別選出最適當者，並將其英文字母畫記在答案卡之「選擇題答案區」。各題答對者，得2分。</p>
+
+                    <div class="passage" style="margin-bottom: 2rem;">
+                        <p>The rise of social media has fundamentally changed how people communicate and share information. These platforms have created new opportunities for connection, creativity, and commerce, but they have also introduced significant challenges.</p>
+                        
+                        <p>__31__ Social media allows people to maintain relationships across great distances and connect with others who share similar interests or experiences. It has given a voice to marginalized communities and enabled grassroots movements to organize and spread their messages rapidly.</p>
+                        
+                        <p>However, the same features that make social media powerful for positive change can also be exploited for harmful purposes. __32__ False information can spread as quickly as accurate news, and echo chambers can reinforce existing beliefs without exposing users to alternative viewpoints.</p>
+                        
+                        <p>__33__ Many young people report feeling pressure to present a perfect version of their lives online, leading to anxiety, depression, and low self-esteem. Cyberbullying has also become a serious problem, with harassment following victims into their homes through their devices.</p>
+                        
+                        <p>Despite these challenges, social media continues to evolve and play an increasingly important role in modern life. __34__ Users need to develop critical thinking skills to evaluate the information they encounter, and platforms must take greater responsibility for moderating content and protecting user welfare.</p>
+                    </div>
+
+                    <div class="options-list" style="margin-bottom: 2rem;">
+                        <div>(A) The psychological impact of social media on mental health has become a growing concern.</div>
+                        <div>(B) On the positive side, social media has democratized communication and information sharing.</div>
+                        <div>(C) The key to maximizing benefits while minimizing harm lies in digital literacy and platform accountability.</div>
+                        <div>(D) Misinformation and polarization represent two of the most serious risks of social media.</div>
+                        <div>(E) Educational institutions have been slow to adapt to these technological changes.</div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                        <div class="question" style="display: flex; align-items: center; gap: 1rem;">
+                            <span class="question-number">31</span>
+                            <div class="options" style="display: flex; gap: 0.5rem;">
+                                <label class="option" style="margin: 0;"><input type="radio" name="q31" value="A"> (A)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q31" value="B"> (B)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q31" value="C"> (C)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q31" value="D"> (D)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q31" value="E"> (E)</label>
+                            </div>
+                        </div>
+
+                        <div class="question" style="display: flex; align-items: center; gap: 1rem;">
+                            <span class="question-number">32</span>
+                            <div class="options" style="display: flex; gap: 0.5rem;">
+                                <label class="option" style="margin: 0;"><input type="radio" name="q32" value="A"> (A)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q32" value="B"> (B)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q32" value="C"> (C)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q32" value="D"> (D)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q32" value="E"> (E)</label>
+                            </div>
+                        </div>
+
+                        <div class="question" style="display: flex; align-items: center; gap: 1rem;">
+                            <span class="question-number">33</span>
+                            <div class="options" style="display: flex; gap: 0.5rem;">
+                                <label class="option" style="margin: 0;"><input type="radio" name="q33" value="A"> (A)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q33" value="B"> (B)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q33" value="C"> (C)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q33" value="D"> (D)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q33" value="E"> (E)</label>
+                            </div>
+                        </div>
+
+                        <div class="question" style="display: flex; align-items: center; gap: 1rem;">
+                            <span class="question-number">34</span>
+                            <div class="options" style="display: flex; gap: 0.5rem;">
+                                <label class="option" style="margin: 0;"><input type="radio" name="q34" value="A"> (A)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q34" value="B"> (B)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q34" value="C"> (C)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q34" value="D"> (D)</label>
+                                <label class="option" style="margin: 0;"><input type="radio" name="q34" value="E"> (E)</label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 五、閱讀測驗 (占24分) -->
+                <section class="section">
+                    <h2 class="section-title">五、閱讀測驗 (占24分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第35題至第46題，每題請先依據文章內容，從四個選項中選出最適當的答案，並將其英文字母畫記在答案卡之「選擇題答案區」。各題答對者，得2分。</p>
+
+                    <h3 style="margin-bottom: 1.5rem; color: #2c3e50;">第35至38題</h3>
+                    <div class="passage" style="margin-bottom: 2rem;">
+                        <p>Urban farming is gaining popularity as cities around the world seek sustainable solutions to food production. This practice involves growing crops in urban environments, including rooftops, balconies, vacant lots, and even indoor facilities using advanced hydroponic systems.</p>
+                        
+                        <p>One of the primary benefits of urban farming is its contribution to food security. By producing food locally, cities can reduce their dependence on rural agriculture and long supply chains that are vulnerable to disruptions. Urban farms can provide fresh produce year-round, even in harsh climates, through the use of greenhouses and controlled environment agriculture.</p>
+                        
+                        <p>Urban farming also offers environmental advantages. It reduces the carbon footprint associated with transporting food from rural areas to urban markets. Additionally, urban farms can help manage stormwater runoff, improve air quality, and provide habitats for urban wildlife. Some urban farming initiatives even convert organic waste into compost, creating a circular economy within the city.</p>
+                        
+                        <p>Despite these benefits, urban farming faces several challenges. The initial setup costs can be high, particularly for advanced systems like hydroponics or aeroponics. Limited space in densely populated cities means that urban farms may not be able to produce enough food to meet all of a city's needs. There are also concerns about soil contamination in urban areas, which can affect the safety of crops grown in traditional soil-based systems.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">35</div>
+                        <div class="question-text">What is the main topic of the passage?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q35" value="A"> (A) The history of agriculture</label>
+                            <label class="option"><input type="radio" name="q35" value="B"> (B) Urban farming benefits and challenges</label>
+                            <label class="option"><input type="radio" name="q35" value="C"> (C) Environmental problems in cities</label>
+                            <label class="option"><input type="radio" name="q35" value="D"> (D) Food transportation systems</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">36</div>
+                        <div class="question-text">According to the passage, urban farming contributes to food security by:</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q36" value="A"> (A) increasing crop yields in rural areas</label>
+                            <label class="option"><input type="radio" name="q36" value="B"> (B) reducing dependence on distant food sources</label>
+                            <label class="option"><input type="radio" name="q36" value="C"> (C) eliminating the need for food imports</label>
+                            <label class="option"><input type="radio" name="q36" value="D"> (D) lowering food prices for consumers</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">37</div>
+                        <div class="question-text">Which of the following is NOT mentioned as an environmental benefit of urban farming?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q37" value="A"> (A) Reduced carbon footprint</label>
+                            <label class="option"><input type="radio" name="q37" value="B"> (B) Better stormwater management</label>
+                            <label class="option"><input type="radio" name="q37" value="C"> (C) Increased biodiversity</label>
+                            <label class="option"><input type="radio" name="q37" value="D"> (D) Reduced noise pollution</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">38</div>
+                        <div class="question-text">What challenge of urban farming is mentioned in the passage?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q38" value="A"> (A) Lack of consumer interest</label>
+                            <label class="option"><input type="radio" name="q38" value="B"> (B) High initial investment costs</label>
+                            <label class="option"><input type="radio" name="q38" value="C"> (C) Seasonal weather variations</label>
+                            <label class="option"><input type="radio" name="q38" value="D"> (D) Competition with rural farmers</label>
+                        </div>
+                    </div>
+
+                    <h3 style="margin: 2rem 0 1.5rem; color: #2c3e50;">第39至42題</h3>
+                    <div class="passage" style="margin-bottom: 2rem;">
+                        <p>The concept of artificial intelligence (AI) has evolved dramatically since its inception in the 1950s. What began as a theoretical framework for machine learning has now become an integral part of modern technology, influencing everything from smartphone applications to medical diagnoses.</p>
+                        
+                        <p>Machine learning, a subset of AI, allows computers to learn and make decisions without being explicitly programmed for every task. This technology has enabled significant advances in various fields. In healthcare, AI systems can analyze medical images to detect diseases earlier than human doctors. In transportation, autonomous vehicles use AI to navigate roads safely. In business, AI-powered algorithms help companies optimize their operations and personalize customer experiences.</p>
+                        
+                        <p>However, the rapid advancement of AI technology has also raised important ethical questions. Concerns about job displacement arise as AI systems become capable of performing tasks traditionally done by humans. Privacy issues emerge as AI systems collect and analyze vast amounts of personal data. There are also questions about algorithmic bias, where AI systems might make unfair decisions based on biased training data.</p>
+                        
+                        <p>To address these challenges, many experts advocate for the development of ethical AI guidelines and regulations. They argue that AI development should prioritize transparency, accountability, and fairness. Some propose that AI systems should be required to explain their decision-making processes, making them more transparent to users and regulators.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">39</div>
+                        <div class="question-text">What is the main purpose of this passage?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q39" value="A"> (A) To explain the history of computer programming</label>
+                            <label class="option"><input type="radio" name="q39" value="B"> (B) To discuss AI development and its implications</label>
+                            <label class="option"><input type="radio" name="q39" value="C"> (C) To promote AI technology in healthcare</label>
+                            <label class="option"><input type="radio" name="q39" value="D"> (D) To criticize current AI regulations</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">40</div>
+                        <div class="question-text">According to the passage, machine learning allows computers to:</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q40" value="A"> (A) replace human workers completely</label>
+                            <label class="option"><input type="radio" name="q40" value="B"> (B) learn and decide without specific programming</label>
+                            <label class="option"><input type="radio" name="q40" value="C"> (C) eliminate the need for data analysis</label>
+                            <label class="option"><input type="radio" name="q40" value="D"> (D) prevent all algorithmic bias</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">41</div>
+                        <div class="question-text">Which ethical concern about AI is NOT mentioned in the passage?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q41" value="A"> (A) Job displacement</label>
+                            <label class="option"><input type="radio" name="q41" value="B"> (B) Privacy violations</label>
+                            <label class="option"><input type="radio" name="q41" value="C"> (C) Algorithmic bias</label>
+                            <label class="option"><input type="radio" name="q41" value="D"> (D) Environmental impact</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">42</div>
+                        <div class="question-text">What solution do experts propose for addressing AI challenges?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q42" value="A"> (A) Stopping all AI development</label>
+                            <label class="option"><input type="radio" name="q42" value="B"> (B) Limiting AI to certain industries</label>
+                            <label class="option"><input type="radio" name="q42" value="C"> (C) Developing ethical guidelines and transparency</label>
+                            <label class="option"><input type="radio" name="q42" value="D"> (D) Reducing data collection by AI systems</label>
+                        </div>
+                    </div>
+
+                    <h3 style="margin: 2rem 0 1.5rem; color: #2c3e50;">第43至46題</h3>
+                    <div class="passage" style="margin-bottom: 2rem;">
+                        <p>The Mediterranean diet, based on the traditional eating patterns of countries surrounding the Mediterranean Sea, has gained international recognition for its health benefits. This dietary approach emphasizes whole foods, healthy fats, and fresh ingredients while limiting processed foods and red meat.</p>
+                        
+                        <p>Central to the Mediterranean diet are olive oil, fish, legumes, nuts, fruits, and vegetables. Olive oil serves as the primary source of added fat, providing monounsaturated fats that are beneficial for heart health. Fish, particularly fatty fish like salmon and sardines, supply omega-3 fatty acids that support brain function and reduce inflammation. Legumes and nuts offer plant-based proteins and fiber, while fruits and vegetables provide essential vitamins, minerals, and antioxidants.</p>
+                        
+                        <p>Research has consistently shown that adherence to the Mediterranean diet is associated with numerous health benefits. Studies indicate that this eating pattern can reduce the risk of heart disease, stroke, type 2 diabetes, and certain cancers. It may also support healthy aging and cognitive function, potentially reducing the risk of dementia and Alzheimer's disease.</p>
+                        
+                        <p>Beyond its health benefits, the Mediterranean diet is also praised for its sustainability and cultural significance. The emphasis on local, seasonal foods supports environmental sustainability and local economies. Additionally, the diet promotes social eating practices, with meals often shared among family and friends, contributing to overall well-being and social connection.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">43</div>
+                        <div class="question-text">What is the Mediterranean diet primarily based on?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q43" value="A"> (A) Modern nutritional science</label>
+                            <label class="option"><input type="radio" name="q43" value="B"> (B) Traditional eating patterns of Mediterranean countries</label>
+                            <label class="option"><input type="radio" name="q43" value="C"> (C) Weight loss principles</label>
+                            <label class="option"><input type="radio" name="q43" value="D"> (D) Vegetarian dietary guidelines</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">44</div>
+                        <div class="question-text">According to the passage, olive oil in the Mediterranean diet provides:</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q44" value="A"> (A) omega-3 fatty acids</label>
+                            <label class="option"><input type="radio" name="q44" value="B"> (B) monounsaturated fats</label>
+                            <label class="option"><input type="radio" name="q44" value="C"> (C) plant-based proteins</label>
+                            <label class="option"><input type="radio" name="q44" value="D"> (D) essential vitamins</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">45</div>
+                        <div class="question-text">Which health benefit is NOT mentioned in the passage?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q45" value="A"> (A) Reduced risk of heart disease</label>
+                            <label class="option"><input type="radio" name="q45" value="B"> (B) Lower chance of type 2 diabetes</label>
+                            <label class="option"><input type="radio" name="q45" value="C"> (C) Improved bone density</label>
+                            <label class="option"><input type="radio" name="q45" value="D"> (D) Support for cognitive function</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">46</div>
+                        <div class="question-text">What additional benefit of the Mediterranean diet is mentioned?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q46" value="A"> (A) It is inexpensive to follow</label>
+                            <label class="option"><input type="radio" name="q46" value="B"> (B) It requires minimal cooking skills</label>
+                            <label class="option"><input type="radio" name="q46" value="C"> (C) It promotes environmental sustainability</label>
+                            <label class="option"><input type="radio" name="q46" value="D"> (D) It eliminates the need for supplements</label>
+                        </div>
+                    </div>
+                </section>
+            </form>
+        </div>
+    </main>
+
+    <div class="controls">
+        <div class="container">
+            <div class="control-buttons">
+                <a href="../index.html" class="btn btn-secondary">← 返回首頁</a>
+                <button type="button" onclick="exam.checkAnswers()" class="btn btn-primary">檢查答案</button>
+                <button type="button" onclick="exam.submitExam()" class="btn btn-success">提交試卷</button>
+                <button type="button" onclick="exam.showAnswers()" class="btn btn-secondary">查看詳解</button>
+                <button type="button" onclick="exam.resetExam()" class="btn btn-outline">重新測驗</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/exam-109.js"></script>
+</body>
+</html>

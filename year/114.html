@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>114學年度學測英文 - 互動練習</title>
+    <link rel="stylesheet" href="../styles/common.css">
+</head>
+<body>
+    <header class="exam-header">
+        <div class="container">
+            <div class="exam-info">
+                <div class="exam-title">114學年度學科能力測驗 - 英文考科</div>
+                <div class="timer" id="timer">100:00</div>
+                <div class="score-display" id="currentScore" style="display: none;">
+                    得分：<span id="scoreValue">0</span>/100
+                </div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="exam-content">
+        <div class="container">
+            <form id="examForm">
+                <!-- 第壹部分、選擇題 (占62分) -->
+                
+                <!-- 一、詞彙題 (占10分) -->
+                <section class="section">
+                    <h2 class="section-title">第壹部分、選擇題 (占62分)<br>一、詞彙題 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第1題至第10題為單選題，每題1分。</p>
+
+                    <div class="question">
+                        <div class="question-number">1</div>
+                        <div class="question-text">
+                            If you put a ______ under a leaking faucet, you will be surprised at the amount of water collected in 24 hours.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q1" value="A">
+                                <span class="option-text">(A) border</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="B">
+                                <span class="option-text">(B) timer</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="C">
+                                <span class="option-text">(C) container</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="D">
+                                <span class="option-text">(D) marker</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">2</div>
+                        <div class="question-text">
+                            The local farmers' market is popular as it offers a variety of fresh seasonal ______ to people in the community.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q2" value="A">
+                                <span class="option-text">(A) produce</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="B">
+                                <span class="option-text">(B) fashion</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="C">
+                                <span class="option-text">(C) brand</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="D">
+                                <span class="option-text">(D) trend</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">3</div>
+                        <div class="question-text">
+                            As the years have passed by, many of my childhood memories are already ______; I can no longer recall clearly what happened back then.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q3" value="A">
+                                <span class="option-text">(A) blurring</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="B">
+                                <span class="option-text">(B) trimming</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="C">
+                                <span class="option-text">(C) draining</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="D">
+                                <span class="option-text">(D) glaring</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">4</div>
+                        <div class="question-text">
+                            Racist remarks are by nature ______ and hurtful, and should be avoided on all occasions.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q4" value="A">
+                                <span class="option-text">(A) excessive</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="B">
+                                <span class="option-text">(B) furious</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="C">
+                                <span class="option-text">(C) offensive</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="D">
+                                <span class="option-text">(D) stubborn</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">5</div>
+                        <div class="question-text">
+                            Not satisfied with the first ______ of her essay, Mary revised it several times before turning it in to the teacher.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q5" value="A">
+                                <span class="option-text">(A) text</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="B">
+                                <span class="option-text">(B) brush</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="C">
+                                <span class="option-text">(C) draft</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="D">
+                                <span class="option-text">(D) plot</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">6</div>
+                        <div class="question-text">
+                            Left ______ for years, the deserted house was filled with a thick coating of dust and a smell of old damp wood.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q6" value="A">
+                                <span class="option-text">(A) casual</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="B">
+                                <span class="option-text">(B) fragile</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="C">
+                                <span class="option-text">(C) remote</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="D">
+                                <span class="option-text">(D) vacant</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">7</div>
+                        <div class="question-text">
+                            The high school student showed ______ courage when she helped the old man escape from the fire.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q7" value="A">
+                                <span class="option-text">(A) gigantic</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="B">
+                                <span class="option-text">(B) exclusive</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="C">
+                                <span class="option-text">(C) multiple</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="D">
+                                <span class="option-text">(D) enormous</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">8</div>
+                        <div class="question-text">
+                            Publicly financed projects are often ______ or delayed during tough economic times due to a lack of resources.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q8" value="A">
+                                <span class="option-text">(A) halted</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="B">
+                                <span class="option-text">(B) hatched</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="C">
+                                <span class="option-text">(C) possessed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="D">
+                                <span class="option-text">(D) reinforced</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">9</div>
+                        <div class="question-text">
+                            Despite his busy schedule, the President ______ the school's graduation ceremony with his presence and a heartwarming speech.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q9" value="A">
+                                <span class="option-text">(A) praised</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="B">
+                                <span class="option-text">(B) graced</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="C">
+                                <span class="option-text">(C) addressed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="D">
+                                <span class="option-text">(D) credited</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">10</div>
+                        <div class="question-text">
+                            The manager of the company was sued for ______ abusing his colleagues, calling them "hopeless losers."
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q10" value="A">
+                                <span class="option-text">(A) verbally</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q10" value="B">
+                                <span class="option-text">(B) dominantly</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q10" value="C">
+                                <span class="option-text">(C) legitimately</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q10" value="D">
+                                <span class="option-text">(D) relevantly</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 二、綜合測驗 (占10分) -->
+                <section class="section">
+                    <h2 class="section-title">二、綜合測驗 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第11題至第20題為單選題，每題1分。</p>
+
+                    <h3 style="margin-bottom: 1.5rem; color: #2c3e50;">第11至15題為題組</h3>
+                    <div class="passage" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; line-height: 1.8;">
+                        <p>In 1995, a group of business and academic leaders met at the home of Juanita Brown and David Isaacs in Mill Valley, California. None of them had any idea they were about to create a social innovation that <strong>11</strong> rapidly around the world.</p>
+                        
+                        <p>The group was supposed to have a large-circle discussion in their beautiful garden. Unfortunately, it started pouring. With their plan <strong>12</strong> by the rain, the two dozen participants squeezed into the living room. They broke into small, intimate table conversations, recording their insights on paper tablecloths. They periodically stopped their conversations to switch tables so the insights and ideas might <strong>13</strong> and deepen. As they moved from one table to another, they noticed new ideas emerging from the discussions. This in turn enriched subsequent rounds of conversation. Over the course of the morning, the innovative discussion process <strong>14</strong> a new form of collective effort that transformed the depth, scope, and quality of their discussion.</p>
+                        
+                        <p>The World Café was <strong>15</strong> created. Since that rainy morning in Mill Valley, the World Café approach has been applied to multi-group discussions and cooperative actions by businesses, industries, and educational institutions around the world.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">11</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q11" value="A">
+                                <span class="option-text">(A) had spread</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q11" value="B">
+                                <span class="option-text">(B) would spread</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q11" value="C">
+                                <span class="option-text">(C) had been spreading</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q11" value="D">
+                                <span class="option-text">(D) would have spread</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">12</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q12" value="A">
+                                <span class="option-text">(A) facilitated</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q12" value="B">
+                                <span class="option-text">(B) disrupted</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q12" value="C">
+                                <span class="option-text">(C) disclosed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q12" value="D">
+                                <span class="option-text">(D) fulfilled</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">13</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q13" value="A">
+                                <span class="option-text">(A) circulate</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q13" value="B">
+                                <span class="option-text">(B) emphasize</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q13" value="C">
+                                <span class="option-text">(C) recover</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q13" value="D">
+                                <span class="option-text">(D) preserve</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">14</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q14" value="A">
+                                <span class="option-text">(A) made up for</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q14" value="B">
+                                <span class="option-text">(B) kept track of</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q14" value="C">
+                                <span class="option-text">(C) gave rise to</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q14" value="D">
+                                <span class="option-text">(D) looked out for</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">15</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q15" value="A">
+                                <span class="option-text">(A) still</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q15" value="B">
+                                <span class="option-text">(B) also</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q15" value="C">
+                                <span class="option-text">(C) further</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q15" value="D">
+                                <span class="option-text">(D) thus</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <h3 style="margin: 2rem 0 1.5rem; color: #2c3e50;">第16至20題為題組</h3>
+                    <div class="passage" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; line-height: 1.8;">
+                        <p>If you have ever been sick to your stomach on a rocking boat or a bumpy car ride, you know the discomfort of motion sickness. It can <strong>16</strong> suddenly, progressing from a feeling of uneasiness to a cold sweat. Soon, it can lead to dizziness, nausea, and vomiting.</p>
+                        
+                        <p>Motion sickness occurs when the signals your brain receives from your eyes, ears, and body <strong>17</strong>. Your brain doesn't know whether you are stationary or moving when these parts send conflicting information: One part of your balance-sensing system detects that your body is moving, but the other parts <strong>18</strong>. Your brain's confused reaction makes you feel sick. You may experience the discomfort from the motion of cars, boats, or amusement park rides. You may also get sick from playing video games, or looking through a microscope.</p>
+                        
+                        <p>You can take some <strong>19</strong> to help avoid the discomfort. If you are traveling, reserve seats where motion is felt the least, such as the front row of a car or forward cars of a train. Looking out into the distance from the vehicle can help <strong>20</strong>. You can also take medicine before your ride to avoid or reduce nausea and vomiting.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">16</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q16" value="A">
+                                <span class="option-text">(A) crash</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q16" value="B">
+                                <span class="option-text">(B) flush</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q16" value="C">
+                                <span class="option-text">(C) burst</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q16" value="D">
+                                <span class="option-text">(D) strike</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">17</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q17" value="A">
+                                <span class="option-text">(A) are not regular</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q17" value="B">
+                                <span class="option-text">(B) can hardly move</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q17" value="C">
+                                <span class="option-text">(C) do not match</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q17" value="D">
+                                <span class="option-text">(D) are rarely cued</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">18</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q18" value="A">
+                                <span class="option-text">(A) aren't</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q18" value="B">
+                                <span class="option-text">(B) won't</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q18" value="C">
+                                <span class="option-text">(C) don't</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q18" value="D">
+                                <span class="option-text">(D) haven't</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">19</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q19" value="A">
+                                <span class="option-text">(A) special opportunities</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q19" value="B">
+                                <span class="option-text">(B) preventive measures</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q19" value="C">
+                                <span class="option-text">(C) potential risks</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q19" value="D">
+                                <span class="option-text">(D) significant advantages</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">20</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q20" value="A">
+                                <span class="option-text">(A) as well</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q20" value="B">
+                                <span class="option-text">(B) by far</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q20" value="C">
+                                <span class="option-text">(C) at least</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q20" value="D">
+                                <span class="option-text">(D) after all</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 三、文意選填 (占10分) -->
+                <section class="section">
+                    <h2 class="section-title">三、文意選填 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第21題至第30題為單選題，每題1分。</p>
+
+                    <h3 style="margin-bottom: 1.5rem; color: #2c3e50;">第21至30題為題組</h3>
+                    <div class="passage" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; line-height: 1.8;">
+                        <p>The Notre-Dame de Paris is one of the most famous cathedrals in Europe. Located at the heart of Paris, this medieval cathedral is <strong>21</strong> for its intricate architecture, stunning stained glass windows, and, above all, its bells.</p>
+                        
+                        <p>Mounted in the two tall towers of the cathedral, Notre-Dame's bells have been ringing for over 800 years. In fact, there is documented <strong>22</strong> to the ringing of bells even before the cathedral's construction was completed, dating as far back as the 12th century. The 10 bells vary in size, each <strong>23</strong> a name. The largest one, named "Emmanuel," weighs over 13 tons. It is the only one of the whole group that <strong>24</strong> the French Revolution, while the rest were melted down for weapons. The melted bells were recast in the late 19th century. But due to their poor acoustic quality, all of the bells were replaced in 2013—except for Emmanuel, which <strong>25</strong> its renowned, excellent sound. This particular bell, ringing in F sharp, is considered one of the most harmonically beautiful in Europe.</p>
+                        
+                        <p>Over centuries, the bells have become a <strong>26</strong> part of life in Paris, where they are known as "the cathedral's voice." They have been used to mark the hours of the day, to call the <strong>27</strong> to prayer, and to signal emergency situations such as fires and invasions. They have also rung in times of <strong>28</strong> and of mourning, announcing such events as royal weddings and coronations of kings, as well as funerals of heads of state.</p>
+                        
+                        <p>However, after the devastating fire that damaged the cathedral in 2019, the bells fell <strong>29</strong>. The building went through a complex and time-consuming process of <strong>30</strong>, and the famous monument was finally reopened on December 8, 2024. The sounds of Notre-Dame bells once again filled the air in Paris, and will be heard for generations to come.</p>
+                    </div>
+
+                    <div class="fill-options" style="background: #f0f8ff; padding: 1rem; border-radius: 8px; margin-bottom: 2rem;">
+                        <p style="margin-bottom: 0.5rem; font-weight: bold;">選項：</p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; font-size: 0.9rem;">
+                            <span>(A) reference</span>
+                            <span>(B) bearing</span>
+                            <span>(C) familiar</span>
+                            <span>(D) retained</span>
+                            <span>(E) faithful</span>
+                            <span>(F) survived</span>
+                            <span>(G) celebration</span>
+                            <span>(H) restoration</span>
+                            <span>(I) noted</span>
+                            <span>(J) silent</span>
+                        </div>
+                    </div>
+
+                    <!-- 21-30題選項 -->
+                    <div class="question">
+                        <div class="question-number">21</div>
+                        <div class="options" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem;">
+                            <label class="option"><input type="radio" name="q21" value="A"><span class="option-text">(A)</span></label>
+                            <label class="option"><input type="radio" name="q21" value="B"><span class="option-text">(B)</span></label>
+                            <label class="option"><input type="radio" name="q21" value="C"><span class="option-text">(C)</span></label>
+                            <label class="option"><input type="radio" name="q21" value="D"><span class="option-text">(D)</span></label>
+                            <label class="option"><input type="radio" name="q21" value="E"><span class="option-text">(E)</span></label>
+                            <label class="option"><input type="radio" name="q21" value="F"><span class="option-text">(F)</span></label>
+                            <label class="option"><input type="radio" name="q21" value="G"><span class="option-text">(G)</span></label>
+                            <label class="option"><input type="radio" name="q21" value="H"><span class="option-text">(H)</span></label>
+                            <label class="option"><input type="radio" name="q21" value="I"><span class="option-text">(I)</span></label>
+                            <label class="option"><input type="radio" name="q21" value="J"><span class="option-text">(J)</span></label>
+                        </div>
+                    </div>
+                    
+                    <!-- 重複22-30題結構 -->
+                    <div class="question"><div class="question-number">22</div><div class="options" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem;">
+                        <label class="option"><input type="radio" name="q22" value="A"><span class="option-text">(A)</span></label>
+                        <label class="option"><input type="radio" name="q22" value="B"><span class="option-text">(B)</span></label>
+                        <label class="option"><input type="radio" name="q22" value="C"><span class="option-text">(C)</span></label>
+                        <label class="option"><input type="radio" name="q22" value="D"><span class="option-text">(D)</span></label>
+                        <label class="option"><input type="radio" name="q22" value="E"><span class="option-text">(E)</span></label>
+                        <label class="option"><input type="radio" name="q22" value="F"><span class="option-text">(F)</span></label>
+                        <label class="option"><input type="radio" name="q22" value="G"><span class="option-text">(G)</span></label>
+                        <label class="option"><input type="radio" name="q22" value="H"><span class="option-text">(H)</span></label>
+                        <label class="option"><input type="radio" name="q22" value="I"><span class="option-text">(I)</span></label>
+                        <label class="option"><input type="radio" name="q22" value="J"><span class="option-text">(J)</span></label>
+                    </div></div>
+
+                    <div class="question"><div class="question-number">23</div><div class="options" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem;">
+                        <label class="option"><input type="radio" name="q23" value="A"><span class="option-text">(A)</span></label>
+                        <label class="option"><input type="radio" name="q23" value="B"><span class="option-text">(B)</span></label>
+                        <label class="option"><input type="radio" name="q23" value="C"><span class="option-text">(C)</span></label>
+                        <label class="option"><input type="radio" name="q23" value="D"><span class="option-text">(D)</span></label>
+                        <label class="option"><input type="radio" name="q23" value="E"><span class="option-text">(E)</span></label>
+                        <label class="option"><input type="radio" name="q23" value="F"><span class="option-text">(F)</span></label>
+                        <label class="option"><input type="radio" name="q23" value="G"><span class="option-text">(G)</span></label>
+                        <label class="option"><input type="radio" name="q23" value="H"><span class="option-text">(H)</span></label>
+                        <label class="option"><input type="radio" name="q23" value="I"><span class="option-text">(I)</span></label>
+                        <label class="option"><input type="radio" name="q23" value="J"><span class="option-text">(J)</span></label>
+                    </div></div>
+
+                    <!-- 24-30題依此類推... -->
+                    <div class="question"><div class="question-number">24</div><div class="options" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem;">
+                        <label class="option"><input type="radio" name="q24" value="A"><span class="option-text">(A)</span></label><label class="option"><input type="radio" name="q24" value="B"><span class="option-text">(B)</span></label><label class="option"><input type="radio" name="q24" value="C"><span class="option-text">(C)</span></label><label class="option"><input type="radio" name="q24" value="D"><span class="option-text">(D)</span></label><label class="option"><input type="radio" name="q24" value="E"><span class="option-text">(E)</span></label><label class="option"><input type="radio" name="q24" value="F"><span class="option-text">(F)</span></label><label class="option"><input type="radio" name="q24" value="G"><span class="option-text">(G)</span></label><label class="option"><input type="radio" name="q24" value="H"><span class="option-text">(H)</span></label><label class="option"><input type="radio" name="q24" value="I"><span class="option-text">(I)</span></label><label class="option"><input type="radio" name="q24" value="J"><span class="option-text">(J)</span></label>
+                    </div></div>
+                    
+                    <div class="question"><div class="question-number">25</div><div class="options" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem;"><label class="option"><input type="radio" name="q25" value="A"><span class="option-text">(A)</span></label><label class="option"><input type="radio" name="q25" value="B"><span class="option-text">(B)</span></label><label class="option"><input type="radio" name="q25" value="C"><span class="option-text">(C)</span></label><label class="option"><input type="radio" name="q25" value="D"><span class="option-text">(D)</span></label><label class="option"><input type="radio" name="q25" value="E"><span class="option-text">(E)</span></label><label class="option"><input type="radio" name="q25" value="F"><span class="option-text">(F)</span></label><label class="option"><input type="radio" name="q25" value="G"><span class="option-text">(G)</span></label><label class="option"><input type="radio" name="q25" value="H"><span class="option-text">(H)</span></label><label class="option"><input type="radio" name="q25" value="I"><span class="option-text">(I)</span></label><label class="option"><input type="radio" name="q25" value="J"><span class="option-text">(J)</span></label></div></div>
+                    
+                    <div class="question"><div class="question-number">26</div><div class="options" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem;"><label class="option"><input type="radio" name="q26" value="A"><span class="option-text">(A)</span></label><label class="option"><input type="radio" name="q26" value="B"><span class="option-text">(B)</span></label><label class="option"><input type="radio" name="q26" value="C"><span class="option-text">(C)</span></label><label class="option"><input type="radio" name="q26" value="D"><span class="option-text">(D)</span></label><label class="option"><input type="radio" name="q26" value="E"><span class="option-text">(E)</span></label><label class="option"><input type="radio" name="q26" value="F"><span class="option-text">(F)</span></label><label class="option"><input type="radio" name="q26" value="G"><span class="option-text">(G)</span></label><label class="option"><input type="radio" name="q26" value="H"><span class="option-text">(H)</span></label><label class="option"><input type="radio" name="q26" value="I"><span class="option-text">(I)</span></label><label class="option"><input type="radio" name="q26" value="J"><span class="option-text">(J)</span></label></div></div>
+                    
+                    <div class="question"><div class="question-number">27</div><div class="options" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem;"><label class="option"><input type="radio" name="q27" value="A"><span class="option-text">(A)</span></label><label class="option"><input type="radio" name="q27" value="B"><span class="option-text">(B)</span></label><label class="option"><input type="radio" name="q27" value="C"><span class="option-text">(C)</span></label><label class="option"><input type="radio" name="q27" value="D"><span class="option-text">(D)</span></label><label class="option"><input type="radio" name="q27" value="E"><span class="option-text">(E)</span></label><label class="option"><input type="radio" name="q27" value="F"><span class="option-text">(F)</span></label><label class="option"><input type="radio" name="q27" value="G"><span class="option-text">(G)</span></label><label class="option"><input type="radio" name="q27" value="H"><span class="option-text">(H)</span></label><label class="option"><input type="radio" name="q27" value="I"><span class="option-text">(I)</span></label><label class="option"><input type="radio" name="q27" value="J"><span class="option-text">(J)</span></label></div></div>
+                    
+                    <div class="question"><div class="question-number">28</div><div class="options" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem;"><label class="option"><input type="radio" name="q28" value="A"><span class="option-text">(A)</span></label><label class="option"><input type="radio" name="q28" value="B"><span class="option-text">(B)</span></label><label class="option"><input type="radio" name="q28" value="C"><span class="option-text">(C)</span></label><label class="option"><input type="radio" name="q28" value="D"><span class="option-text">(D)</span></label><label class="option"><input type="radio" name="q28" value="E"><span class="option-text">(E)</span></label><label class="option"><input type="radio" name="q28" value="F"><span class="option-text">(F)</span></label><label class="option"><input type="radio" name="q28" value="G"><span class="option-text">(G)</span></label><label class="option"><input type="radio" name="q28" value="H"><span class="option-text">(H)</span></label><label class="option"><input type="radio" name="q28" value="I"><span class="option-text">(I)</span></label><label class="option"><input type="radio" name="q28" value="J"><span class="option-text">(J)</span></label></div></div>
+                    
+                    <div class="question"><div class="question-number">29</div><div class="options" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem;"><label class="option"><input type="radio" name="q29" value="A"><span class="option-text">(A)</span></label><label class="option"><input type="radio" name="q29" value="B"><span class="option-text">(B)</span></label><label class="option"><input type="radio" name="q29" value="C"><span class="option-text">(C)</span></label><label class="option"><input type="radio" name="q29" value="D"><span class="option-text">(D)</span></label><label class="option"><input type="radio" name="q29" value="E"><span class="option-text">(E)</span></label><label class="option"><input type="radio" name="q29" value="F"><span class="option-text">(F)</span></label><label class="option"><input type="radio" name="q29" value="G"><span class="option-text">(G)</span></label><label class="option"><input type="radio" name="q29" value="H"><span class="option-text">(H)</span></label><label class="option"><input type="radio" name="q29" value="I"><span class="option-text">(I)</span></label><label class="option"><input type="radio" name="q29" value="J"><span class="option-text">(J)</span></label></div></div>
+                    
+                    <div class="question"><div class="question-number">30</div><div class="options" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem;"><label class="option"><input type="radio" name="q30" value="A"><span class="option-text">(A)</span></label><label class="option"><input type="radio" name="q30" value="B"><span class="option-text">(B)</span></label><label class="option"><input type="radio" name="q30" value="C"><span class="option-text">(C)</span></label><label class="option"><input type="radio" name="q30" value="D"><span class="option-text">(D)</span></label><label class="option"><input type="radio" name="q30" value="E"><span class="option-text">(E)</span></label><label class="option"><input type="radio" name="q30" value="F"><span class="option-text">(F)</span></label><label class="option"><input type="radio" name="q30" value="G"><span class="option-text">(G)</span></label><label class="option"><input type="radio" name="q30" value="H"><span class="option-text">(H)</span></label><label class="option"><input type="radio" name="q30" value="I"><span class="option-text">(I)</span></label><label class="option"><input type="radio" name="q30" value="J"><span class="option-text">(J)</span></label></div></div>
+                </section>
+
+                <!-- 四、篇章結構 (占8分) -->
+                <section class="section">
+                    <h2 class="section-title">四、篇章結構 (占8分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第31題至第34題為單選題，每題2分。</p>
+
+                    <h3 style="margin-bottom: 1.5rem; color: #2c3e50;">第31至34題為題組</h3>
+                    <div class="passage" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; line-height: 1.8;">
+                        <p>A capsule hotel, also known as a pod hotel, is a unique type of basic, affordable accommodation. Originated in Japan, these hotels were initially meant for business professionals to stay close to populated business districts without spending a lot. <strong>31</strong></p>
+
+                        <p>A typical room of a capsule hotel is roughly the length and width of a single bed, with sufficient height for a guest to crawl in and sit up on the bed. The walls of each capsule may be made of wood, metal or any rigid material, but are often fiberglass or plastic. <strong>32</strong> Each capsule is equipped with a comfortable mattress, a small light, and sometimes a television or other entertainment options. Such minimalist design is what makes these hotels both inexpensive and efficient, providing only the essential elements for a good night sleep.</p>
+
+                        <p>The first capsule hotel, the Capsule Inn Osaka, opened in 1979. Since then, capsule hotels have quickly spread to other cities and countries. Chains have emerged in Taiwan, Singapore, and even on resort islands like Bali. Pod hotels are also seen in Europe and North America, especially in big cities like New York, London, and Paris. <strong>33</strong> Instead of the traditional bare pod-sized style, new chains now feature interior design that appeals to digitally connected travelers from around the world. Guests may enjoy facilities such as free Wi-Fi, mobile charging, and even a soundless alarm system that raises the sleeping guests into a seated position while gradually brightening the lights.</p>
+
+                        <p>While offering budget-conscious travelers a unique option, capsule hotels may not be suitable for everyone. Some hotels may not provide air conditioning in the capsules, leading to poor air flow. <strong>34</strong> Also, you may have to share common facilities (such as bathrooms) with other guests. And, if you're worried about feeling claustrophobic in small spaces, you'd better think twice before making a reservation.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">31</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q31" value="A">
+                                <span class="option-text">(A) In response to rising demands, these hotels are embracing a wave of innovation.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q31" value="B">
+                                <span class="option-text">(B) The room's thin plastic walls easily transmit the sound of snoring made by neighboring guests.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q31" value="C">
+                                <span class="option-text">(C) The chambers are stacked side-by-side, two units high, with the upper rooms reached by a ladder.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q31" value="D">
+                                <span class="option-text">(D) Today, they provide low-budget, overnight lodging in commerce centers in large cities worldwide.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">32</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q32" value="A"><span class="option-text">(A) In response to rising demands, these hotels are embracing a wave of innovation.</span></label>
+                            <label class="option"><input type="radio" name="q32" value="B"><span class="option-text">(B) The room's thin plastic walls easily transmit the sound of snoring made by neighboring guests.</span></label>
+                            <label class="option"><input type="radio" name="q32" value="C"><span class="option-text">(C) The chambers are stacked side-by-side, two units high, with the upper rooms reached by a ladder.</span></label>
+                            <label class="option"><input type="radio" name="q32" value="D"><span class="option-text">(D) Today, they provide low-budget, overnight lodging in commerce centers in large cities worldwide.</span></label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">33</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q33" value="A"><span class="option-text">(A) In response to rising demands, these hotels are embracing a wave of innovation.</span></label>
+                            <label class="option"><input type="radio" name="q33" value="B"><span class="option-text">(B) The room's thin plastic walls easily transmit the sound of snoring made by neighboring guests.</span></label>
+                            <label class="option"><input type="radio" name="q33" value="C"><span class="option-text">(C) The chambers are stacked side-by-side, two units high, with the upper rooms reached by a ladder.</span></label>
+                            <label class="option"><input type="radio" name="q33" value="D"><span class="option-text">(D) Today, they provide low-budget, overnight lodging in commerce centers in large cities worldwide.</span></label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">34</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q34" value="A"><span class="option-text">(A) In response to rising demands, these hotels are embracing a wave of innovation.</span></label>
+                            <label class="option"><input type="radio" name="q34" value="B"><span class="option-text">(B) The room's thin plastic walls easily transmit the sound of snoring made by neighboring guests.</span></label>
+                            <label class="option"><input type="radio" name="q34" value="C"><span class="option-text">(C) The chambers are stacked side-by-side, two units high, with the upper rooms reached by a ladder.</span></label>
+                            <label class="option"><input type="radio" name="q34" value="D"><span class="option-text">(D) Today, they provide low-budget, overnight lodging in commerce centers in large cities worldwide.</span></label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 五、閱讀測驗 (占24分) -->
+                <section class="section">
+                    <h2 class="section-title">五、閱讀測驗 (占24分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第35題至第46題為單選題，每題2分。</p>
+
+                    <h3 style="margin-bottom: 1.5rem; color: #2c3e50;">第35至38題為題組</h3>
+                    <div class="passage" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; line-height: 1.8;">
+                        <p>While waiting to cross the street at busy intersections, have you ever wondered who invented the traffic light? Most people credit the first traffic light to Nottingham engineer John Peake Knight. A railway manager, Knight specialized in designing the signaling system for Britain's growing railway network in the 1860s. He saw no reason why this could not be adapted for use on the busy London intersections. Thus, he proposed a signaling system based on the railway movable-arm signal: Arms extending horizontally commanded drivers to stop, whereas arms lowered to a 45-degree angle told drivers to move on, resembling a traffic director's gestures. Red and green gas lamps were added to the signal for use at night. A police officer was stationed by the side to operate the system.</p>
+                        
+                        <p>Knight's traffic signal was installed near London's Westminster Bridge in December 1868, but the system was short-lived. A gas leak one month later caused an explosion in the lights, injuring the policeman operating it. Deemed a public hazard, the project was immediately dropped, and traffic lights were banned until their return in 1929 back to the British streets.</p>
+                        
+                        <p>In the early 1900s, versions of the British traffic lights appeared in big cities in America, where traffic was on a sharp rise. Systems using movable arms were popular in Chicago, while those using the red and green lights were adopted in San Francisco. Patents with innovations on Knight's ideas were filed nationwide. A major breakthrough was the yellow light invented by a Detroit police officer William Potts. Installed in Detroit in 1920, Potts' three-color system allowed for the added signal "proceed with caution" to be displayed.</p>
+                        
+                        <p>Now, with the emergence of self-driving cars, researchers have begun to suggest that traffic signals are no longer necessary. Intersections will operate in a way that cars automatically adjust their speed to cross through, while maintaining safe distances from other vehicles. In the near future, we may experience a brand new form of traffic management!</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">35</div>
+                        <div class="question-text">What is this passage mainly about?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q35" value="A"><span class="option-text">(A) The evolution of traffic control systems.</span></label>
+                            <label class="option"><input type="radio" name="q35" value="B"><span class="option-text">(B) The inventors of traffic lights in history.</span></label>
+                            <label class="option"><input type="radio" name="q35" value="C"><span class="option-text">(C) The functions of different traffic signals.</span></label>
+                            <label class="option"><input type="radio" name="q35" value="D"><span class="option-text">(D) The development of modern transportation.</span></label>
+                        </div>
+                    </div>
+
+                    <!-- 繼續其餘閱讀測驗題目... -->
+                    <div class="question">
+                        <div class="question-number">36</div>
+                        <div class="question-text">Which of the following pictures shows Knight's proposed traffic signal?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q36" value="A"><span class="option-text">(A) [現代交通燈圖像]</span></label>
+                            <label class="option"><input type="radio" name="q36" value="B"><span class="option-text">(B) [鐵路臂式信號]</span></label>
+                            <label class="option"><input type="radio" name="q36" value="C"><span class="option-text">(C) [可動臂式交通信號燈]</span></label>
+                            <label class="option"><input type="radio" name="q36" value="D"><span class="option-text">(D) [停車標誌]</span></label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">37</div>
+                        <div class="question-text">Which of the following statements is true, according to the passage?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q37" value="A"><span class="option-text">(A) Knight was injured in the explosion of his traffic light.</span></label>
+                            <label class="option"><input type="radio" name="q37" value="B"><span class="option-text">(B) Potts' traffic light was the first one to appear in the USA.</span></label>
+                            <label class="option"><input type="radio" name="q37" value="C"><span class="option-text">(C) The first traffic signal originated from the idea of a traffic director.</span></label>
+                            <label class="option"><input type="radio" name="q37" value="D"><span class="option-text">(D) Future vehicles may not need traffic lights to cross an intersection.</span></label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">38</div>
+                        <div class="question-text">Here is a sentence: "This design was adopted in later traffic light designs across the world." Which paragraph is most suitable to have it as the final sentence?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q38" value="A"><span class="option-text">(A) Paragraph 1.</span></label>
+                            <label class="option"><input type="radio" name="q38" value="B"><span class="option-text">(B) Paragraph 2.</span></label>
+                            <label class="option"><input type="radio" name="q38" value="C"><span class="option-text">(C) Paragraph 3.</span></label>
+                            <label class="option"><input type="radio" name="q38" value="D"><span class="option-text">(D) Paragraph 4.</span></label>
+                        </div>
+                    </div>
+
+                    <!-- 第39至42題為題組 -->
+                    <h3 style="margin: 2rem 0 1.5rem; color: #2c3e50;">第39至42題為題組</h3>
+                    <div class="passage" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; line-height: 1.8;">
+                        <p>Typically featuring zombies and serial killers, horror movies are too frightening to be fun for some people. But many others enjoy a good fear spectacle, and line up to see the latest scary movie. Given the variations in preferences, new studies have started to untangle the benefits and risks of horror movies.</p>
+                        
+                        <p>One benefit of horror movies revolves around the concept of so-called "safe fear." When watching a frightening film, people are in the comfort of their own home or theater seats rather than under the threat of any real danger. In a controlled environment, these films may actually reduce the negative impact on viewers and help them become tougher. Secondly, as people are drawn into the story, they tend to take the perspective of the characters and rehearse the plot unconsciously. Researchers believe that viewers are learning vicariously this way, picking up tips on how to handle threats in the real world. In addition, studies show that the thrill and excitement linked with scary films can be therapeutic: It allows viewers to release bottled-up emotions and experience a sense of relief after the movie is over. This probably explains why during the COVID-19 pandemic, horror and pandemic thrillers were the most-watched movies on digital movie apps.</p>
+                        
+                        <p>However, researchers also find that horror movies can have negative effects on some people. People who are more sensitive to anxiety can panic after viewing a thriller. For those with unpleasant experiences, trauma may be triggered by the themes and images in the movies, which could make their symptoms worse. Furthermore, watching horror movies can disturb sleep patterns, as the residual fear and anxiety they evoke may keep people awake all night, thus leading to fatigue and irritability the following day. Finally, specialists warn that frightening films can have a negative impact on children. Children under 14 who watch horror movies have a greater chance of developing anxiety later in adulthood. Worse yet, exposure to graphic violence and bloodshed can make them less sensitive to real-life violence and more accepting of aggression.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">39</div>
+                        <div class="question-text">What field of study does the research mentioned in the passage most likely belong to?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q39" value="A"><span class="option-text">(A) Psychology.</span></label>
+                            <label class="option"><input type="radio" name="q39" value="B"><span class="option-text">(B) Education.</span></label>
+                            <label class="option"><input type="radio" name="q39" value="C"><span class="option-text">(C) Philosophy.</span></label>
+                            <label class="option"><input type="radio" name="q39" value="D"><span class="option-text">(D) Communication.</span></label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">40</div>
+                        <div class="question-text">What does the author mean by "learning vicariously" in the second paragraph?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q40" value="A"><span class="option-text">(A) Making inquiries without reservation.</span></label>
+                            <label class="option"><input type="radio" name="q40" value="B"><span class="option-text">(B) Gaining knowledge through observation.</span></label>
+                            <label class="option"><input type="radio" name="q40" value="C"><span class="option-text">(C) Acquiring insights by face-to-face interaction.</span></label>
+                            <label class="option"><input type="radio" name="q40" value="D"><span class="option-text">(D) Obtaining information from personal experience.</span></label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">41</div>
+                        <div class="question-text">Which of the following statements about horror movies can be inferred from the passage?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q41" value="A"><span class="option-text">(A) Most horror movie lovers are prone to aggressive behavior.</span></label>
+                            <label class="option"><input type="radio" name="q41" value="B"><span class="option-text">(B) There are far more benefits to horror movies than disadvantages.</span></label>
+                            <label class="option"><input type="radio" name="q41" value="C"><span class="option-text">(C) COVID-19 was an important source of inspiration for horror movies.</span></label>
+                            <label class="option"><input type="radio" name="q41" value="D"><span class="option-text">(D) Watching horror movies may have a long-term effect on personality.</span></label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">42</div>
+                        <div class="question-text">How does the author develop the ideas in this passage?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q42" value="A"><span class="option-text">(A) By defining and illustrating a concept.</span></label>
+                            <label class="option"><input type="radio" name="q42" value="B"><span class="option-text">(B) By showing opposing views of an issue.</span></label>
+                            <label class="option"><input type="radio" name="q42" value="C"><span class="option-text">(C) By presenting cause and effect of a problem.</span></label>
+                            <label class="option"><input type="radio" name="q42" value="D"><span class="option-text">(D) By providing steps for settling a disagreement.</span></label>
+                        </div>
+                    </div>
+
+                    <!-- 第43至46題為題組 -->
+                    <h3 style="margin: 2rem 0 1.5rem; color: #2c3e50;">第43至46題為題組</h3>
+                    <div class="passage" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; line-height: 1.8;">
+                        <p>Russia is widely portrayed as the most alcohol-dependent country in the world. Critics of the country say that drinking is almost an inherent trait of the Russian people. However, there is more to the story.</p>
+                        
+                        <p>The consumption of alcoholic beverages was unusual in ancient Russia. Before the adoption of Christianity in Russia (10th century), there were no vineyards and therefore no wine. People only drank beverages with low alcohol content. Vodka, Russia's national drink, was not a Russian invention. The liquid was originally a grape alcohol introduced from France in the late 14th century. The first Russian-made vodka appeared in the 15th century, and the drink remained relatively low in alcohol content until the mid-18th century.</p>
+                        
+                        <p>There is contradictory information about Russians' inclination toward alcohol in the 15th and 16th centuries. Some documents noted that Russians "indulge in excessive drinking whenever the occasion arises," while others claimed that Russians "rarely drink wine." The heaviest drinkers in medieval Europe were actually Germans. There were many sayings about their desire for alcohol, such as "drunk as a German."</p>
+                        
+                        <p>The Russian state played a significant role in the spread of alcohol consumption in the country. In the 19th century, the emperors began to establish a state monopoly, largely due to the rise of illegal production of low-quality vodka. Thus, only the government was permitted to produce the alcohol. This soon filled the state treasury with huge revenues, but it also encouraged vodka consumption. The situation worsened when the industrial production of vodka began in the country, causing its prices to drop sharply and making it available to even low-income citizens.</p>
+                        
+                        <p>Meanwhile, a powerful anti-alcohol movement started in the 19th century. Government policies were made and public organizations established to prevent the spread of alcoholism in the country. The movement continued over the years; however, the problem remains. Although Russia does not occupy first place when it comes to alcohol consumption per capita, it is still close to the top.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">43</div>
+                        <div class="question-text">What is the main purpose of the second paragraph in the passage?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q43" value="A"><span class="option-text">(A) To discuss the content of alcoholic drinks in ancient Europe.</span></label>
+                            <label class="option"><input type="radio" name="q43" value="B"><span class="option-text">(B) To highlight the French impact on Russians' drinking habits.</span></label>
+                            <label class="option"><input type="radio" name="q43" value="C"><span class="option-text">(C) To argue against the assumption that Russians are born drinkers.</span></label>
+                            <label class="option"><input type="radio" name="q43" value="D"><span class="option-text">(D) To link Russians' vodka consumption to their adoption of Christianity.</span></label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">44</div>
+                        <div class="question-text">Which of the following is true about vodka production?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q44" value="A"><span class="option-text">(A) Vodka production in Russia started in the 15th century.</span></label>
+                            <label class="option"><input type="radio" name="q44" value="B"><span class="option-text">(B) The first vodka made from wheat was imported from France.</span></label>
+                            <label class="option"><input type="radio" name="q44" value="C"><span class="option-text">(C) Germany was the biggest vodka producer in medieval Europe.</span></label>
+                            <label class="option"><input type="radio" name="q44" value="D"><span class="option-text">(D) Russian people were encouraged to make their own vodka in the 19th century.</span></label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">45</div>
+                        <div class="question-text">What does "This" in the fourth paragraph refer to?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q45" value="A"><span class="option-text">(A) The alcohol.</span></label>
+                            <label class="option"><input type="radio" name="q45" value="B"><span class="option-text">(B) The government.</span></label>
+                            <label class="option"><input type="radio" name="q45" value="C"><span class="option-text">(C) The illegal production.</span></label>
+                            <label class="option"><input type="radio" name="q45" value="D"><span class="option-text">(D) The state monopoly.</span></label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">46</div>
+                        <div class="question-text">How does the author conclude the passage in the last paragraph?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q46" value="A"><span class="option-text">(A) By providing further facts.</span></label>
+                            <label class="option"><input type="radio" name="q46" value="B"><span class="option-text">(B) By summarizing the main ideas.</span></label>
+                            <label class="option"><input type="radio" name="q46" value="C"><span class="option-text">(C) By raising a new problem.</span></label>
+                            <label class="option"><input type="radio" name="q46" value="D"><span class="option-text">(D) By making a future prediction.</span></label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 第貳部分、混合題 -->
+                <section class="section">
+                    <h2 class="section-title">第貳部分、混合題 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：本部分共有1題組，限在標示題號的作答區內作答。</p>
+
+                    <div class="question">
+                        <div class="question-number">49</div>
+                        <div class="question-text">From (A) to (J) in the forum discussion, which ONES show a positive attitude toward zoos?（多選題，4分）</div>
+                        <div class="options">
+                            <label class="option"><input type="checkbox" name="q49" value="C"><span class="option-text">(C)</span></label>
+                            <label class="option"><input type="checkbox" name="q49" value="D"><span class="option-text">(D)</span></label>
+                            <label class="option"><input type="checkbox" name="q49" value="G"><span class="option-text">(G)</span></label>
+                            <label class="option"><input type="checkbox" name="q49" value="I"><span class="option-text">(I)</span></label>
+                        </div>
+                    </div>
+                </section>
+                
+            </form>
+        </div>
+    </main>
+
+    <div class="controls">
+        <div class="container">
+            <div class="control-buttons">
+                <a href="../index.html" class="btn btn-secondary">← 返回首頁</a>
+                <button type="button" class="btn btn-primary" id="checkAnswers">檢查答案</button>
+                <button type="button" class="btn btn-success" id="submitExam" style="display: none;">提交試卷</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/exam-114.js"></script>
+</body>
+</html>

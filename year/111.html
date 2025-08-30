@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>111學年度學測英文 - 互動練習</title>
+    <link rel="stylesheet" href="../styles/common.css">
+</head>
+<body>
+    <header class="exam-header">
+        <div class="container">
+            <div class="exam-info">
+                <div class="exam-title">111學年度學科能力測驗 - 英文考科</div>
+                <div class="timer" id="timer">100:00</div>
+                <div class="score-display" id="currentScore" style="display: none;">
+                    得分：<span id="scoreValue">0</span>/100
+                </div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="exam-content">
+        <div class="container">
+            <div style="text-align: center; padding: 3rem; background: linear-gradient(135deg, #fd79a8, #e84393); color: white; border-radius: 15px; margin-bottom: 2rem;">
+                <h2 style="font-size: 2rem; margin-bottom: 1rem;">📚 111學年度試題</h2>
+                <p style="font-size: 1.2rem; opacity: 0.9;">完整試題內容 - 互動練習版</p>
+            </div>
+
+            <form id="examForm">
+                <section class="section">
+                    <h2 class="section-title">第壹部分、選擇題 (占62分)<br>一、詞彙題 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第1題至第10題，每題1分。</p>
+
+                    <div class="question">
+                        <div class="question-number">1</div>
+                        <div class="question-text">When Jeffery doesn't feel like cooking, he often orders pizza online and has it ______ to his house.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q1" value="A"> (A) advanced</label>
+                            <label class="option"><input type="radio" name="q1" value="B"> (B) delivered</label>
+                            <label class="option"><input type="radio" name="q1" value="C"> (C) offered</label>
+                            <label class="option"><input type="radio" name="q1" value="D"> (D) stretched</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">2</div>
+                        <div class="question-text">Jane is the best ______ I have ever had. I cannot imagine running my office without her help.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q2" value="A"> (A) assistant</label>
+                            <label class="option"><input type="radio" name="q2" value="B"> (B) influence</label>
+                            <label class="option"><input type="radio" name="q2" value="C"> (C) contribution</label>
+                            <label class="option"><input type="radio" name="q2" value="D"> (D) politician</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">3</div>
+                        <div class="question-text">The temple celebrated Mazu Festival by hosting ten days of lion dances, Taiwanese operas, and traditional hand ______ shows.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q3" value="A"> (A) chat</label>
+                            <label class="option"><input type="radio" name="q3" value="B"> (B) quiz</label>
+                            <label class="option"><input type="radio" name="q3" value="C"> (C) puppet</label>
+                            <label class="option"><input type="radio" name="q3" value="D"> (D) variety</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">4</div>
+                        <div class="question-text">The new vaccine was ______ banned by the Food and Drug Administration due to its fatal side effects.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q4" value="A"> (A) potentially</label>
+                            <label class="option"><input type="radio" name="q4" value="B"> (B) delicately</label>
+                            <label class="option"><input type="radio" name="q4" value="C"> (C) ambiguously</label>
+                            <label class="option"><input type="radio" name="q4" value="D"> (D) optionally</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">5</div>
+                        <div class="question-text">______ the photos with dates and keywords help you sort them easily in your file.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q5" value="A"> (A) Tagging</label>
+                            <label class="option"><input type="radio" name="q5" value="B"> (B) Flocking</label>
+                            <label class="option"><input type="radio" name="q5" value="C"> (C) Rolling</label>
+                            <label class="option"><input type="radio" name="q5" value="D"> (D) Snapping</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">6</div>
+                        <div class="question-text">An ______ person is usually pleasant and easy to get along with, but don't expect that he or she will always say "yes" to everything.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q6" value="A"> (A) enormous</label>
+                            <label class="option"><input type="radio" name="q6" value="B"> (B) intimate</label>
+                            <label class="option"><input type="radio" name="q6" value="C"> (C) agreeable</label>
+                            <label class="option"><input type="radio" name="q6" value="D"> (D) ultimate</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">7</div>
+                        <div class="question-text">Hidden deep in a small alley among various tiny shops, the entrance of the Michelin star restaurant is barely ______ to passersby.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q7" value="A"> (A) identical</label>
+                            <label class="option"><input type="radio" name="q7" value="B"> (B) visible</label>
+                            <label class="option"><input type="radio" name="q7" value="C"> (C) available</label>
+                            <label class="option"><input type="radio" name="q7" value="D"> (D) remarkable</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">8</div>
+                        <div class="question-text">The original budget for my round-island trip was NT$5,000, but the ______ cost is likely to be 50 percent higher.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q8" value="A"> (A) moderate</label>
+                            <label class="option"><input type="radio" name="q8" value="B"> (B) absolute</label>
+                            <label class="option"><input type="radio" name="q8" value="C"> (C) promising</label>
+                            <label class="option"><input type="radio" name="q8" value="D"> (D) eventual</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">9</div>
+                        <div class="question-text">After watching a TV program on natural history, Adam decided to go on a ______ for dinosaur fossils in South Dakota.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q9" value="A"> (A) trial</label>
+                            <label class="option"><input type="radio" name="q9" value="B"> (B) route</label>
+                            <label class="option"><input type="radio" name="q9" value="C"> (C) strike</label>
+                            <label class="option"><input type="radio" name="q9" value="D"> (D) quest</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">10</div>
+                        <div class="question-text">With pink cherry blossoms blooming everywhere, the valley ______ like a young bride under the bright spring sunshine.</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q10" value="A"> (A) bounces</label>
+                            <label class="option"><input type="radio" name="q10" value="B"> (B) blushes</label>
+                            <label class="option"><input type="radio" name="q10" value="C"> (C) polishes</label>
+                            <label class="option"><input type="radio" name="q10" value="D"> (D) transfers</label>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">二、綜合測驗 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第11題至第20題，每題1分。</p>
+                    
+                    <div class="passage-title">第11至15題為題組</div>
+                    <div class="passage-content">
+                        <p>A book town is a rural town in which second-hand and antiquarian bookshops are concentrated. The concept was <strong>11</strong> by Richard Booth, who opened the first second-hand bookshop in Hay-on-Wye, UK in 1961. Following him, many local people opened their own bookshops, and the small town soon became a model of sustainable rural development and tourism. Since the 1970s, book towns like Hay-on-Wye <strong>12</strong> up all over the world.</p>
+                        
+                        <p>Although all book towns have a great number of bookshops, that's where the similarities <strong>13</strong>. Each of these towns shows unique features of its own. Some have many small private shops, while others have organizations steered by volunteers. Some even run regular activities to attract visitors. For example, an annual book festival is held in Hay-on-Wye. Clunes, in Australia, holds a monthly book talk that hosts authors to discuss their latest <strong>14</strong>.</p>
+                        
+                        <p>As digital reading is changing our traditional way of reading, book towns like Hay-on-Wye are particularly important to <strong>15</strong>. The feel of a book, the smell, the weight, and the knowledge that a particular book might be more than a hundred years old—all these highlight the importance of preserving the physical book as a complement to technology.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">11</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q11" value="A"> (A) initiated</label>
+                            <label class="option"><input type="radio" name="q11" value="B"> (B) represented</label>
+                            <label class="option"><input type="radio" name="q11" value="C"> (C) acknowledged</label>
+                            <label class="option"><input type="radio" name="q11" value="D"> (D) manipulated</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">12</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q12" value="A"> (A) spring</label>
+                            <label class="option"><input type="radio" name="q12" value="B"> (B) sprang</label>
+                            <label class="option"><input type="radio" name="q12" value="C"> (C) had sprung</label>
+                            <label class="option"><input type="radio" name="q12" value="D"> (D) have been springing</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">13</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q13" value="A"> (A) form</label>
+                            <label class="option"><input type="radio" name="q13" value="B"> (B) count</label>
+                            <label class="option"><input type="radio" name="q13" value="C"> (C) end</label>
+                            <label class="option"><input type="radio" name="q13" value="D"> (D) matter</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">14</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q14" value="A"> (A) trends</label>
+                            <label class="option"><input type="radio" name="q14" value="B"> (B) releases</label>
+                            <label class="option"><input type="radio" name="q14" value="C"> (C) agendas</label>
+                            <label class="option"><input type="radio" name="q14" value="D"> (D) announcements</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">15</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q15" value="A"> (A) get their worldwide fame</label>
+                            <label class="option"><input type="radio" name="q15" value="B"> (B) conform to the new mode</label>
+                            <label class="option"><input type="radio" name="q15" value="C"> (C) make their visitors satisfied</label>
+                            <label class="option"><input type="radio" name="q15" value="D"> (D) keep the printed word alive</label>
+                        </div>
+                    </div>
+
+                    <div class="passage-title">第16至20題為題組</div>
+                    <div class="passage-content">
+                        <p>Airline passengers may have noticed that all plane windows have rounded edges, instead of the hard corners commonly found in our house. The round windows are indeed pleasant to the eye, but they actually were designed for reasons <strong>16</strong> aesthetics.</p>
+                        
+                        <p>In the early days of aviation, plane windows <strong>17</strong> square in shape. Then as commercial air travel became popular in the 1950s and airplanes began flying higher and faster, three planes mysteriously broke apart in midair. The cause? Square windows. Scientists found that sharp corners are natural weak spots where stress concentrates. The problem is <strong>18</strong> when airplanes fly at higher altitudes, where the difference between the inside and outside pressure increases, causing added stress. When subjected to repeated pressurization high in the sky, the four corners on a square window may <strong>19</strong>.</p>
+                        
+                        <p>Curved windows, on the other hand, distribute stress around more evenly, reducing the likelihood of cracks or breaks. Circular shapes are also stronger and resist deformation, and therefore can <strong>20</strong> extreme differences in pressure inside and outside of an aircraft.</p>
+                        
+                        <p>Thus, round windows are a major safety innovation that keeps planes from disintegrating mid-flight. They are also used on ships and spacecraft for their greater structural integrity.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">16</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q16" value="A"> (A) contrary to</label>
+                            <label class="option"><input type="radio" name="q16" value="B"> (B) except for</label>
+                            <label class="option"><input type="radio" name="q16" value="C"> (C) more of</label>
+                            <label class="option"><input type="radio" name="q16" value="D"> (D) other than</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">17</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q17" value="A"> (A) used to be</label>
+                            <label class="option"><input type="radio" name="q17" value="B"> (B) were to be</label>
+                            <label class="option"><input type="radio" name="q17" value="C"> (C) would have been</label>
+                            <label class="option"><input type="radio" name="q17" value="D"> (D) must have been</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">18</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q18" value="A"> (A) disguised</label>
+                            <label class="option"><input type="radio" name="q18" value="B"> (B) understood</label>
+                            <label class="option"><input type="radio" name="q18" value="C"> (C) confronted</label>
+                            <label class="option"><input type="radio" name="q18" value="D"> (D) intensified</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">19</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q19" value="A"> (A) cause conflict</label>
+                            <label class="option"><input type="radio" name="q19" value="B"> (B) rebuild strength</label>
+                            <label class="option"><input type="radio" name="q19" value="C"> (C) spell disaster</label>
+                            <label class="option"><input type="radio" name="q19" value="D"> (D) endure shock</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">20</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q20" value="A"> (A) tolerate</label>
+                            <label class="option"><input type="radio" name="q20" value="B"> (B) improve</label>
+                            <label class="option"><input type="radio" name="q20" value="C"> (C) justify</label>
+                            <label class="option"><input type="radio" name="q20" value="D"> (D) obtain</label>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">三、文意選填 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第21題至第30題，每題一個空格，請依文意在文章後所提供的(A)到(J)選項中分別選出最適當者，填入空格中。每題1分。</p>
+                    
+                    <div class="passage-title">第21至30題為題組</div>
+                    <div class="passage-content">
+                        <p>A stunt person is a man or a woman who performs dangerous acts, usually in the television or movie industry. In this line of work, the person is paid to do daring actions that are deemed too <strong>21</strong> for the regular actor to perform, including jumping from heights, crashing cars, or fighting with weapons.</p>
+                        
+                        <p>Stunt work emerged out of <strong>22</strong> over time. In the early days of the film industry, actors themselves shot acrobatic acts and dangerous scenes, until they began to get injured. There were, however, no <strong>23</strong> crew members to perform impressive stunts at that time. If something dangerous needed to be done for a scene, the producers would hire anyone crazy or desperate enough to do it. These people were not trained to perform stunts, so they often <strong>24</strong> things for the first time during the actual shooting. They had to learn from their own mistakes, which <strong>25</strong> some their lives, and almost all suffered light or severe injuries.</p>
+                        
+                        <p>Beginning around 1910, audiences developed a taste for serial action movies, which <strong>26</strong> the use of dedicated stunt people to perform in dangerous scenes. Such demand increased with the rise of western movies, and many cowboys with masterful skills on horseback found a new <strong>27</strong> as a stunt person. Tom Mix and Yakima Canutt were among the most famous. The 1960s and '70s <strong>28</strong> the development of most modern stunt technology, like air rams and bullet squibs. That technology has continued to evolve into the present.</p>
+                        
+                        <p>Today, CGI (computer generated imagery) is widely used in filmmaking, and it is now <strong>29</strong> to create very lifelike scenes without using real stunt people. However, CGI has difficulties of its own, and there will always be a demand for the realism and thrilling <strong>30</strong> of an actual stunt. So the stunt industry is probably in no immediate danger of dying off.</p>
+                    </div>
+
+                    <div class="cloze-options">
+                        <p style="font-weight: bold; margin-bottom: 1rem;">選項：</p>
+                        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-bottom: 2rem;">
+                            <span>(A) possible</span> <span>(B) sensation</span> <span>(C) risky</span> <span>(D) cost</span> <span>(E) witnessed</span>
+                            <span>(F) professional</span> <span>(G) called for</span> <span>(H) tried out</span> <span>(I) necessity</span> <span>(J) career</span>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                        <div class="question">
+                            <div class="question-number">21</div>
+                            <select name="q21" class="cloze-select">
+                                <option value="">選擇答案</option>
+                                <option value="A">(A) possible</option>
+                                <option value="B">(B) sensation</option>
+                                <option value="C">(C) risky</option>
+                                <option value="D">(D) cost</option>
+                                <option value="E">(E) witnessed</option>
+                                <option value="F">(F) professional</option>
+                                <option value="G">(G) called for</option>
+                                <option value="H">(H) tried out</option>
+                                <option value="I">(I) necessity</option>
+                                <option value="J">(J) career</option>
+                            </select>
+                        </div>
+                        <div class="question">
+                            <div class="question-number">22</div>
+                            <select name="q22" class="cloze-select">
+                                <option value="">選擇答案</option>
+                                <option value="A">(A) possible</option>
+                                <option value="B">(B) sensation</option>
+                                <option value="C">(C) risky</option>
+                                <option value="D">(D) cost</option>
+                                <option value="E">(E) witnessed</option>
+                                <option value="F">(F) professional</option>
+                                <option value="G">(G) called for</option>
+                                <option value="H">(H) tried out</option>
+                                <option value="I">(I) necessity</option>
+                                <option value="J">(J) career</option>
+                            </select>
+                        </div>
+                        <div class="question">
+                            <div class="question-number">23</div>
+                            <select name="q23" class="cloze-select">
+                                <option value="">選擇答案</option>
+                                <option value="A">(A) possible</option>
+                                <option value="B">(B) sensation</option>
+                                <option value="C">(C) risky</option>
+                                <option value="D">(D) cost</option>
+                                <option value="E">(E) witnessed</option>
+                                <option value="F">(F) professional</option>
+                                <option value="G">(G) called for</option>
+                                <option value="H">(H) tried out</option>
+                                <option value="I">(I) necessity</option>
+                                <option value="J">(J) career</option>
+                            </select>
+                        </div>
+                        <div class="question">
+                            <div class="question-number">24</div>
+                            <select name="q24" class="cloze-select">
+                                <option value="">選擇答案</option>
+                                <option value="A">(A) possible</option>
+                                <option value="B">(B) sensation</option>
+                                <option value="C">(C) risky</option>
+                                <option value="D">(D) cost</option>
+                                <option value="E">(E) witnessed</option>
+                                <option value="F">(F) professional</option>
+                                <option value="G">(G) called for</option>
+                                <option value="H">(H) tried out</option>
+                                <option value="I">(I) necessity</option>
+                                <option value="J">(J) career</option>
+                            </select>
+                        </div>
+                        <div class="question">
+                            <div class="question-number">25</div>
+                            <select name="q25" class="cloze-select">
+                                <option value="">選擇答案</option>
+                                <option value="A">(A) possible</option>
+                                <option value="B">(B) sensation</option>
+                                <option value="C">(C) risky</option>
+                                <option value="D">(D) cost</option>
+                                <option value="E">(E) witnessed</option>
+                                <option value="F">(F) professional</option>
+                                <option value="G">(G) called for</option>
+                                <option value="H">(H) tried out</option>
+                                <option value="I">(I) necessity</option>
+                                <option value="J">(J) career</option>
+                            </select>
+                        </div>
+                        <div class="question">
+                            <div class="question-number">26</div>
+                            <select name="q26" class="cloze-select">
+                                <option value="">選擇答案</option>
+                                <option value="A">(A) possible</option>
+                                <option value="B">(B) sensation</option>
+                                <option value="C">(C) risky</option>
+                                <option value="D">(D) cost</option>
+                                <option value="E">(E) witnessed</option>
+                                <option value="F">(F) professional</option>
+                                <option value="G">(G) called for</option>
+                                <option value="H">(H) tried out</option>
+                                <option value="I">(I) necessity</option>
+                                <option value="J">(J) career</option>
+                            </select>
+                        </div>
+                        <div class="question">
+                            <div class="question-number">27</div>
+                            <select name="q27" class="cloze-select">
+                                <option value="">選擇答案</option>
+                                <option value="A">(A) possible</option>
+                                <option value="B">(B) sensation</option>
+                                <option value="C">(C) risky</option>
+                                <option value="D">(D) cost</option>
+                                <option value="E">(E) witnessed</option>
+                                <option value="F">(F) professional</option>
+                                <option value="G">(G) called for</option>
+                                <option value="H">(H) tried out</option>
+                                <option value="I">(I) necessity</option>
+                                <option value="J">(J) career</option>
+                            </select>
+                        </div>
+                        <div class="question">
+                            <div class="question-number">28</div>
+                            <select name="q28" class="cloze-select">
+                                <option value="">選擇答案</option>
+                                <option value="A">(A) possible</option>
+                                <option value="B">(B) sensation</option>
+                                <option value="C">(C) risky</option>
+                                <option value="D">(D) cost</option>
+                                <option value="E">(E) witnessed</option>
+                                <option value="F">(F) professional</option>
+                                <option value="G">(G) called for</option>
+                                <option value="H">(H) tried out</option>
+                                <option value="I">(I) necessity</option>
+                                <option value="J">(J) career</option>
+                            </select>
+                        </div>
+                        <div class="question">
+                            <div class="question-number">29</div>
+                            <select name="q29" class="cloze-select">
+                                <option value="">選擇答案</option>
+                                <option value="A">(A) possible</option>
+                                <option value="B">(B) sensation</option>
+                                <option value="C">(C) risky</option>
+                                <option value="D">(D) cost</option>
+                                <option value="E">(E) witnessed</option>
+                                <option value="F">(F) professional</option>
+                                <option value="G">(G) called for</option>
+                                <option value="H">(H) tried out</option>
+                                <option value="I">(I) necessity</option>
+                                <option value="J">(J) career</option>
+                            </select>
+                        </div>
+                        <div class="question">
+                            <div class="question-number">30</div>
+                            <select name="q30" class="cloze-select">
+                                <option value="">選擇答案</option>
+                                <option value="A">(A) possible</option>
+                                <option value="B">(B) sensation</option>
+                                <option value="C">(C) risky</option>
+                                <option value="D">(D) cost</option>
+                                <option value="E">(E) witnessed</option>
+                                <option value="F">(F) professional</option>
+                                <option value="G">(G) called for</option>
+                                <option value="H">(H) tried out</option>
+                                <option value="I">(I) necessity</option>
+                                <option value="J">(J) career</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">四、篇章結構 (占8分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第31題至第34題，每題一個空格，請依文意在文章後所提供的(A)到(D)選項中分別選出最適當者，填入空格中。每題2分。</p>
+                    
+                    <div class="passage-title">第31至34題為題組</div>
+                    <div class="passage-content">
+                        <p>Obon, or the Bon Festival, is a Japanese holiday that honors the spirits of the dead. <strong>31</strong> The festival usually lasts for four to five days in August. During this period, many people travel back to their hometowns and spend time with loved ones, both past and present.</p>
+                        
+                        <p>Though not a national holiday, Obon is surely one of the most traditional events of the year. Celebration often begins with mukaebi (welcoming fire), during which people make a small bonfire in front of their house to guide spirits upon their return back home. <strong>32</strong> Food offerings are presented at house altars and temples. Some regions prepare horses made of cucumbers and cows made of eggplants, hoping that the spirits will come back to Earth quickly, on a horse, and leave slowly, riding the cow.</p>
+                        
+                        <p><strong>33</strong> Paper lanterns and offerings are sent floating down rivers to accompany the ancestors back to their resting place. Many areas will also organize bon-odori dances. The style of the dances varies from region to region but is normally based on the rhythms of taiko drums. Performers usually play on a tall stage with lanterns and banners strung all around. Participants, often dressed in light cotton kimonos, are encouraged to dance to the music around the stage. <strong>34</strong> Originally dedicated to the deceased, the dances have now become a symbol of the summer festival themselves.</p>
+                    </div>
+
+                    <div class="structure-options">
+                        <p style="font-weight: bold; margin-bottom: 1rem;">選項：</p>
+                        <div style="margin-bottom: 2rem; line-height: 1.8;">
+                            <p>(A) Some people also visit the cemetery to clean up the family graves and pray for their ancestors.</p>
+                            <p>(B) Such festive activities are usually held in parks, temples, and other public places around Japan.</p>
+                            <p>(C) Obon concludes with another bonfire, okuribi, lighting up the sky to see the ancestors' spirits off.</p>
+                            <p>(D) Originating from the Chinese Ghost Festival, this annual event has evolved into a time of family reunion.</p>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                        <div class="question">
+                            <div class="question-number">31</div>
+                            <select name="q31" class="structure-select">
+                                <option value="">選擇答案</option>
+                                <option value="A">(A) Some people also visit...</option>
+                                <option value="B">(B) Such festive activities...</option>
+                                <option value="C">(C) Obon concludes with...</option>
+                                <option value="D">(D) Originating from...</option>
+                            </select>
+                        </div>
+                        <div class="question">
+                            <div class="question-number">32</div>
+                            <select name="q32" class="structure-select">
+                                <option value="">選擇答案</option>
+                                <option value="A">(A) Some people also visit...</option>
+                                <option value="B">(B) Such festive activities...</option>
+                                <option value="C">(C) Obon concludes with...</option>
+                                <option value="D">(D) Originating from...</option>
+                            </select>
+                        </div>
+                        <div class="question">
+                            <div class="question-number">33</div>
+                            <select name="q33" class="structure-select">
+                                <option value="">選擇答案</option>
+                                <option value="A">(A) Some people also visit...</option>
+                                <option value="B">(B) Such festive activities...</option>
+                                <option value="C">(C) Obon concludes with...</option>
+                                <option value="D">(D) Originating from...</option>
+                            </select>
+                        </div>
+                        <div class="question">
+                            <div class="question-number">34</div>
+                            <select name="q34" class="structure-select">
+                                <option value="">選擇答案</option>
+                                <option value="A">(A) Some people also visit...</option>
+                                <option value="B">(B) Such festive activities...</option>
+                                <option value="C">(C) Obon concludes with...</option>
+                                <option value="D">(D) Originating from...</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">五、閱讀測驗 (占24分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第35題至第46題，每題2分。</p>
+                    
+                    <div class="passage-title">第35至38題為題組</div>
+                    <div class="passage-content">
+                        <p>Standing proud in the savannah with their red blankets and painted shields, the Maasai people are one of the widely known symbols of East Africa. Their unique style, as remarked by Karen Blixen, author of Out of Africa, "has grown from the inside, and is an expression of the race and its history."</p>
+                        
+                        <p>The Maasai are a semi-nomadic group in Kenya and northern Tanzania, wandering in bands and living almost entirely on the meat, blood, and milk of their herds. Over the years, the fearless tribesmen have stood strong against slavery, and resisted the urging of the Kenyan and Tanzanian governments to adopt a more modern lifestyle. In fact, they are one of the few tribes that have retained most of their traditions. Up until recently, the only way for a Maasai boy to achieve warrior status was to single-handedly kill a lion with his spear.</p>
+                        
+                        <p>Maasai clothing varies with age, gender, and place. The most recognizable piece of clothing is the shúkà, a sheet of fabric worn wrapped around the body. Red is a popular color, and women generally opt for checked, striped, or patterned pieces of cloth. Young men wear black for several months after their circumcision, a ritual signifying their coming of age. A Maasai warrior is rarely seen without his spear and shield. In Blixen's words, "their weapons and finery are as much a part of their being as are a stag's antlers" (a male deer's horns).</p>
+                        
+                        <p>Beadwork is an important part of Maasai culture. Beaded jewelry is made by women, and is famous for its complexity. Natural materials such as clay, shells, and ivory were used before trading with the Europeans in the 19th century. They were then replaced by colorful glass beads, allowing for more detailed beadwork and color patterns. Multicolored beadwork is popular among both men and women. Each color holds a special meaning: White stands for peace, green for land and production, while red—the most favored color among the Maasai—is the symbol of unity and bravery.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">35</div>
+                        <div class="question-text">Which of the following pictures best represents the image of a typical Maasai warrior?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q35" value="A"> (A) 持弓箭的戰士</label>
+                            <label class="option"><input type="radio" name="q35" value="B"> (B) 拿盾牌長矛的紅衣戰士</label>
+                            <label class="option"><input type="radio" name="q35" value="C"> (C) 拿衝浪板的人</label>
+                            <label class="option"><input type="radio" name="q35" value="D"> (D) 拿長矛的半裸戰士</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">36</div>
+                        <div class="question-text">What can we learn from the passage about the Maasai people?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q36" value="A"> (A) They have been urged by governments to leave behind their traditions.</label>
+                            <label class="option"><input type="radio" name="q36" value="B"> (B) They resist foreign influence because they were enslaved in the past.</label>
+                            <label class="option"><input type="radio" name="q36" value="C"> (C) A boy has to kill a lion by himself before becoming an adult.</label>
+                            <label class="option"><input type="radio" name="q36" value="D"> (D) A Maasai woman is usually good at beadwork and farming.</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">37</div>
+                        <div class="question-text">Which of the following is true about Maasai clothing and beadwork?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q37" value="A"> (A) Striped and patterned cloth is preferred by young adults.</label>
+                            <label class="option"><input type="radio" name="q37" value="B"> (B) Young men cannot wear black until they become warriors.</label>
+                            <label class="option"><input type="radio" name="q37" value="C"> (C) Colorful glass jewelry became popular after the 19th century.</label>
+                            <label class="option"><input type="radio" name="q37" value="D"> (D) The color of the shúkà represented one's importance in the tribe.</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">38</div>
+                        <div class="question-text">Why does the author quote Blixen's comment at the end of the third paragraph?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q38" value="A"> (A) To explain how Maasai warriors hunt for deer in the wild.</label>
+                            <label class="option"><input type="radio" name="q38" value="B"> (B) To exemplify the types of weapons used by Maasai warriors.</label>
+                            <label class="option"><input type="radio" name="q38" value="C"> (C) To emphasize that weapons are an inseparable part of a Maasai warrior's outfit.</label>
+                            <label class="option"><input type="radio" name="q38" value="D"> (D) To show the similarities between the behavior of a Maasai warrior and that of a male deer.</label>
+                        </div>
+                    </div>
+
+                    <div class="passage-title">第39至42題為題組</div>
+                    <div class="passage-content">
+                        <p>A hard hat is a helmet used mostly at worksites to protect the head from injuries due to falling objects. Since its introduction in the early 20th century, the headgear has saved countless lives and is considered the number one safety tool for construction workers.</p>
+                        
+                        <p>The hard hat was invented in 1919 by Edward W. Bullard, who had just returned from World War I. Before the war, workers used to smear their hats with coal tar for protection of their head. Bullard, having witnessed the life-saving power of the metal helmet in the War, decided to produce a head protection device that was affordable for every worker and lightweight enough to be worn all day long. The Hard Boiled Hat was thus born, using steamed canvas and leather, covered with black paint, and featuring a suspension system to reduce impact. Soon, hard hats became widely used. The headgear was later made mandatory at construction sites in major construction projects, such as the Hoover Dam in 1931 and the Golden Gate Bridge in 1933.</p>
+                        
+                        <p>Over the past century, hard hats have advanced considerably, evolving from canvas and leather to aluminum, fiberglass, and, eventually, to thermoplastic. Recently, new models have been introduced and accessories added to meet the needs of laborers working on various job sites. For instance, a ventilated hard hat was developed to keep wearers cooler, and see-through face shields were attached to better see the hazards lurking above. Today, attachments include radios, sensors, cameras, and a lot more. A common color code has also been developed for recognizing people and their roles on site. Yellow is used for general laborers and contractors, white (or sometimes black) for supervisors and managers, and green for inspectors and new workers.</p>
+                        
+                        <p>New products continue to expand the market. Global sales of hard hats totaled USD 2.1 billion in 2016, and are expected to reach USD 3.19 billion in 2025.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">39</div>
+                        <div class="question-text">Which of the following aspects about hard hats is NOT discussed in the passage?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q39" value="A"> (A) Their functions.</label>
+                            <label class="option"><input type="radio" name="q39" value="B"> (B) Their appearances.</label>
+                            <label class="option"><input type="radio" name="q39" value="C"> (C) Their materials.</label>
+                            <label class="option"><input type="radio" name="q39" value="D"> (D) Their limitations.</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">40</div>
+                        <div class="question-text">In what order did the following protective hats appear?<br>
+a. fiberglass hats<br>
+b. hats with see-through shields<br>
+c. hats with canvas and leather<br>
+d. hats with tar over them</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q40" value="A"> (A) d→c→a→b</label>
+                            <label class="option"><input type="radio" name="q40" value="B"> (B) c→d→b→a</label>
+                            <label class="option"><input type="radio" name="q40" value="C"> (C) c→b→a→d</label>
+                            <label class="option"><input type="radio" name="q40" value="D"> (D) d→c→b→a</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">41</div>
+                        <div class="question-text">According to the passage, which of the following statements is true about the hard hat?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q41" value="A"> (A) Global sales have doubled every ten years.</label>
+                            <label class="option"><input type="radio" name="q41" value="B"> (B) The inspiration came from the inventor's wartime experience.</label>
+                            <label class="option"><input type="radio" name="q41" value="C"> (C) It was standard equipment for construction workers in the 1920s.</label>
+                            <label class="option"><input type="radio" name="q41" value="D"> (D) Different colors are used in different industries to signal the roles of people on site.</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">42</div>
+                        <div class="question-text">Which of the following words are used in the passage to refer to the hard hat?<br>
+a. tool b. code c. device d. helmet e. accessory f. headgear</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q42" value="A"> (A) a, b, d, e</label>
+                            <label class="option"><input type="radio" name="q42" value="B"> (B) a, c, d, f</label>
+                            <label class="option"><input type="radio" name="q42" value="C"> (C) c, d, e, f</label>
+                            <label class="option"><input type="radio" name="q42" value="D"> (D) a, d, e, f</label>
+                        </div>
+                    </div>
+
+                    <div class="passage-title">第43至46題為題組</div>
+                    <div class="passage-content">
+                        <p>Zebrafish, named for their characteristic stripes, have been a popular test subject for researchers. Only a few centimeters in length, the fish breed easily in captivity, grow quickly, and their transparent body makes it easy to study their organs. Above all, they possess some amazing "self-healing" power. When part of their heart is removed, they can grow it back in a matter of weeks. When blinded, they can quickly regain the ability to see.</p>
+                        
+                        <p>Recent studies show that humans and zebrafish have the same major organs and share 70 percent of the genes. Moreover, 84 percent of human genes associated with disease find a counterpart in zebrafish. Scientists thus hope that understanding the self-healing mystery of the fish may one day allow humans to regenerate such organs as eyes, hearts, and spines.</p>
+                        
+                        <p>Researchers at Vanderbilt University are particularly interested in zebrafish retina regeneration. They have learned that damage of retina can cause blindness in zebrafish, yet it only takes about three to four weeks before vision is restored. The structure and cell types of zebrafish retinas are almost identical to those of humans. If the process can be replicated in humans, it may give rise to new treatments for blindness caused by retinal damage.</p>
+                        
+                        <p>In order to know exactly how zebrafish retina is regenerated, the team looked at the neurotransmitter gamma-aminobutyric acid (GABA), a chemical messenger in the brain that reduces the activity of neurons. They found that lowering GABA levels in zebrafish can trigger retina regeneration, while a high level of GABA concentration will suppress the regeneration process. This suggested that GABA plays an important role in the fish's ability to regain their sight.</p>
+                        
+                        <p>The team is beginning to test the GABA theory on mice. If that works, human trials will be next on the agenda. If the research proves successful in humans, some of the nearly 40 million blind people worldwide may one day have a tiny, striped fish to thank.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">43</div>
+                        <div class="question-text">What can we learn about zebrafish from the passage?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q43" value="A"> (A) How they should be studied in labs.</label>
+                            <label class="option"><input type="radio" name="q43" value="B"> (B) Where they derive their regenerative ability.</label>
+                            <label class="option"><input type="radio" name="q43" value="C"> (C) Why they share humans' genetic code.</label>
+                            <label class="option"><input type="radio" name="q43" value="D"> (D) What they may offer in medical advancements.</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">44</div>
+                        <div class="question-text">Which of the following statements is true regarding GABA in zebrafish?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q44" value="A"> (A) Increasing GABA level facilitates neuron activities.</label>
+                            <label class="option"><input type="radio" name="q44" value="B"> (B) There is a high level of GABA in the brain of zebrafish.</label>
+                            <label class="option"><input type="radio" name="q44" value="C"> (C) Lowering GABA levels in the brain can stimulate retina regrowth.</label>
+                            <label class="option"><input type="radio" name="q44" value="D"> (D) GABA contains chemical elements that trigger the growth of neurons.</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">45</div>
+                        <div class="question-text">Which of the following is closest in meaning to "replicated" in the third paragraph?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q45" value="A"> (A) Reproduced.</label>
+                            <label class="option"><input type="radio" name="q45" value="B"> (B) Reassembled.</label>
+                            <label class="option"><input type="radio" name="q45" value="C"> (C) Recycled.</label>
+                            <label class="option"><input type="radio" name="q45" value="D"> (D) Restored.</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">46</div>
+                        <div class="question-text">According to the passage, which of the following is an opinion, but NOT a fact?</div>
+                        <div class="options">
+                            <label class="option"><input type="radio" name="q46" value="A"> (A) Humans and zebrafish have 70 percent of genes in common.</label>
+                            <label class="option"><input type="radio" name="q46" value="B"> (B) Zebrafish can quickly recover vision after damage to the retina.</label>
+                            <label class="option"><input type="radio" name="q46" value="C"> (C) Scientists are testing if the GABA theory works on mice as it does on zebrafish.</label>
+                            <label class="option"><input type="radio" name="q46" value="D"> (D) Understanding regeneration in zebrafish may allow humans to regrow their organs.</label>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">第貳部分、混合題 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：本部分共有1題組，每一子題配分標於題末。限在答題卷標示題號的作答區內作答，並依規定用筆作答。</p>
+                    
+                    <div class="passage-title">第47至49題為題組</div>
+                    <div class="passage-content">
+                        <div style="display: flex; align-items: center; margin-bottom: 2rem;">
+                            <div style="flex: 1;">
+                                <p>To support refugees and people facing crises around the world, the International Olympic Committee created the Refugee Olympic Team. Refugee athletes have been invited to compete in the Olympic Games since 2016. Here are two refugee athletes and their stories.</p>
+                            </div>
+                            <div style="margin-left: 2rem;">
+                                <div style="font-size: 2rem;">🏃‍♂️🏃‍♀️</div>
+                                <div style="font-size: 0.8rem; color: #666;">REFUGEE<br>OLYMPIC<br>TEAM</div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                            <div>
+                                <h4 style="color: #2d3436; margin-bottom: 1rem;">Yusra Mardini (游泳)</h4>
+                                <p style="font-size: 0.9rem; line-height: 1.6;">Yusra Mardini is a swimmer who grew up in the war-torn country of Syria. Due to the unstable political situation there, Yusra sometimes had to train in pools under roofs that had been blown open by bombings.</p>
+                                
+                                <p style="font-size: 0.9rem; line-height: 1.6;">In 2015 when she was just a 17-year-old, her house was destroyed in the civil war, so she decided to flee her home country. She managed to reach Turkey through Lebanon. From Turkey, she boarded a small boat that held 20 people and set sail into the deep waters of the Aegean Sea. But 30 minutes later, the engine stopped and the boat began to sink. Yusra dove into the cold water, and—with the help of her sister and two men—swam and pushed the boat for over three hours to reach the Greek island of Lesbos. They saved everyone aboard.</p>
+                                
+                                <p style="font-size: 0.9rem; line-height: 1.6;">Yusra eventually settled in Germany and has since worked to inspire others to pursue their dreams. Her incredible story and superior swimming skills won her the opportunity to participate in the Olympic Games. She was a member of the Refugee Olympic Team for both the 2016 Rio Games and 2021 Tokyo Games.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 style="color: #2d3436; margin-bottom: 1rem;">Popole Misenga (柔道)</h4>
+                                <p style="font-size: 0.9rem; line-height: 1.6;">Popole Misenga was born in the Democratic Republic of the Congo. When he was nine, the country's civil war claimed the life of his mother and left him homeless. Escaping from the war zone, he wandered alone for a week in a rainforest before being rescued and taken to a center for displaced children in the capital, Kinshasa.</p>
+                                
+                                <p style="font-size: 0.9rem; line-height: 1.6;">There, Popole discovered judo, from which he gained strength in body and mind. "Judo helped me by giving me serenity, discipline, commitment—everything," he said. He trained hard and became a professional judoka. However, each time he lost a competition, his coaches would lock him in a cage for days, feeding him only coffee and bread.</p>
+                                
+                                <p style="font-size: 0.9rem; line-height: 1.6;">Finally, when he was cruelly abused for not winning medals at the 2013 World Championships in Brazil, he decided to seek protection. Popole was granted asylum in 2014 by Brazilian government and later continued judo training at a youth facility. He made his Olympic debut at Rio 2016. He also represented the Refugee Olympic Team in 2021 Tokyo Games.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question mixed-question">
+                        <div class="question-number">47</div>
+                        <div class="question-text">請根據選文內容，從兩則故事中各選出一個單詞（word），分別填入下列兩句的空格，並視語法需要作適當的字形變化，使句子語意完整、語法正確，且符合全文文意。（填空，4分）</div>
+                        <div class="mixed-answer-area">
+                            <p>With her amazing courage and swimming skills, Yusra Mardini was not only able to save lives but also fulfill her dream of <input type="text" name="q47" class="fill-blank" placeholder="(A)"> in the Olympic Games.</p>
+                            <p>Judo helped Popole Misenga to be strong both physically and mentally, and gave him the courage to escape from the <input type="text" name="q47b" class="fill-blank" placeholder="(B)"> of his coaches.</p>
+                        </div>
+                    </div>
+
+                    <div class="question mixed-question">
+                        <div class="question-number">48</div>
+                        <div class="question-text">Which word in Popole Misenga's story means "protection given by a country or embassy to refugees from another country"? (簡答，2分)</div>
+                        <div class="mixed-answer-area">
+                            <input type="text" name="q48" class="fill-blank" placeholder="輸入答案">
+                        </div>
+                    </div>
+
+                    <div class="question mixed-question">
+                        <div class="question-number">49</div>
+                        <div class="question-text">請從下列(A)到(F)中，選出對Yusra Mardini 和 Popole Misenga都正確的選項。（多選題，4分）</div>
+                        <div class="options">
+                            <label class="option"><input type="checkbox" name="q49" value="A"> (A) Being an Olympic medalist.</label>
+                            <label class="option"><input type="checkbox" name="q49" value="B"> (B) Growing up in an orphanage.</label>
+                            <label class="option"><input type="checkbox" name="q49" value="C"> (C) Joining the Olympic Games more than once.</label>
+                            <label class="option"><input type="checkbox" name="q49" value="D"> (D) Leaving his/her hometown because of war.</label>
+                            <label class="option"><input type="checkbox" name="q49" value="E"> (E) Showing talent in sports after going to a foreign country.</label>
+                            <label class="option"><input type="checkbox" name="q49" value="F"> (F) Traveling through several countries before securing protection.</label>
+                        </div>
+                    </div>
+                </section>
+            </form>
+        </div>
+    </main>
+
+    <div class="controls">
+        <div class="container">
+            <div class="control-buttons">
+                <a href="../index.html" class="btn btn-secondary">← 返回首頁</a>
+                <button type="button" onclick="exam.submitExam()" class="btn btn-primary">提交答案</button>
+                <button type="button" onclick="exam.showAnswers()" class="btn btn-secondary">查看詳解</button>
+                <button type="button" onclick="exam.resetExam()" class="btn btn-outline">重新測驗</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/exam-111.js"></script>
+</body>
+</html>

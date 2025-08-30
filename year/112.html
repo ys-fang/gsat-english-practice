@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>112學年度學測英文 - 互動練習</title>
+    <link rel="stylesheet" href="../styles/common.css">
+</head>
+<body>
+    <header class="exam-header">
+        <div class="container">
+            <div class="exam-info">
+                <div class="exam-title">112學年度學科能力測驗 - 英文考科</div>
+                <div class="timer" id="timer">100:00</div>
+                <div class="score-display" id="currentScore" style="display: none;">
+                    得分：<span id="scoreValue">0</span>/72
+                </div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="exam-content">
+        <div class="container">
+            <form id="examForm">
+                <!-- 第壹部分、選擇題 -->
+                <section class="section">
+                    <h2 class="section-title">第壹部分、選擇題 (占62分)<br>一、詞彙題 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第1題至第10題為單選題，每題1分。</p>
+
+                    <div class="question">
+                        <div class="question-number">1</div>
+                        <div class="question-text">
+                            The bus driver often complains about chewing gum found under passenger seats because it is ______ and very hard to remove.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q1" value="A">
+                                <span class="option-text">(A) sticky</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="B">
+                                <span class="option-text">(B) greasy</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="C">
+                                <span class="option-text">(C) clumsy</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="D">
+                                <span class="option-text">(D) mighty</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">2</div>
+                        <div class="question-text">
+                            Jesse is a talented model. He can easily adopt an elegant ______ for a camera shoot.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q2" value="A">
+                                <span class="option-text">(A) clap</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="B">
+                                <span class="option-text">(B) toss</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="C">
+                                <span class="option-text">(C) pose</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="D">
+                                <span class="option-text">(D) snap</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">3</div>
+                        <div class="question-text">
+                            In order to draw her family tree, Mary tried to trace her ______ back to their arrival in North America.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q3" value="A">
+                                <span class="option-text">(A) siblings</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="B">
+                                <span class="option-text">(B) commuters</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="C">
+                                <span class="option-text">(C) ancestors</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="D">
+                                <span class="option-text">(D) instructors</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">4</div>
+                        <div class="question-text">
+                            Upon the super typhoon warning, Nancy rushed to the supermarket—only to find the shelves almost ______ and the stock nearly gone.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q4" value="A">
+                                <span class="option-text">(A) blank</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="B">
+                                <span class="option-text">(B) bare</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="C">
+                                <span class="option-text">(C) hollow</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="D">
+                                <span class="option-text">(D) queer</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">5</div>
+                        <div class="question-text">
+                            Even though Jack said "Sorry!" to me in person, I did not feel any ______ in his apology.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q5" value="A">
+                                <span class="option-text">(A) liability</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="B">
+                                <span class="option-text">(B) generosity</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="C">
+                                <span class="option-text">(C) integrity</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="D">
+                                <span class="option-text">(D) sincerity</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">6</div>
+                        <div class="question-text">
+                            My grandfather has astonishing powers of ______. He can still vividly describe his first day at school as a child.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q6" value="A">
+                                <span class="option-text">(A) resolve</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="B">
+                                <span class="option-text">(B) fraction</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="C">
+                                <span class="option-text">(C) privilege</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="D">
+                                <span class="option-text">(D) recall</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">7</div>
+                        <div class="question-text">
+                            Recent research has found lots of evidence to ______ the drug company's claims about its "miracle" tablets for curing cancer.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q7" value="A">
+                                <span class="option-text">(A) provoke</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="B">
+                                <span class="option-text">(B) counter</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="C">
+                                <span class="option-text">(C) expose</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="D">
+                                <span class="option-text">(D) convert</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">8</div>
+                        <div class="question-text">
+                            Corrupt officials and misguided policies have ______ the country's economy and burdened its people with enormous foreign debts.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q8" value="A">
+                                <span class="option-text">(A) crippled</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="B">
+                                <span class="option-text">(B) accelerated</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="C">
+                                <span class="option-text">(C) rendered</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="D">
+                                <span class="option-text">(D) ventured</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">9</div>
+                        <div class="question-text">
+                            As a record number of fans showed up for the baseball final, the highways around the stadium were ______ with traffic all day.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q9" value="A">
+                                <span class="option-text">(A) choked</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="B">
+                                <span class="option-text">(B) disturbed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="C">
+                                <span class="option-text">(C) enclosed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="D">
+                                <span class="option-text">(D) injected</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">10</div>
+                        <div class="question-text">
+                            Studies show that the ______ unbiased media are in fact often deeply influenced by political ideology.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q10" value="A">
+                                <span class="option-text">(A) undoubtedly</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q10" value="B">
+                                <span class="option-text">(B) roughly</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q10" value="C">
+                                <span class="option-text">(C) understandably</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q10" value="D">
+                                <span class="option-text">(D) supposedly</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 二、綜合測驗 -->
+                <section class="section">
+                    <h2 class="section-title">二、綜合測驗 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第11題至第20題為單選題，每題1分。</p>
+
+                    <h3 class="passage-title">第11至15題為題組</h3>
+                    <div class="passage-content">
+                        <p>In certain forests, when you look up you will see a network of cracks formed by gaps between the outermost edges of tree branches. It looks like a precisely engineered jigsaw puzzle, each branch growing just perfectly so it almost, <strong>11</strong>, touches the neighboring tree. This beautiful phenomenon is called crown shyness.</p>
+                        
+                        <p>Scientists have been discussing crown shyness since the 1920s, proposing <strong>12</strong> explanations for the phenomenon. Some researchers point out that as trees often grow close together, treetops can easily collide and break when swayed by the wind. In order to protect their branches from breakage, trees maintain "shyness gaps"—spaces large enough to prevent them from touching their neighbors.</p>
+                        
+                        <p>Other scientists suggest that plants, like animals, <strong>13</strong> resources—nutrients, water, space, and light. In forested areas with thick tree crowns, there is intense struggle for these resources. Gaps in the treetops resulting from crown shyness may allow trees to increase their <strong>14</strong> light and enhance photosynthesis. Additionally, by having branches that do not touch those of their neighbors, trees may be able to limit the spread of leaf-eating insects, and potentially also the transmission of diseases from tree to tree. <strong>15</strong> decades of investigation, there is no consensus on exactly what causes the beautiful and mysterious phenomenon of crown shyness.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">11</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q11" value="A">
+                                <span class="option-text">(A) in no time</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q11" value="B">
+                                <span class="option-text">(B) by all means</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q11" value="C">
+                                <span class="option-text">(C) but not quite</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q11" value="D">
+                                <span class="option-text">(D) and pretty much</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">12</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q12" value="A">
+                                <span class="option-text">(A) universal</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q12" value="B">
+                                <span class="option-text">(B) productive</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q12" value="C">
+                                <span class="option-text">(C) conventional</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q12" value="D">
+                                <span class="option-text">(D) multiple</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">13</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q13" value="A">
+                                <span class="option-text">(A) get over</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q13" value="B">
+                                <span class="option-text">(B) compete for</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q13" value="C">
+                                <span class="option-text">(C) give way to</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q13" value="D">
+                                <span class="option-text">(D) make up for</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">14</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q14" value="A">
+                                <span class="option-text">(A) reliance on</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q14" value="B">
+                                <span class="option-text">(B) exposure to</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q14" value="C">
+                                <span class="option-text">(C) sensitivity to</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q14" value="D">
+                                <span class="option-text">(D) reflection on</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">15</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q15" value="A">
+                                <span class="option-text">(A) For</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q15" value="B">
+                                <span class="option-text">(B) Besides</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q15" value="C">
+                                <span class="option-text">(C) Despite</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q15" value="D">
+                                <span class="option-text">(D) Concerning</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <h3 class="passage-title">第16至20題為題組</h3>
+                    <div class="passage-content">
+                        <p>Gravity has been at the top of the science agenda since the start of Mars missions. In the earlier days of space travel, scientists tried to overcome the force of gravity so that a rocket could shoot <strong>16</strong> Earth's pull in order to land humans on the moon. Today, they are more interested in how reduced gravity affects the astronauts' <strong>17</strong> condition.</p>
+                        
+                        <p>Our bodies have evolved to exist within Earth's gravity (1 g), not in the weightlessness of space (0 g) or the microgravity of Mars (0.3 g). When on Earth, we have more fluids in our lower body because they are pulled down by Earth's gravity. However, with the absence of gravity in the outer space, our body fluids <strong>18</strong>, shifting toward the upper body and the head. As a result, the astronauts have swollen, puffy faces, very much resembling that of the round-headed Charlie Brown in the famous comic strip. This "Charlie Brown effect" will be more <strong>19</strong> when the astronauts go on their Mars missions, which will take about three years to complete, much longer than missions to the moon. Moreover, the effect is often <strong>20</strong> space motion sickness, headaches, and nausea. Such a syndrome is considered the top health risk for the astronauts, and scientists are still trying to figure out how it may be prevented.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">16</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q16" value="A">
+                                <span class="option-text">(A) back to</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q16" value="B">
+                                <span class="option-text">(B) free of</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q16" value="C">
+                                <span class="option-text">(C) long before</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q16" value="D">
+                                <span class="option-text">(D) straight on</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">17</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q17" value="A">
+                                <span class="option-text">(A) physical</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q17" value="B">
+                                <span class="option-text">(B) perceptual</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q17" value="C">
+                                <span class="option-text">(C) mental</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q17" value="D">
+                                <span class="option-text">(D) external</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">18</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q18" value="A">
+                                <span class="option-text">(A) redistribute</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q18" value="B">
+                                <span class="option-text">(B) redistributed</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q18" value="C">
+                                <span class="option-text">(C) redistributing</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q18" value="D">
+                                <span class="option-text">(D) being redistributed</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">19</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q19" value="A">
+                                <span class="option-text">(A) contagious</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q19" value="B">
+                                <span class="option-text">(B) unusual</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q19" value="C">
+                                <span class="option-text">(C) severe</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q19" value="D">
+                                <span class="option-text">(D) aggressive</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">20</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q20" value="A">
+                                <span class="option-text">(A) varied with</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q20" value="B">
+                                <span class="option-text">(B) brought about</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q20" value="C">
+                                <span class="option-text">(C) transferred from</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q20" value="D">
+                                <span class="option-text">(D) accompanied by</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 三、文意選填 -->
+                <section class="section">
+                    <h2 class="section-title">三、文意選填 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第21題至第30題為單選題，每題1分。</p>
+
+                    <h3 class="passage-title">第21至30題為題組</h3>
+                    <div class="passage-content">
+                        <p>Water makes up more than half of our body weight. To sustain this amount of fluid in our bodies, plain water is considered our best choice, for it contains no sugar and no calories. Yet, is water always the healthiest drink we can <strong>21</strong>? Well, it depends on who and where we are, and what we're doing.</p>
+                        
+                        <p>Obviously, a physically <strong>22</strong> person with an outdoor job under the sun will need to drink more fluid than a desk-bound person who lives and works in an air-conditioned place. But there's more to it than that. When a person sweats, he loses water and salt, so he needs to replace both. Replacing lost fluid with just plain water means the body has too much water and not enough salt. To <strong>23</strong> things out, the body will get rid of water by producing urine. For this reason, milk can actually be more <strong>24</strong> than drinking water. Milk naturally contains salt and lactose, a sugar which the human body needs in small amounts to help stimulate water <strong>25</strong>. Coconut water, which contains salt and carbohydrates, is also more functional than water at restoring and maintaining a normal fluid <strong>26</strong> after exercise.</p>
+                        
+                        <p>For the average person, however, water remains a very good <strong>27</strong> for keeping hydrated—if you know how to drink it. The secret is: Never wait until the body is telling you you're thirsty, since there must already have been significant changes in your body for it to eventually <strong>28</strong> your consciousness. At that point, it might be well past the best moment to take in fluid. Also, drinking a lot of liquid in one go can cause more water to <strong>29</strong> the body quickly and come out as urine. To <strong>30</strong> this, you need to drink water throughout the day to maintain your hydration levels.</p>
+                    </div>
+
+                    <div class="fill-options">
+                        <p style="margin-bottom: 1rem; font-weight: bold;">選項：</p>
+                        <div class="option-grid">
+                            <span>(A) absorption</span>
+                            <span>(B) active</span>
+                            <span>(C) alert</span>
+                            <span>(D) combat</span>
+                            <span>(E) option</span>
+                            <span>(F) effective</span>
+                            <span>(G) even</span>
+                            <span>(H) status</span>
+                            <span>(I) pass through</span>
+                            <span>(J) reach for</span>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">21</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q21" value="A">
+                                <span class="option-text">(A) absorption</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q21" value="B">
+                                <span class="option-text">(B) active</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q21" value="C">
+                                <span class="option-text">(C) alert</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q21" value="D">
+                                <span class="option-text">(D) combat</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q21" value="E">
+                                <span class="option-text">(E) option</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q21" value="F">
+                                <span class="option-text">(F) effective</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q21" value="G">
+                                <span class="option-text">(G) even</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q21" value="H">
+                                <span class="option-text">(H) status</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q21" value="I">
+                                <span class="option-text">(I) pass through</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q21" value="J">
+                                <span class="option-text">(J) reach for</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">22</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q22" value="A">
+                                <span class="option-text">(A) absorption</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="B">
+                                <span class="option-text">(B) active</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="C">
+                                <span class="option-text">(C) alert</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="D">
+                                <span class="option-text">(D) combat</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="E">
+                                <span class="option-text">(E) option</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="F">
+                                <span class="option-text">(F) effective</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="G">
+                                <span class="option-text">(G) even</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="H">
+                                <span class="option-text">(H) status</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="I">
+                                <span class="option-text">(I) pass through</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q22" value="J">
+                                <span class="option-text">(J) reach for</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">23</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q23" value="A">
+                                <span class="option-text">(A) absorption</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="B">
+                                <span class="option-text">(B) active</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="C">
+                                <span class="option-text">(C) alert</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="D">
+                                <span class="option-text">(D) combat</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="E">
+                                <span class="option-text">(E) option</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="F">
+                                <span class="option-text">(F) effective</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="G">
+                                <span class="option-text">(G) even</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="H">
+                                <span class="option-text">(H) status</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="I">
+                                <span class="option-text">(I) pass through</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q23" value="J">
+                                <span class="option-text">(J) reach for</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">24</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q24" value="A">
+                                <span class="option-text">(A) absorption</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q24" value="B">
+                                <span class="option-text">(B) active</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q24" value="C">
+                                <span class="option-text">(C) alert</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q24" value="D">
+                                <span class="option-text">(D) combat</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q24" value="E">
+                                <span class="option-text">(E) option</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q24" value="F">
+                                <span class="option-text">(F) effective</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q24" value="G">
+                                <span class="option-text">(G) even</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q24" value="H">
+                                <span class="option-text">(H) status</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q24" value="I">
+                                <span class="option-text">(I) pass through</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q24" value="J">
+                                <span class="option-text">(J) reach for</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">25</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q25" value="A">
+                                <span class="option-text">(A) absorption</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q25" value="B">
+                                <span class="option-text">(B) active</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q25" value="C">
+                                <span class="option-text">(C) alert</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q25" value="D">
+                                <span class="option-text">(D) combat</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q25" value="E">
+                                <span class="option-text">(E) option</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q25" value="F">
+                                <span class="option-text">(F) effective</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q25" value="G">
+                                <span class="option-text">(G) even</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q25" value="H">
+                                <span class="option-text">(H) status</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q25" value="I">
+                                <span class="option-text">(I) pass through</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q25" value="J">
+                                <span class="option-text">(J) reach for</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">26</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q26" value="A">
+                                <span class="option-text">(A) absorption</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q26" value="B">
+                                <span class="option-text">(B) active</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q26" value="C">
+                                <span class="option-text">(C) alert</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q26" value="D">
+                                <span class="option-text">(D) combat</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q26" value="E">
+                                <span class="option-text">(E) option</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q26" value="F">
+                                <span class="option-text">(F) effective</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q26" value="G">
+                                <span class="option-text">(G) even</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q26" value="H">
+                                <span class="option-text">(H) status</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q26" value="I">
+                                <span class="option-text">(I) pass through</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q26" value="J">
+                                <span class="option-text">(J) reach for</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">27</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q27" value="A">
+                                <span class="option-text">(A) absorption</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q27" value="B">
+                                <span class="option-text">(B) active</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q27" value="C">
+                                <span class="option-text">(C) alert</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q27" value="D">
+                                <span class="option-text">(D) combat</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q27" value="E">
+                                <span class="option-text">(E) option</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q27" value="F">
+                                <span class="option-text">(F) effective</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q27" value="G">
+                                <span class="option-text">(G) even</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q27" value="H">
+                                <span class="option-text">(H) status</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q27" value="I">
+                                <span class="option-text">(I) pass through</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q27" value="J">
+                                <span class="option-text">(J) reach for</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">28</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q28" value="A">
+                                <span class="option-text">(A) absorption</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q28" value="B">
+                                <span class="option-text">(B) active</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q28" value="C">
+                                <span class="option-text">(C) alert</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q28" value="D">
+                                <span class="option-text">(D) combat</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q28" value="E">
+                                <span class="option-text">(E) option</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q28" value="F">
+                                <span class="option-text">(F) effective</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q28" value="G">
+                                <span class="option-text">(G) even</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q28" value="H">
+                                <span class="option-text">(H) status</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q28" value="I">
+                                <span class="option-text">(I) pass through</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q28" value="J">
+                                <span class="option-text">(J) reach for</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">29</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q29" value="A">
+                                <span class="option-text">(A) absorption</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q29" value="B">
+                                <span class="option-text">(B) active</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q29" value="C">
+                                <span class="option-text">(C) alert</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q29" value="D">
+                                <span class="option-text">(D) combat</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q29" value="E">
+                                <span class="option-text">(E) option</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q29" value="F">
+                                <span class="option-text">(F) effective</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q29" value="G">
+                                <span class="option-text">(G) even</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q29" value="H">
+                                <span class="option-text">(H) status</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q29" value="I">
+                                <span class="option-text">(I) pass through</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q29" value="J">
+                                <span class="option-text">(J) reach for</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">30</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q30" value="A">
+                                <span class="option-text">(A) absorption</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q30" value="B">
+                                <span class="option-text">(B) active</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q30" value="C">
+                                <span class="option-text">(C) alert</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q30" value="D">
+                                <span class="option-text">(D) combat</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q30" value="E">
+                                <span class="option-text">(E) option</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q30" value="F">
+                                <span class="option-text">(F) effective</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q30" value="G">
+                                <span class="option-text">(G) even</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q30" value="H">
+                                <span class="option-text">(H) status</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q30" value="I">
+                                <span class="option-text">(I) pass through</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q30" value="J">
+                                <span class="option-text">(J) reach for</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 四、篇章結構 -->
+                <section class="section">
+                    <h2 class="section-title">四、篇章結構 (占8分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第31題至第34題為單選題，每題2分。</p>
+
+                    <h3 class="passage-title">第31至34題為題組</h3>
+                    <div class="passage-content">
+                        <p>Have you ever thought of "coloring" the names of the days of the week? When you listen to someone speaking, do you see a rainbow of colors? Or perhaps Mozart's music tastes like an apple pie to you? If so, it is very likely that you have synesthesia.</p>
+                        
+                        <p>Synesthesia is a condition in which people's senses intermix. In some cases, people with synesthesia may experience colors when they hear, read, or even think of letters and numbers. In others, words can trigger a real sensation of taste on their tongue.</p>
+                        
+                        <p><strong>31</strong> In the early 1990s, however, scientists noticed that synesthetic colors do not change over time. When asked what color is evoked by a letter or number, synesthetic people would persistently give the same answer even if tested months or years apart. <strong>32</strong> The most compelling support, however, comes from brain scans, which show that color processing areas in the brain light up when these people listen to certain words.</p>
+                        
+                        <p>Is synesthesia genetically inherited or acquired after birth? Scientists agree that synesthesia has a genetic basis, because it frequently runs in families. But an actual synesthesia gene (or genes) has not been identified yet. <strong>33</strong> For example, the flavors people with taste-word synesthesia experience are usually childhood flavors, such as chocolate or strawberries. Also, people with color-music synesthesia more often than not have had early musical training.</p>
+                        
+                        <p>Once thought to be extremely rare, synesthesia is now found to affect about one to four percent of the population. <strong>34</strong> As is often observed, most of us tend to associate lower notes with darker colors and higher notes with brighter colors. Researchers further point out that in most people synesthesia is active only during the first months of their infancy, while this ability remains forever in certain individuals.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">31</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q31" value="A">
+                                <span class="option-text">(A) This consistency serves as a proof that synesthesia is real.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q31" value="B">
+                                <span class="option-text">(B) Meanwhile, environmental influences seem to shape a person's synesthesia.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q31" value="C">
+                                <span class="option-text">(C) People with synesthesia used to be accused of making their experiences up.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q31" value="D">
+                                <span class="option-text">(D) Some studies even show that people may all be synesthetic to some degree.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">32</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q32" value="A">
+                                <span class="option-text">(A) This consistency serves as a proof that synesthesia is real.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q32" value="B">
+                                <span class="option-text">(B) Meanwhile, environmental influences seem to shape a person's synesthesia.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q32" value="C">
+                                <span class="option-text">(C) People with synesthesia used to be accused of making their experiences up.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q32" value="D">
+                                <span class="option-text">(D) Some studies even show that people may all be synesthetic to some degree.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">33</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q33" value="A">
+                                <span class="option-text">(A) This consistency serves as a proof that synesthesia is real.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q33" value="B">
+                                <span class="option-text">(B) Meanwhile, environmental influences seem to shape a person's synesthesia.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q33" value="C">
+                                <span class="option-text">(C) People with synesthesia used to be accused of making their experiences up.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q33" value="D">
+                                <span class="option-text">(D) Some studies even show that people may all be synesthetic to some degree.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">34</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q34" value="A">
+                                <span class="option-text">(A) This consistency serves as a proof that synesthesia is real.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q34" value="B">
+                                <span class="option-text">(B) Meanwhile, environmental influences seem to shape a person's synesthesia.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q34" value="C">
+                                <span class="option-text">(C) People with synesthesia used to be accused of making their experiences up.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q34" value="D">
+                                <span class="option-text">(D) Some studies even show that people may all be synesthetic to some degree.</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 五、閱讀測驗 -->
+                <section class="section">
+                    <h2 class="section-title">五、閱讀測驗 (占24分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第35題至第46題為單選題，每題2分。</p>
+
+                    <h3 class="passage-title">第35至38題為題組</h3>
+                    <div class="passage-content">
+                        <p>When did people first experience the joy of the hula hoop? Although the term did not emerge until the 18th century, toy hoops twirled around the waist, limbs, or neck can be traced back to ancient times. As early as 1000 BC, Egyptian children played with hoop toys of dried grapevine. They threw, jumped, and slung them around their bodies as we do today. They also struck them with sticks to roll them down the road. Hoop rolling was also popular in ancient Greece. Their hoops, often made of metal, were not merely toys for Greek children but served as exercise devices as well.</p>
+                        
+                        <p>In the 14th century, hoops were popular as a form of recreation in Great Britain. The craze for hoops even resulted in dislocated backs and heart attacks, according to medical records. The term "hula," however, did not enter the English language until the 1700s, when British sailors first witnessed hula dancing in the Hawaiian Islands. Though no hoops were used, the movements of the ritual dances looked very similar to those in hooping. Thus "hula" and "hoop" came together, resulting in the term "hula hooping."</p>
+                        
+                        <p>Hoops spun their way through the cultures of pre-colonial America as well. Often considered as representing the circle of life, hoops featured prominently in the ritual dances of Native Americans. Dancers used small reed hoops as symbolic representations of animals such as eagles or snakes. With very rapid movements, they used the hoops to construct the symbolic forms around their bodies.</p>
+                        
+                        <p>The hula hoop gained international popularity in the late 1950s, when a plastic version was successfully marketed by California's Wham-O toy company. Twenty-five million plastic hoops were sold in less than four months. The hula hoop "fad" is still going strong today.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">35</div>
+                        <div class="question-text">What question does the passage answer?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q35" value="A">
+                                <span class="option-text">(A) How was the word "hula-hooping" derived?</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q35" value="B">
+                                <span class="option-text">(B) Why did Wham-O start making hula hoops?</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q35" value="C">
+                                <span class="option-text">(C) Where did Hawaiian hula dancing come from?</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q35" value="D">
+                                <span class="option-text">(D) What was the favorite toy of ancient Egyptian kids?</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">36</div>
+                        <div class="question-text">Which of the following statements is true about use of the hoop in history?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q36" value="A">
+                                <span class="option-text">(A) The British used it for medical purposes.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q36" value="B">
+                                <span class="option-text">(B) Native Americans used it to train animals.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q36" value="C">
+                                <span class="option-text">(C) Ancient Greeks used it as a tool for workout.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q36" value="D">
+                                <span class="option-text">(D) Hawaiian dancers used it to represent the circle of life.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">37</div>
+                        <div class="question-text">Which of the following is NOT mentioned as a way of enjoying hula hoop fun?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q37" value="A">
+                                <span class="option-text">(A) Striking.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q37" value="B">
+                                <span class="option-text">(B) Twirling.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q37" value="C">
+                                <span class="option-text">(C) Spinning.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q37" value="D">
+                                <span class="option-text">(D) Kicking.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">38</div>
+                        <div class="question-text">According to the passage, what materials have been used for making hoops?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q38" value="A">
+                                <span class="option-text">(A) reed, grapevine, bamboo, plastic</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q38" value="B">
+                                <span class="option-text">(B) reed, grapevine, plastic, metal</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q38" value="C">
+                                <span class="option-text">(C) reed, bamboo, plastic, animal skin</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q38" value="D">
+                                <span class="option-text">(D) grapevine, plastic, metal, animal skin</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <h3 class="passage-title">第39至42題為題組</h3>
+                    <div class="passage-content">
+                        <p>When you enjoy your morning cup of tea, you are probably not aware that those tea leaves can mean injury, or even death, for Asian elephants roaming Indian tea gardens.</p>
+                        
+                        <p>In the Indian state of Assam, growing numbers of tea farms are destroying the Asian elephant's habitats and endangering their population. Much of the forest land where tea is grown in Assam is flat and thus farmers must dig drainage trenches to prevent water from accumulating and hurting the shrubs. The trenches, however, can be death traps for the elephants. Since the elephants need to use tea plantations as landmarks when navigating forests, they almost inevitably have to move through the farms. Moreover, because there are fewer humans around, pregnant females often use tea-growing areas as safe shelters to give birth. But baby elephants, not used to negotiating rough ground, may easily fall into the trenches and get hurt; and once injured, they might not be able to climb out. When mothers try to dig their babies out, both may be trapped and smothered by thick mud. Furthermore, elephants are known to resist leaving their sick or dying behind, and a herd may linger at a trench with a trapped baby for hours, reluctant to move on until all hope is lost.</p>
+                        
+                        <p>Is it possible for elephants to coexist with the prosperous tea business? Elephant Friendly Tea is an organization that takes the initiative to make it possible. The organization encourages consumers to choose brands that take precautions to protect elephants and has set up a certification program to reward tea growers who are doing it right. Until now, only smaller tea brands have been certified, but awareness is growing. The organization believes that people may be motivated to buy elephant-friendly brands when they know more about the risk tea can pose to these endangered animals.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">39</div>
+                        <div class="question-text">Why do farmers in Assam dig trenches in tea gardens?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q39" value="A">
+                                <span class="option-text">(A) To protect tea trees.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q39" value="B">
+                                <span class="option-text">(B) To trap elephants.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q39" value="C">
+                                <span class="option-text">(C) To expand tea farms.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q39" value="D">
+                                <span class="option-text">(D) To mark boundaries of tea gardens.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">40</div>
+                        <div class="question-text">Why are baby elephants easily injured in the Assam tea gardens according to the passage?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q40" value="A">
+                                <span class="option-text">(A) They cannot find a safe shelter when climbing out of the trenches.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q40" value="B">
+                                <span class="option-text">(B) They cannot locate the landmarks while trying to navigate forests.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q40" value="C">
+                                <span class="option-text">(C) They are trapped by the sharp branches of the tea trees.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q40" value="D">
+                                <span class="option-text">(D) They have difficulties moving around the uneven fields.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">41</div>
+                        <div class="question-text">Which of the following statements about elephants and the tea gardens is true according to the passage?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q41" value="A">
+                                <span class="option-text">(A) The elephants use the trenches to roam around the tea gardens.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q41" value="B">
+                                <span class="option-text">(B) The fast growth of the tea gardens destroys the elephants' food source.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q41" value="C">
+                                <span class="option-text">(C) Elephants are unwilling to leave their injured members behind in the tea gardens.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q41" value="D">
+                                <span class="option-text">(D) Pregnant elephants avoid delivering babies in the tea gardens for fear of being disturbed.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">42</div>
+                        <div class="question-text">What does "it" in the last paragraph refer to?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q42" value="A">
+                                <span class="option-text">(A) To certify elephant-friendly trenches and organizations.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q42" value="B">
+                                <span class="option-text">(B) To reward tea growers for protecting the environment.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q42" value="C">
+                                <span class="option-text">(C) To encourage consumers to choose high-quality brands.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q42" value="D">
+                                <span class="option-text">(D) To create a win-win situation for elephants and tea farms.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <h3 class="passage-title">第43至46題為題組</h3>
+                    <div class="passage-content">
+                        <p>Situated off the coast of Tanzania and washed by the warm, clean waters of the Indian Ocean, Zanzibar is a tropical archipelago comprised of several scattered islands. This popular beach destination is now famous for its white sand beaches, slender palms, and turquoise seas. But few people know that in the past, control of Zanzibar meant access to unimaginable wealth.</p>
+                        
+                        <p>From ancient times, Zanzibar has been a trading hotspot, thanks to its location on the trade route between Arabia and Africa. Traders from Asia had already visited the islands 900 years before the arrival of its first permanent settlers from the African mainland (around 1000 AD). In the 8th century, Persian merchants built settlements here, which grew over the next four centuries into their trading posts. Between the 12th and 15th centuries, trade increased between Arabia, Persia, and Zanzibar, bringing the archipelago both wealth and power.</p>
+                        
+                        <p>During the Age of Exploration, commerce in Zanzibar quickly boomed, largely due to the rise of the spice trade. At the close of the 15th century, Europeans' craze for spices gave rise to the Spice Route, a network of sea lanes joining Europe with the Far East, where most spices came from. In 1498, Portuguese explorer Vasco da Gama made the first sea voyage to India, via the southernmost tip of Africa. In 1499, he arrived at Zanzibar, an archipelago sitting at the crossroads of the Spice Route. The islands soon attracted traders from different lands. Hundreds of ships sailing the Spice Route docked here, bringing spices and goods for transaction, and Zanzibar became one of the biggest trading centers in the world.</p>
+                        
+                        <p>Since the 16th century, Zanzibar has come under the rule of the Portuguese, the Arabians, and then the British, each leaving a mark on the place. The paths of various religions also crossed here: Muslims have lived peacefully with Christians and Buddhists on the islands for centuries. The unique cultural intersections, scented with the aroma of cloves, vanilla, and cinnamon floating in the air, give these jewels on the Indian Ocean an amazing charm that goes far beyond tropical beach fun.</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">43</div>
+                        <div class="question-text">Which of the following is true about the earliest traders in Zanzibar?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q43" value="A">
+                                <span class="option-text">(A) The earliest traders arrived around 900 AD.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q43" value="B">
+                                <span class="option-text">(B) Most of the earliest merchants came from Africa.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q43" value="C">
+                                <span class="option-text">(C) Asian merchants arrived centuries before the African settlers.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q43" value="D">
+                                <span class="option-text">(D) Traders from Persia settled down permanently around 1000 AD.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">44</div>
+                        <div class="question-text">According to the passage, where is Zanzibar most likely located on the following map?</div>
+                        <div style="text-align: center; margin: 1rem 0;">
+                            <div style="display: inline-block; position: relative; width: 400px; height: 300px; border: 1px solid #ccc; background: #f9f9f9;">
+                                <div style="position: absolute; top: 20px; left: 50px; font-size: 0.8rem;">North America</div>
+                                <div style="position: absolute; top: 80px; right: 80px; font-size: 0.8rem;">Europe</div>
+                                <div style="position: absolute; top: 120px; right: 30px; font-size: 0.8rem;">Asia</div>
+                                <div style="position: absolute; bottom: 80px; left: 80px; font-size: 0.8rem;">South America</div>
+                                <div style="position: absolute; top: 150px; left: 150px; font-size: 0.8rem;">Africa</div>
+                                <div style="position: absolute; top: 100px; left: 100px; background: red; color: white; padding: 2px; border-radius: 50%; width: 15px; height: 15px; text-align: center; font-size: 0.7rem;">A</div>
+                                <div style="position: absolute; top: 180px; left: 120px; background: red; color: white; padding: 2px; border-radius: 50%; width: 15px; height: 15px; text-align: center; font-size: 0.7rem;">B</div>
+                                <div style="position: absolute; top: 140px; right: 100px; background: red; color: white; padding: 2px; border-radius: 50%; width: 15px; height: 15px; text-align: center; font-size: 0.7rem;">C</div>
+                                <div style="position: absolute; bottom: 100px; left: 140px; background: red; color: white; padding: 2px; border-radius: 50%; width: 15px; height: 15px; text-align: center; font-size: 0.7rem;">D</div>
+                            </div>
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q44" value="A">
+                                <span class="option-text">(A) A</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q44" value="B">
+                                <span class="option-text">(B) B</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q44" value="C">
+                                <span class="option-text">(C) C</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q44" value="D">
+                                <span class="option-text">(D) D</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">45</div>
+                        <div class="question-text">Which of the following can be inferred from the passage about Zanzibar?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q45" value="A">
+                                <span class="option-text">(A) For centuries, Zanzibar has been a heaven for beach lovers.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q45" value="B">
+                                <span class="option-text">(B) Cloves, vanilla, and cinnamon are common spices in Zanzibar.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q45" value="C">
+                                <span class="option-text">(C) Besides spices, Zanzibar is well known for a great variety of jewelry.</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q45" value="D">
+                                <span class="option-text">(D) Vasco da Gama was Zanzibar's first foreign ruler during the Age of Exploration.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">46</div>
+                        <div class="question-text">Which set of words is used in the passage to refer to Zanzibar?</div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q46" value="A">
+                                <span class="option-text">(A) islands, settlements, posts, crossroads</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q46" value="B">
+                                <span class="option-text">(B) islands, posts, jewels, destination</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q46" value="C">
+                                <span class="option-text">(C) archipelago, islands, jewels, destination</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q46" value="D">
+                                <span class="option-text">(D) archipelago, settlements, paths, islands</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 第貳部分、混合題 -->
+                <section class="section">
+                    <h2 class="section-title">第貳部分、混合題 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：本部分共有1題組，每一子題配分標於題末。限在答題卷標示題號的作答區內作答，並以規定用筆作答。</p>
+
+                    <h3 class="passage-title">第47至50題為題組</h3>
+                    <div class="passage-content">
+                        <p>Even if you're not a vegetarian, there's a good chance you've heard of plant-based meat. These meat substitutes are often advertised as beneficial for the environment. But do the customers really like them?</p>
+                        
+                        <p>Read the following chatroom discussions about GreenBurger, a product using alternative-meat patties.</p>
+                        
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin: 1rem 0; font-family: monospace; font-size: 0.9rem;">
+                            <strong>(A) Olivia</strong><br>
+                            That's a firm NO! I tried one when I was a prep cook for Next Level Burgers...tasted awful, just like mashed peas gone to rot.
+                            
+                            <br><br><strong>(B) Smith</strong><br>
+                            I haven't tried them. I just don't see the point. They are heavily processed with more calories and sodium than meat and are more expensive too! Unless you are a strict vegetarian and eschew meat for ethical reasons, meat is surely a better deal.
+                            
+                            <br><br><strong>(C) Mika</strong><br>
+                            Not really. It tastes too much like actual meat. If I wanted to eat a dead cow, I would go for real burgers. Being vegan means I try to stick to plant food. But this is just not something that will ever interest me.
+                            
+                            <br><br><strong>(D) Thomas</strong><br>
+                            GreenBurger just tastes "beany" to me, so I think that whatever form it comes in, it works better in recipes that would usually contain beans, such as in a rice bowl (as ground meat substitute). That being said, I'm definitely a carnivore and prefer meat, but I don't see anything wrong with choosing one of the fakey-fakey meaty things once in a while—just for a change.
+                            
+                            <br><br><strong>(E) Rico</strong><br>
+                            I finally tried one last week. It didn't taste that bad, but I was surprised to find it had 40 more calories than the meat version! Isn't it supposed to be a healthy choice?
+                            
+                            <br><br><strong>(F) Linda</strong><br>
+                            I liked it fine. I did NOT like the price, though. Hopefully that will come down. I'm trying to eat less beef.
+                            
+                            <br><br><strong>(G) Ablo</strong><br>
+                            Yes! My whole family does. We've been mostly vegan 90% of the time for the last 6 years and we cannot thank GreenBurger enough! Especially when a burger craving hits...a GreenBurger does the trick. I've tried all kinds of vegan "burgers," and GreenBurgers are closer to what I'm looking for. In fact, I can have them every day—vegan or not!
+                            
+                            <br><br><strong>(H) Alexander</strong><br>
+                            Well, they taste good if you add plenty of spices and sauces. Good for you? No, not at all. They're highly processed and contain no vegetables. They also contain a very large amount of processed coconut oil, which is even worse than lard. It's a killer for sure if eaten regularly. So why risk your life?
+                        </div>
+                    </div>
+
+                    <div class="question mixed-question">
+                        <div class="question-number">47-48</div>
+                        <div class="question-text">請從文章中找出最適當的單詞（word）填入下列句子空格中，並視語法需要做適當的字形變化。每格限填一個單詞（word）。（填充，4分）</div>
+                        <div class="mixed-answer-area">
+                            <p>On the whole, the chatroom discussions about GreenBurger mainly focus on the issues of <input type="text" name="q47" class="fill-blank" placeholder="47">, price, and <input type="text" name="q48" class="fill-blank" placeholder="48"> concerns.</p>
+                        </div>
+                    </div>
+
+                    <div class="question mixed-question">
+                        <div class="question-number">49</div>
+                        <div class="question-text">From (A) to (H) in the above chatroom discussions, which ones show that GreenBurger can be a choice for the chatroom participants themselves only under certain circumstances?（多選題，4分）</div>
+                        <div class="options multiple-choice">
+                            <label class="option">
+                                <input type="checkbox" name="q49" value="A">
+                                <span class="option-text">(A) Olivia</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q49" value="B">
+                                <span class="option-text">(B) Smith</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q49" value="C">
+                                <span class="option-text">(C) Mika</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q49" value="D">
+                                <span class="option-text">(D) Thomas</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q49" value="E">
+                                <span class="option-text">(E) Rico</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q49" value="F">
+                                <span class="option-text">(F) Linda</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q49" value="G">
+                                <span class="option-text">(G) Ablo</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q49" value="H">
+                                <span class="option-text">(H) Alexander</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question mixed-question">
+                        <div class="question-number">50</div>
+                        <div class="question-text">Which phrase in the chatroom discussions means "serves the purpose" or "works well"?（簡答，2分）</div>
+                        <div class="mixed-answer-area">
+                            <textarea name="q50" rows="2" placeholder="請在此輸入答案..."></textarea>
+                        </div>
+                    </div>
+                </section>
+            </form>
+        </div>
+    </main>
+
+    <div class="controls">
+        <div class="container">
+            <div class="control-buttons">
+                <a href="../index.html" class="btn btn-secondary">← 返回首頁</a>
+                <button type="button" class="btn btn-primary" id="checkAnswers">檢查答案</button>
+                <button type="button" class="btn btn-success" id="submitExam" style="display: none;">提交試卷</button>
+            </div>
+            <div class="stats" id="statsArea" style="display: none;">
+                <div class="stat-item">
+                    <span class="stat-label">答題進度</span>
+                    <span class="stat-value" id="progressText">0/46</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">正確題數</span>
+                    <span class="stat-value" id="correctCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">目前得分</span>
+                    <span class="stat-value" id="scoreText">0/72</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/exam-112.js"></script>
+</body>
+</html>
