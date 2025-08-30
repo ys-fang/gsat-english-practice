@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>114學年度學測英文 - 互動練習</title>
     <link rel="stylesheet" href="../styles/common.css">
+    <script src="../scripts/gsat-exam-base.js"></script>
 </head>
 <body>
     <header class="exam-header">
@@ -30,7 +31,7 @@
                 <!-- 一、詞彙題 (占10分) -->
                 <section class="section">
                     <h2 class="section-title">第壹部分、選擇題 (占62分)<br>一、詞彙題 (占10分)</h2>
-                    <p style="margin-bottom: 2rem; color: #666;">說明：第1題至第10題為單選題，每題1分。</p>
+                    <div class="section-instruction">說明：第1題至第10題為單選題，每題1分。</div>
 
                     <div class="question">
                         <div class="question-number">1</div>
@@ -286,7 +287,7 @@
                 <!-- 二、綜合測驗 (占10分) -->
                 <section class="section">
                     <h2 class="section-title">二、綜合測驗 (占10分)</h2>
-                    <p style="margin-bottom: 2rem; color: #666;">說明：第11題至第20題為單選題，每題1分。</p>
+                    <div class="section-instruction">說明：第11題至第20題為單選題，每題1分。</div>
 
                     <h3 style="margin-bottom: 1.5rem; color: #2c3e50;">第11至15題為題組</h3>
                     <div class="passage" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; line-height: 1.8;">
@@ -530,7 +531,7 @@
                 <!-- 三、文意選填 (占10分) -->
                 <section class="section">
                     <h2 class="section-title">三、文意選填 (占10分)</h2>
-                    <p style="margin-bottom: 2rem; color: #666;">說明：第21題至第30題為單選題，每題1分。</p>
+                    <div class="section-instruction">說明：第21題至第30題為單選題，每題1分。</div>
 
                     <h3 style="margin-bottom: 1.5rem; color: #2c3e50;">第21至30題為題組</h3>
                     <div class="passage" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; line-height: 1.8;">
@@ -624,7 +625,7 @@
                 <!-- 四、篇章結構 (占8分) -->
                 <section class="section">
                     <h2 class="section-title">四、篇章結構 (占8分)</h2>
-                    <p style="margin-bottom: 2rem; color: #666;">說明：第31題至第34題為單選題，每題2分。</p>
+                    <div class="section-instruction">說明：第31題至第34題為單選題，每題2分。</div>
 
                     <h3 style="margin-bottom: 1.5rem; color: #2c3e50;">第31至34題為題組</h3>
                     <div class="passage" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; line-height: 1.8;">
@@ -693,7 +694,7 @@
                 <!-- 五、閱讀測驗 (占24分) -->
                 <section class="section">
                     <h2 class="section-title">五、閱讀測驗 (占24分)</h2>
-                    <p style="margin-bottom: 2rem; color: #666;">說明：第35題至第46題為單選題，每題2分。</p>
+                    <div class="section-instruction">說明：第35題至第46題為單選題，每題2分。</div>
 
                     <h3 style="margin-bottom: 1.5rem; color: #2c3e50;">第35至38題為題組</h3>
                     <div class="passage" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; line-height: 1.8;">
@@ -867,7 +868,7 @@
                 <!-- 第貳部分、混合題 -->
                 <section class="section">
                     <h2 class="section-title">第貳部分、混合題 (占10分)</h2>
-                    <p style="margin-bottom: 2rem; color: #666;">說明：本部分共有1題組，限在標示題號的作答區內作答。</p>
+                    <div class="section-instruction">說明：本部分共有1題組，限在標示題號的作答區內作答。</div>
 
                     <div class="question">
                         <div class="question-number">49</div>
@@ -888,9 +889,21 @@
     <div class="controls">
         <div class="container">
             <div class="control-buttons">
-                <a href="../index.html" class="btn btn-secondary">← 返回首頁</a>
-                <button type="button" class="btn btn-primary" id="checkAnswers">檢查答案</button>
-                <button type="button" class="btn btn-success" id="submitExam" style="display: none;">提交試卷</button>
+                <a href="../index.html" class="btn btn-secondary">
+                    ← 返回首頁
+                </a>
+                <button type="button" class="btn btn-primary" id="showAnswersBtn">
+                    查看答案
+                </button>
+                <button type="button" class="btn btn-success" id="submitExamBtn">
+                    提交考卷
+                </button>
+                <button type="button" class="btn btn-warning" id="resetExamBtn">
+                    重新開始
+                </button>
+                <button type="button" class="btn btn-secondary" id="focusModeBtn">
+                    專注模式
+                </button>
             </div>
         </div>
     </div>

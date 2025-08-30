@@ -1,398 +1,160 @@
-// 114年學測英文試題 - 互動功能
-class Exam114 {
+/**
+ * 114學年度學測英文 - 專業考試系統
+ * GSAT 114 English Exam - Professional System
+ * 
+ * 基於統一基礎類實現，提供一致的專業考試體驗
+ */
+
+// 114年學測英文正確答案
+const answers114 = {
+    // 詞彙題 (1-10題) - 每題1分
+    q1: 'C',    // container - 容器放在漏水龍頭下
+    q2: 'A',    // produce - 農夫市集提供新鮮季節性農產品
+    q3: 'A',    // blurring - 童年記憶正在模糊
+    q4: 'C',    // offensive - 種族主義言論本質上是冒犯性的
+    q5: 'C',    // draft - 論文的第一份草稿
+    q6: 'D',    // vacant - 空置多年的廢棄房屋
+    q7: 'D',    // enormous - 高中生展現巨大的勇氣
+    q8: 'A',    // halted - 公共項目被停止或延遲
+    q9: 'B',    // graced - 總統以出席為典禮增光
+    q10: 'A',   // verbally - 口頭辱罵同事
+
+    // 綜合測驗 (11-20題) - 每題1分
+    q11: 'B',   // would spread - 未來會傳播到世界各地
+    q12: 'B',   // disrupted - 計劃被雨水打亂
+    q13: 'A',   // circulate - 想法可能流通和加深
+    q14: 'C',   // gave rise to - 產生了新形式的集體努力
+    q15: 'D',   // thus - 因此創造了世界咖啡廳
+    q16: 'D',   // strike - 暈車可以突然發作
+    q17: 'C',   // do not match - 大腦接收的信號不匹配
+    q18: 'C',   // don't - 其他部分沒有檢測到移動
+    q19: 'B',   // preventive measures - 預防措施
+    q20: 'A',   // as well - 眺望遠方也有幫助
+
+    // 文意選填 (21-30題) - 每題1分
+    q21: 'I',   // noted - 以其建築而聞名
+    q22: 'A',   // reference - 有文獻記載鐘聲
+    q23: 'B',   // bearing - 每個鐘都有名字
+    q24: 'F',   // survived - 唯一倖存法國革命的鐘
+    q25: 'D',   // retained - 保持其著名的優秀音質
+    q26: 'C',   // familiar - 成為巴黎生活中熟悉的一部分
+    q27: 'E',   // faithful - 呼召信徒祈禱
+    q28: 'G',   // celebration - 慶祝和哀悼時刻
+    q29: 'J',   // silent - 鐘聲沉寂
+    q30: 'H',   // restoration - 修復過程
+
+    // 篇章結構 (31-34題) - 每題2分
+    q31: 'D',   // 今天，它們在世界各地大城市的商業中心提供低預算過夜住宿
+    q32: 'C',   // 房間並排堆疊，兩單位高，上層房間通過梯子到達
+    q33: 'A',   // 為了回應不斷增長的需求，這些酒店正在擁抱創新浪潮
+    q34: 'B',   // 房間的薄塑料牆容易傳播鄰居的鼾聲
+
+    // 閱讀測驗 (35-46題) - 每題2分
+    // 第35-38題: 交通燈的發展
+    q35: 'A',   // 交通控制系統的演進
+    q36: 'C',   // 可動臂式交通信號燈
+    q37: 'D',   // 未來車輛在十字路口可能不需要交通燈
+    q38: 'C',   // 第三段最適合作為最後一句
+
+    // 第39-42題: 恐怖電影的影響
+    q39: 'A',   // 心理學研究
+    q40: 'B',   // 通過觀察學習
+    q41: 'D',   // 看恐怖電影可能對人格有長期影響
+    q42: 'B',   // 通過展示問題的對立觀點
+
+    // 第43-46題: 俄羅斯的酒精歷史
+    q43: 'C',   // 反駁俄羅斯人天生是飲酒者的假設
+    q44: 'A',   // 俄羅斯的伏特加生產始於15世紀
+    q45: 'D',   // 國家壟斷
+    q46: 'A'    // 提供更多事實
+};
+
+// 114年專用配置
+const config114 = {
+    totalQuestions: 46,
+    timeLimit: 100 * 60 * 1000, // 100分鐘
+    scores: {
+        vocabulary: { range: [1, 10], points: 1 },      // 詞彙題 1-10
+        cloze: { range: [11, 20], points: 1 },          // 綜合測驗 11-20  
+        fill: { range: [21, 30], points: 1 },           // 文意選填 21-30
+        structure: { range: [31, 34], points: 2 },      // 篇章結構 31-34
+        reading: { range: [35, 46], points: 2 }         // 閱讀測驗 35-46
+    }
+};
+
+// 114年專業考試系統類
+class Exam114 extends GSATExamBase {
     constructor() {
-        // 正確答案 (來自官方答案)
-        this.answers = {
-            q1: 'C', q2: 'A', q3: 'A', q4: 'C', q5: 'C',
-            q6: 'D', q7: 'D', q8: 'A', q9: 'B', q10: 'A',
-            q11: 'B', q12: 'B', q13: 'A', q14: 'C', q15: 'D',
-            q16: 'D', q17: 'C', q18: 'C', q19: 'B', q20: 'A',
-            q21: 'I', q22: 'A', q23: 'B', q24: 'F', q25: 'D',
-            q26: 'C', q27: 'E', q28: 'G', q29: 'J', q30: 'H',
-            q31: 'D', q32: 'C', q33: 'A', q34: 'B',
-            q35: 'A', q36: 'C', q37: 'D', q38: 'C',
-            q39: 'A', q40: 'B', q41: 'D', q42: 'B',
-            q43: 'C', q44: 'A', q45: 'D', q46: 'A',
-            q49: ['C', 'D', 'G', 'I'] // 多選題
+        super('114', answers114, config114);
+    }
+
+    /**
+     * 114年特有的學習建議
+     */
+    getSectionAdvice(sectionKey) {
+        const advice = {
+            vocabulary: '114年詞彙題涵蓋生活化詞彙，建議重點練習情境式單字記憶和詞性辨析',
+            cloze: '綜合測驗重視語法邏輯和語境理解，多練習時態運用和連接詞搭配',
+            fill: '文意選填考驗語義連貫性，需加強上下文語境判斷和詞彙搭配能力',
+            structure: '篇章結構著重邏輯發展，建議練習文章段落間的連貫性和轉折關係',
+            reading: '閱讀測驗題材豐富多元，建議廣泛閱讀科技、歷史、文化等不同領域文章'
         };
+        
+        return advice[sectionKey] || super.getSectionAdvice(sectionKey);
+    }
 
-        // 題目配分
-        this.scores = {
-            vocabulary: 10,     // 詞彙題 1-10 (每題1分)
-            cloze: 10,          // 綜合測驗 11-20 (每題1分)
-            fill: 10,           // 文意選填 21-30 (每題1分)
-            structure: 8,       // 篇章結構 31-34 (每題2分)
-            reading: 24,        // 閱讀測驗 35-46 (每題2分)
-            mixed: 10           // 混合題 47-50
+    /**
+     * 114年錯誤分析提示
+     */
+    getCommonMistakes() {
+        return {
+            vocabulary: ['container vs contents', 'produce vs product', 'blurring vs blasting'],
+            cloze: ['would vs will時態選擇', 'disrupted vs disturbed語境', '片語動詞gave rise to'],
+            fill: ['noted vs famous同義詞', 'survived vs remained', 'familiar vs similar詞義辨析'],
+            structure: ['段落邏輯連接', '時間順序判斷', '因果關係理解'],
+            reading: ['主旨歸納能力', '細節推理判斷', '作者意圖理解']
         };
-
-        this.totalQuestions = 46; // 選擇題總數
-        this.isSubmitted = false;
-        this.startTime = Date.now();
-        this.timeLimit = 100 * 60 * 1000; // 100分鐘
-
-        this.init();
     }
 
-    init() {
-        this.startTimer();
-        this.bindEvents();
-        this.loadProgress();
-    }
-
-    startTimer() {
-        const timerElement = document.getElementById('timer');
+    /**
+     * 114年專屬的額外分析
+     */
+    generatePerformanceAnalysis(totalScore, maxScore, sectionResults) {
+        let analysis = super.generatePerformanceAnalysis(totalScore, maxScore, sectionResults);
         
-        this.timerInterval = setInterval(() => {
-            const elapsed = Date.now() - this.startTime;
-            const remaining = this.timeLimit - elapsed;
-            
-            if (remaining <= 0) {
-                this.timeUp();
-                return;
-            }
-            
-            const minutes = Math.floor(remaining / 60000);
-            const seconds = Math.floor((remaining % 60000) / 1000);
-            
-            timerElement.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-            
-            // 剩餘時間警告
-            if (remaining <= 10 * 60 * 1000) { // 剩餘10分鐘
-                timerElement.classList.add('warning');
-            }
-        }, 1000);
-    }
-
-    timeUp() {
-        clearInterval(this.timerInterval);
-        alert('考試時間結束！系統將自動提交答案。');
-        this.submitExam();
-    }
-
-    bindEvents() {
-        // 選項點擊事件
-        document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
-            input.addEventListener('change', () => {
-                this.updateProgress();
-                this.saveProgress();
-                
-                // 視覺反饋
-                const option = input.closest('.option');
-                const allOptions = option.parentElement.querySelectorAll('.option');
-                
-                if (input.type === 'radio') {
-                    allOptions.forEach(opt => opt.classList.remove('selected'));
-                }
-                
-                if (input.checked) {
-                    option.classList.add('selected');
-                } else {
-                    option.classList.remove('selected');
-                }
-            });
-        });
-
-        // 檢查答案按鈕
-        document.getElementById('checkAnswers').addEventListener('click', () => {
-            this.checkAnswers();
-        });
-
-        // 提交試卷按鈕
-        document.getElementById('submitExam').addEventListener('click', () => {
-            this.submitExam();
-        });
-
-        // 頁面卸載時保存進度
-        window.addEventListener('beforeunload', () => {
-            this.saveProgress();
-        });
-    }
-
-    updateProgress() {
-        const totalQuestions = this.totalQuestions;
-        let answeredQuestions = 0;
-
-        // 計算已回答的題目數
-        for (let i = 1; i <= totalQuestions; i++) {
-            const questionName = `q${i}`;
-            const inputs = document.querySelectorAll(`input[name="${questionName}"]`);
-            
-            if (inputs.length > 0) {
-                const isAnswered = Array.from(inputs).some(input => input.checked);
-                if (isAnswered) answeredQuestions++;
-            }
-        }
-
-        // 更新進度條
-        const progressPercentage = (answeredQuestions / totalQuestions) * 100;
-        document.getElementById('progressBar').style.width = `${progressPercentage}%`;
-    }
-
-    saveProgress() {
-        const formData = new FormData(document.getElementById('examForm'));
-        const progress = {};
-        
-        for (let [key, value] of formData.entries()) {
-            progress[key] = value;
-        }
-        
-        localStorage.setItem('exam114_progress', JSON.stringify({
-            answers: progress,
-            timestamp: Date.now(),
-            startTime: this.startTime
-        }));
-    }
-
-    loadProgress() {
-        const saved = localStorage.getItem('exam114_progress');
-        if (!saved) return;
-
-        try {
-            const progress = JSON.parse(saved);
-            
-            // 恢復答案
-            for (let [questionName, answer] of Object.entries(progress.answers)) {
-                const input = document.querySelector(`input[name="${questionName}"][value="${answer}"]`);
-                if (input) {
-                    input.checked = true;
-                    input.closest('.option').classList.add('selected');
-                }
-            }
-            
-            // 恢復開始時間
-            if (progress.startTime) {
-                this.startTime = progress.startTime;
-            }
-            
-            this.updateProgress();
-        } catch (e) {
-            console.error('載入進度失敗:', e);
-        }
-    }
-
-    checkAnswers() {
-        if (this.isSubmitted) return;
-
-        const form = document.getElementById('examForm');
-        const formData = new FormData(form);
-        let correct = 0;
-        let total = 0;
-
-        // 檢查所有單選題答案
-        for (let i = 1; i <= 46; i++) {
-            const questionName = `q${i}`;
-            const userAnswer = formData.get(questionName);
-            const correctAnswer = this.answers[questionName];
-            
-            if (correctAnswer) {
-                total++;
-                const questionDiv = document.querySelector(`input[name="${questionName}"]`).closest('.question');
-                const options = questionDiv.querySelectorAll('.option');
-                
-                options.forEach(option => {
-                    const input = option.querySelector('input');
-                    const value = input.value;
-                    
-                    // 清除之前的樣式
-                    option.classList.remove('correct', 'incorrect');
-                    
-                    if (value === correctAnswer) {
-                        option.classList.add('correct');
-                    } else if (value === userAnswer && value !== correctAnswer) {
-                        option.classList.add('incorrect');
-                    }
-                });
-                
-                if (userAnswer === correctAnswer) {
-                    correct++;
-                }
-            }
-        }
-
-        // 顯示成績
-        this.showResults(correct, total);
-        
-        // 顯示提交按鈕
-        document.getElementById('checkAnswers').style.display = 'none';
-        document.getElementById('submitExam').style.display = 'block';
-    }
-
-    showResults(correct, total) {
-        const percentage = Math.round((correct / total) * 100);
-        const scoreDisplay = document.getElementById('currentScore');
-        const scoreValue = document.getElementById('scoreValue');
-        
-        // 計算各部分得分
-        let vocabularyScore = 0;
-        let clozeScore = 0;
-        let fillScore = 0;
-        let structureScore = 0;
-        let readingScore = 0;
-        
-        const formData = new FormData(document.getElementById('examForm'));
-        
-        // 詞彙題 (1-10)
-        for (let i = 1; i <= 10; i++) {
-            if (formData.get(`q${i}`) === this.answers[`q${i}`]) {
-                vocabularyScore++;
-            }
-        }
-        
-        // 綜合測驗 (11-20)
-        for (let i = 11; i <= 20; i++) {
-            if (formData.get(`q${i}`) === this.answers[`q${i}`]) {
-                clozeScore++;
-            }
-        }
-        
-        // 文意選填 (21-30)
-        for (let i = 21; i <= 30; i++) {
-            if (formData.get(`q${i}`) === this.answers[`q${i}`]) {
-                fillScore++;
-            }
-        }
-        
-        // 篇章結構 (31-34, 每題2分)
-        for (let i = 31; i <= 34; i++) {
-            if (formData.get(`q${i}`) === this.answers[`q${i}`]) {
-                structureScore += 2;
-            }
-        }
-        
-        // 閱讀測驗 (35-46, 每題2分)
-        for (let i = 35; i <= 46; i++) {
-            if (formData.get(`q${i}`) === this.answers[`q${i}`]) {
-                readingScore += 2;
-            }
-        }
-        
-        const totalScore = vocabularyScore + clozeScore + fillScore + structureScore + readingScore;
-        
-        scoreValue.textContent = `${totalScore}/62`;
-        scoreDisplay.style.display = 'block';
-        
-        // 創建詳細結果顯示
-        this.createDetailedResults({
-            vocabulary: { score: vocabularyScore, total: 10 },
-            cloze: { score: clozeScore, total: 10 },
-            fill: { score: fillScore, total: 10 },
-            structure: { score: structureScore, total: 8 },
-            reading: { score: readingScore, total: 24 },
-            total: { score: totalScore, total: 62 }
-        });
-    }
-
-    createDetailedResults(results) {
-        const existingResults = document.querySelector('.result-summary');
-        if (existingResults) {
-            existingResults.remove();
-        }
-
-        const resultDiv = document.createElement('div');
-        resultDiv.className = 'result-summary';
-        resultDiv.innerHTML = `
-            <div class="score">${results.total.score}/62</div>
-            <div style="font-size: 1.2rem; margin-bottom: 1rem;">
-                得分率: ${Math.round((results.total.score / results.total.total) * 100)}%
-            </div>
-            <div class="score-details">
-                <div class="score-item">
-                    <div class="label">詞彙題</div>
-                    <div class="value">${results.vocabulary.score}/${results.vocabulary.total}</div>
-                </div>
-                <div class="score-item">
-                    <div class="label">綜合測驗</div>
-                    <div class="value">${results.cloze.score}/${results.cloze.total}</div>
-                </div>
-                <div class="score-item">
-                    <div class="label">文意選填</div>
-                    <div class="value">${results.fill.score}/${results.fill.total}</div>
-                </div>
-                <div class="score-item">
-                    <div class="label">篇章結構</div>
-                    <div class="value">${results.structure.score}/${results.structure.total}</div>
-                </div>
-                <div class="score-item">
-                    <div class="label">閱讀測驗</div>
-                    <div class="value">${results.reading.score}/${results.reading.total}</div>
-                </div>
+        // 添加114年特有的學習重點提醒
+        const year114Tips = `
+            <div style="margin-top: 1rem; padding: 1rem; background: #e8f5e8; border-left: 4px solid #4caf50;">
+                <strong>💡 114年學測特色提醒：</strong>
+                <ul style="margin-top: 0.5rem; padding-left: 1.5rem; margin-bottom: 0;">
+                    <li>本年度英文科強調實用性和生活化應用</li>
+                    <li>詞彙題多考查情境中的詞彙運用能力</li>
+                    <li>閱讀文章涵蓋科技發展、文化歷史等多元主題</li>
+                    <li>建議加強跨領域英語閱讀和語境判斷能力</li>
+                </ul>
             </div>
         `;
-
-        // 插入到主要內容區域的開始
-        const mainContent = document.querySelector('.exam-content .container');
-        mainContent.insertBefore(resultDiv, mainContent.firstChild);
-
-        // 滾動到結果區域
-        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    submitExam() {
-        if (this.isSubmitted) return;
-
-        const confirmation = confirm('確定要提交試卷嗎？提交後將無法再修改答案。');
-        if (!confirmation) return;
-
-        this.isSubmitted = true;
-        clearInterval(this.timerInterval);
-
-        // 禁用所有輸入
-        document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
-            input.disabled = true;
-        });
-
-        // 隱藏控制按鈕
-        document.querySelector('.controls').style.display = 'none';
-
-        // 保存最終結果
-        this.saveFinalResults();
-
-        // 顯示提交成功訊息
-        const message = document.createElement('div');
-        message.style.cssText = `
-            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
-            color: white; padding: 2rem; border-radius: 15px;
-            text-align: center; z-index: 1000;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            font-size: 1.2rem;
-        `;
-        message.innerHTML = `
-            <div style="font-size: 2rem; margin-bottom: 1rem;">✓</div>
-            <div>試卷提交成功！</div>
-            <div style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.9;">
-                感謝您使用學測英文練習系統
-            </div>
-        `;
-        document.body.appendChild(message);
-
-        setTimeout(() => {
-            message.remove();
-        }, 3000);
-    }
-
-    saveFinalResults() {
-        const formData = new FormData(document.getElementById('examForm'));
-        const results = {
-            answers: {},
-            score: document.getElementById('scoreValue').textContent,
-            completedAt: new Date().toISOString(),
-            timeSpent: Date.now() - this.startTime
-        };
-
-        for (let [key, value] of formData.entries()) {
-            results.answers[key] = value;
-        }
-
-        localStorage.setItem('exam114_final_results', JSON.stringify(results));
         
-        // 清除進度數據
-        localStorage.removeItem('exam114_progress');
+        return analysis + year114Tips;
     }
 }
 
-// 初始化考試
+// 頁面載入完成後初始化114年考試系統
 document.addEventListener('DOMContentLoaded', () => {
-    new Exam114();
+    // 確保基礎類已載入
+    if (typeof GSATExamBase === 'undefined') {
+        console.error('基礎類未載入，請確認 gsat-exam-base.js 已正確引入');
+        return;
+    }
+    
+    // 建立114年考試實例
+    window.exam = new Exam114();
+    
+    console.log('🎓 114學年度學測英文專業考試系統已啟動');
+    console.log('📚 功能特色：');
+    console.log('   - 專業考試風格界面');
+    console.log('   - 智能進度管理與分析');
+    console.log('   - 考試模擬功能（專注模式、書籤）');
+    console.log('   - 個人化學習建議');
+    console.log('   - 手機優化響應式設計');
 });
