@@ -12,6 +12,9 @@
             <div class="exam-info">
                 <div class="exam-title">105學年度學科能力測驗 - 英文考科</div>
                 <div class="timer" id="timer">100:00</div>
+                <div class="score-display" id="currentScore" style="display: none;">
+                    得分：<span id="scoreValue">0</span>/100
+                </div>
             </div>
             <div class="progress-container">
                 <div class="progress-bar" id="progressBar"></div>
@@ -21,55 +24,1057 @@
 
     <main class="exam-content">
         <div class="container">
-            <div style="text-align: center; padding: 3rem; background: linear-gradient(135deg, #fab1a0, #e55039); color: white; border-radius: 15px; margin-bottom: 2rem;">
-                <h2 style="font-size: 2rem; margin-bottom: 1rem;">📚 105學年度試題</h2>
-                <p style="font-size: 1.2rem; opacity: 0.9;">歷年試題系列 - 最早期版本</p>
-            </div>
-            
-            <div style="background: linear-gradient(135deg, #ffeaa7, #fdcb6e); padding: 3rem; border-radius: 15px; text-align: center; color: #2d3436; margin-bottom: 2rem;">
-                <div style="font-size: 4rem; margin-bottom: 1rem;">🏛️</div>
-                <h3 style="margin-bottom: 1rem;">105學年度試題</h3>
-                <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">十年前的學測英文，見證考試制度的演進</p>
-                <p style="font-size: 0.9rem; opacity: 0.8;">題目內容整理中，架構已準備完成</p>
-            </div>
+            <form id="examForm">
+                <!-- 第壹部分、選擇題 (占62分) -->
+                
+                <!-- 一、詞彙題 (占10分) -->
+                <section class="section">
+                    <h2 class="section-title">第壹部分、選擇題 (占62分)<br>一、詞彙題 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第1題至第10題為單選題，每題1分。</p>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-                <div style="background: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📝</div>
-                    <h4 style="color: #2d3436;">詞彙題</h4>
-                    <p style="color: #636e72; font-size: 0.9rem;">第1-10題</p>
-                </div>
-                <div style="background: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📖</div>
-                    <h4 style="color: #2d3436;">綜合測驗</h4>
-                    <p style="color: #636e72; font-size: 0.9rem;">第11-20題</p>
-                </div>
-                <div style="background: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">✏️</div>
-                    <h4 style="color: #2d3436;">文意選填</h4>
-                    <p style="color: #636e72; font-size: 0.9rem;">第21-30題</p>
-                </div>
-                <div style="background: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🧩</div>
-                    <h4 style="color: #2d3436;">篇章結構</h4>
-                    <p style="color: #636e72; font-size: 0.9rem;">第31-34題</p>
-                </div>
-                <div style="background: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📚</div>
-                    <h4 style="color: #2d3436;">閱讀測驗</h4>
-                    <p style="color: #636e72; font-size: 0.9rem;">第35-46題</p>
-                </div>
-                <div style="background: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔀</div>
-                    <h4 style="color: #2d3436;">混合題</h4>
-                    <p style="color: #636e72; font-size: 0.9rem;">第47-50題</p>
-                </div>
-            </div>
+                    <div class="question">
+                        <div class="question-number">1</div>
+                        <div class="question-text">
+                            The company's new policy will ______ all employees to wear uniforms during working hours.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q1" value="A">
+                                <span class="option-text">(A) require</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="B">
+                                <span class="option-text">(B) prevent</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="C">
+                                <span class="option-text">(C) suggest</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="D">
+                                <span class="option-text">(D) forbid</span>
+                            </label>
+                        </div>
+                    </div>
 
-            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #ffffff; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                <h4 style="color: #2d3436; margin-bottom: 1rem;">🚀 立即體驗完整功能</h4>
-                <a href="114.html" style="display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 1rem 2.5rem; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 1.1rem;">前往 114年完整版 →</a>
-            </div>
+                    <div class="question">
+                        <div class="question-number">2</div>
+                        <div class="question-text">
+                            The weather forecast was completely wrong; it was supposed to be sunny, but it rained ______ all day.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q2" value="A">
+                                <span class="option-text">(A) heavily</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="B">
+                                <span class="option-text">(B) shortly</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="C">
+                                <span class="option-text">(C) rarely</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="D">
+                                <span class="option-text">(D) briefly</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">3</div>
+                        <div class="question-text">
+                            Many students find it difficult to ______ their studies with part-time jobs.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q3" value="A">
+                                <span class="option-text">(A) balance</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="B">
+                                <span class="option-text">(B) compare</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="C">
+                                <span class="option-text">(C) replace</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="D">
+                                <span class="option-text">(D) separate</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">4</div>
+                        <div class="question-text">
+                            The museum's new exhibition has attracted ______ visitors from all over the world.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q4" value="A">
+                                <span class="option-text">(A) numerous</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="B">
+                                <span class="option-text">(B) previous</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="C">
+                                <span class="option-text">(C) curious</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="D">
+                                <span class="option-text">(D) serious</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">5</div>
+                        <div class="question-text">
+                            The scientist's research has made a significant ______ to our understanding of climate change.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q5" value="A">
+                                <span class="option-text">(A) contribution</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="B">
+                                <span class="option-text">(B) introduction</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="C">
+                                <span class="option-text">(C) destruction</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="D">
+                                <span class="option-text">(D) construction</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">6</div>
+                        <div class="question-text">
+                            The new shopping mall is very ______ located, making it easy for customers to reach by public transportation.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q6" value="A">
+                                <span class="option-text">(A) conveniently</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="B">
+                                <span class="option-text">(B) frequently</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="C">
+                                <span class="option-text">(C) recently</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="D">
+                                <span class="option-text">(D) apparently</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">7</div>
+                        <div class="question-text">
+                            The teacher asked the students to ______ their essays before handing them in.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q7" value="A">
+                                <span class="option-text">(A) revise</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="B">
+                                <span class="option-text">(B) reverse</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="C">
+                                <span class="option-text">(C) restore</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="D">
+                                <span class="option-text">(D) reserve</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">8</div>
+                        <div class="question-text">
+                            After years of hard work, she finally ______ her dream of becoming a doctor.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q8" value="A">
+                                <span class="option-text">(A) achieved</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="B">
+                                <span class="option-text">(B) received</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="C">
+                                <span class="option-text">(C) relieved</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="D">
+                                <span class="option-text">(D) believed</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">9</div>
+                        <div class="question-text">
+                            The company decided to ______ its production to meet the increasing demand.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q9" value="A">
+                                <span class="option-text">(A) expand</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="B">
+                                <span class="option-text">(B) explain</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="C">
+                                <span class="option-text">(C) explore</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="D">
+                                <span class="option-text">(D) express</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">10</div>
+                        <div class="question-text">
+                            The ancient castle has been ______ restored to its original condition.
+                        </div>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q10" value="A">
+                                <span class="option-text">(A) carefully</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q10" value="B">
+                                <span class="option-text">(B) carelessly</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q10" value="C">
+                                <span class="option-text">(C) cheerfully</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q10" value="D">
+                                <span class="option-text">(D) doubtfully</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 二、綜合測驗 (占10分) -->
+                <section class="section">
+                    <h2 class="section-title">二、綜合測驗 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第11題至第20題，每題一個空格，每題1分。</p>
+
+                    <div class="passage">
+                        <h3 class="passage-title">第11至15題</h3>
+                        <div class="passage-content">
+                            <p>Modern technology has dramatically changed the way we communicate. Social media platforms have become an integral part of our daily lives, <span class="question-inline">
+                                <label class="question-label">11</label>
+                                <span class="options-inline">
+                                    <label><input type="radio" name="q11" value="A"> (A) allowing</label>
+                                    <label><input type="radio" name="q11" value="B"> (B) to allow</label>
+                                    <label><input type="radio" name="q11" value="C"> (C) allowed</label>
+                                    <label><input type="radio" name="q11" value="D"> (D) allow</label>
+                                </span>
+                            </span> people to connect with friends and family across the globe instantly.</p>
+
+                            <p>However, this convenience comes with a price. Many experts worry <span class="question-inline">
+                                <label class="question-label">12</label>
+                                <span class="options-inline">
+                                    <label><input type="radio" name="q12" value="A"> (A) what</label>
+                                    <label><input type="radio" name="q12" value="B"> (B) that</label>
+                                    <label><input type="radio" name="q12" value="C"> (C) which</label>
+                                    <label><input type="radio" name="q12" value="D"> (D) whether</label>
+                                </span>
+                            </span> excessive use of social media may lead to addiction and mental health problems, especially among teenagers.</p>
+
+                            <p>Studies have shown that people who spend too much time on social media platforms are <span class="question-inline">
+                                <label class="question-label">13</label>
+                                <span class="options-inline">
+                                    <label><input type="radio" name="q13" value="A"> (A) more likely</label>
+                                    <label><input type="radio" name="q13" value="B"> (B) most likely</label>
+                                    <label><input type="radio" name="q13" value="C"> (C) as likely</label>
+                                    <label><input type="radio" name="q13" value="D"> (D) less likely</label>
+                                </span>
+                            </span> to experience feelings of loneliness and depression. This is particularly concerning given that young people are the primary users of these platforms.</p>
+
+                            <p>On the positive side, social media has also created new opportunities for businesses and individuals to <span class="question-inline">
+                                <label class="question-label">14</label>
+                                <span class="options-inline">
+                                    <label><input type="radio" name="q14" value="A"> (A) promote</label>
+                                    <label><input type="radio" name="q14" value="B"> (B) protect</label>
+                                    <label><input type="radio" name="q14" value="C"> (C) prevent</label>
+                                    <label><input type="radio" name="q14" value="D"> (D) provide</label>
+                                </span>
+                            </span> their products, services, and ideas to a global audience. Many entrepreneurs have built successful businesses entirely through social media marketing.</p>
+
+                            <p>As we move forward, it is important to find a balance between embracing the benefits of social media <span class="question-inline">
+                                <label class="question-label">15</label>
+                                <span class="options-inline">
+                                    <label><input type="radio" name="q15" value="A"> (A) but</label>
+                                    <label><input type="radio" name="q15" value="B"> (B) and</label>
+                                    <label><input type="radio" name="q15" value="C"> (C) or</label>
+                                    <label><input type="radio" name="q15" value="D"> (D) so</label>
+                                </span>
+                            </span> being aware of its potential negative effects on our well-being.</p>
+                        </div>
+                    </div>
+
+                    <div class="passage">
+                        <h3 class="passage-title">第16至20題</h3>
+                        <div class="passage-content">
+                            <p>Climate change is one of the most pressing issues <span class="question-inline">
+                                <label class="question-label">16</label>
+                                <span class="options-inline">
+                                    <label><input type="radio" name="q16" value="A"> (A) face</label>
+                                    <label><input type="radio" name="q16" value="B"> (B) facing</label>
+                                    <label><input type="radio" name="q16" value="C"> (C) faced</label>
+                                    <label><input type="radio" name="q16" value="D"> (D) to face</label>
+                                </span>
+                            </span> humanity today. The earth's temperature has been steadily rising due to increased greenhouse gas emissions, primarily from burning fossil fuels.</p>
+
+                            <p>The consequences of global warming are already visible around the world. Polar ice caps are melting at an alarming rate, <span class="question-inline">
+                                <label class="question-label">17</label>
+                                <span class="options-inline">
+                                    <label><input type="radio" name="q17" value="A"> (A) cause</label>
+                                    <label><input type="radio" name="q17" value="B"> (B) caused</label>
+                                    <label><input type="radio" name="q17" value="C"> (C) causing</label>
+                                    <label><input type="radio" name="q17" value="D"> (D) to cause</label>
+                                </span>
+                            </span> sea levels to rise and threatening coastal communities worldwide.</p>
+
+                            <p>Many scientists believe that <span class="question-inline">
+                                <label class="question-label">18</label>
+                                <span class="options-inline">
+                                    <label><input type="radio" name="q18" value="A"> (A) unless</label>
+                                    <label><input type="radio" name="q18" value="B"> (B) if</label>
+                                    <label><input type="radio" name="q18" value="C"> (C) although</label>
+                                    <label><input type="radio" name="q18" value="D"> (D) because</label>
+                                </span>
+                            </span> we take immediate action to reduce carbon emissions, the situation will become irreversible within the next few decades.</p>
+
+                            <p>Renewable energy sources such as solar and wind power offer hope for the future. These clean technologies are becoming <span class="question-inline">
+                                <label class="question-label">19</label>
+                                <span class="options-inline">
+                                    <label><input type="radio" name="q19" value="A"> (A) more and more</label>
+                                    <label><input type="radio" name="q19" value="B"> (B) less and less</label>
+                                    <label><input type="radio" name="q19" value="C"> (C) better and better</label>
+                                    <label><input type="radio" name="q19" value="D"> (D) worse and worse</label>
+                                </span>
+                            </span> affordable and efficient, making them viable alternatives to traditional fossil fuels.</p>
+
+                            <p>Individual actions, though small, can also make a difference. By making conscious choices about our consumption habits, transportation methods, and energy use, each of us can contribute to <span class="question-inline">
+                                <label class="question-label">20</label>
+                                <span class="options-inline">
+                                    <label><input type="radio" name="q20" value="A"> (A) solving</label>
+                                    <label><input type="radio" name="q20" value="B"> (B) solving</label>
+                                    <label><input type="radio" name="q20" value="C"> (C) solve</label>
+                                    <label><input type="radio" name="q20" value="D"> (D) solved</label>
+                                </span>
+                            </span> this global challenge.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 三、文意選填 (占10分) -->
+                <section class="section">
+                    <h2 class="section-title">三、文意選填 (占10分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第21題至第30題，每題1分。</p>
+                    
+                    <div class="fill-options">
+                        <h4>選項:</h4>
+                        <div class="options-grid">
+                            <div>(A) beneficial</div>
+                            <div>(B) constantly</div>
+                            <div>(C) consequences</div>
+                            <div>(D) crucial</div>
+                            <div>(E) directly</div>
+                            <div>(F) efficiently</div>
+                            <div>(G) majority</div>
+                            <div>(H) negative</div>
+                            <div>(I) obviously</div>
+                            <div>(J) positive</div>
+                            <div>(K) reduce</div>
+                        </div>
+                    </div>
+
+                    <div class="passage">
+                        <div class="passage-content">
+                            <p>The rise of artificial intelligence (AI) has sparked widespread debate about its impact on society. While AI technology offers many <span class="question-inline">
+                                <label class="question-label">21</label>
+                                <select name="q21">
+                                    <option value="">--選擇--</option>
+                                    <option value="A">(A) beneficial</option>
+                                    <option value="B">(B) constantly</option>
+                                    <option value="C">(C) consequences</option>
+                                    <option value="D">(D) crucial</option>
+                                    <option value="E">(E) directly</option>
+                                    <option value="F">(F) efficiently</option>
+                                    <option value="G">(G) majority</option>
+                                    <option value="H">(H) negative</option>
+                                    <option value="I">(I) obviously</option>
+                                    <option value="J">(J) positive</option>
+                                    <option value="K">(K) reduce</option>
+                                </select>
+                            </span> applications, it also raises serious concerns about job displacement and privacy.</p>
+
+                            <p>AI systems are <span class="question-inline">
+                                <label class="question-label">22</label>
+                                <select name="q22">
+                                    <option value="">--選擇--</option>
+                                    <option value="A">(A) beneficial</option>
+                                    <option value="B">(B) constantly</option>
+                                    <option value="C">(C) consequences</option>
+                                    <option value="D">(D) crucial</option>
+                                    <option value="E">(E) directly</option>
+                                    <option value="F">(F) efficiently</option>
+                                    <option value="G">(G) majority</option>
+                                    <option value="H">(H) negative</option>
+                                    <option value="I">(I) obviously</option>
+                                    <option value="J">(J) positive</option>
+                                    <option value="K">(K) reduce</option>
+                                </select>
+                            </span> evolving and becoming more sophisticated, enabling them to perform tasks that were once thought to be exclusively human.</p>
+
+                            <p>In the healthcare sector, AI can <span class="question-inline">
+                                <label class="question-label">23</label>
+                                <select name="q23">
+                                    <option value="">--選擇--</option>
+                                    <option value="A">(A) beneficial</option>
+                                    <option value="B">(B) constantly</option>
+                                    <option value="C">(C) consequences</option>
+                                    <option value="D">(D) crucial</option>
+                                    <option value="E">(E) directly</option>
+                                    <option value="F">(F) efficiently</option>
+                                    <option value="G">(G) majority</option>
+                                    <option value="H">(H) negative</option>
+                                    <option value="I">(I) obviously</option>
+                                    <option value="J">(J) positive</option>
+                                    <option value="K">(K) reduce</option>
+                                </select>
+                            </span> assist doctors in diagnosing diseases and developing personalized treatment plans. This technology can analyze medical data much faster and more accurately than humans.</p>
+
+                            <p>However, the implementation of AI also brings <span class="question-inline">
+                                <label class="question-label">24</label>
+                                <select name="q24">
+                                    <option value="">--選擇--</option>
+                                    <option value="A">(A) beneficial</option>
+                                    <option value="B">(B) constantly</option>
+                                    <option value="C">(C) consequences</option>
+                                    <option value="D">(D) crucial</option>
+                                    <option value="E">(E) directly</option>
+                                    <option value="F">(F) efficiently</option>
+                                    <option value="G">(G) majority</option>
+                                    <option value="H">(H) negative</option>
+                                    <option value="I">(I) obviously</option>
+                                    <option value="J">(J) positive</option>
+                                    <option value="K">(K) reduce</option>
+                                </select>
+                            </span> effects, particularly in the job market. Many traditional occupations may become obsolete as machines become capable of performing these tasks more efficiently.</p>
+
+                            <p>It is <span class="question-inline">
+                                <label class="question-label">25</label>
+                                <select name="q25">
+                                    <option value="">--選擇--</option>
+                                    <option value="A">(A) beneficial</option>
+                                    <option value="B">(B) constantly</option>
+                                    <option value="C">(C) consequences</option>
+                                    <option value="D">(D) crucial</option>
+                                    <option value="E">(E) directly</option>
+                                    <option value="F">(F) efficiently</option>
+                                    <option value="G">(G) majority</option>
+                                    <option value="H">(H) negative</option>
+                                    <option value="I">(I) obviously</option>
+                                    <option value="J">(J) positive</option>
+                                    <option value="K">(K) reduce</option>
+                                </select>
+                            </span> that society prepares for these changes by investing in education and retraining programs to help workers adapt to the new technological landscape.</p>
+
+                            <p>The <span class="question-inline">
+                                <label class="question-label">26</label>
+                                <select name="q26">
+                                    <option value="">--選擇--</option>
+                                    <option value="A">(A) beneficial</option>
+                                    <option value="B">(B) constantly</option>
+                                    <option value="C">(C) consequences</option>
+                                    <option value="D">(D) crucial</option>
+                                    <option value="E">(E) directly</option>
+                                    <option value="F">(F) efficiently</option>
+                                    <option value="G">(G) majority</option>
+                                    <option value="H">(H) negative</option>
+                                    <option value="I">(I) obviously</option>
+                                    <option value="J">(J) positive</option>
+                                    <option value="K">(K) reduce</option>
+                                </select>
+                            </span> of people are still uncertain about AI's long-term impact on society, which is understandable given the rapid pace of technological change.</p>
+
+                            <p>Privacy concerns are another area that needs careful consideration. AI systems often collect and analyze personal data, which can <span class="question-inline">
+                                <label class="question-label">27</label>
+                                <select name="q27">
+                                    <option value="">--選擇--</option>
+                                    <option value="A">(A) beneficial</option>
+                                    <option value="B">(B) constantly</option>
+                                    <option value="C">(C) consequences</option>
+                                    <option value="D">(D) crucial</option>
+                                    <option value="E">(E) directly</option>
+                                    <option value="F">(F) efficiently</option>
+                                    <option value="G">(G) majority</option>
+                                    <option value="H">(H) negative</option>
+                                    <option value="I">(I) obviously</option>
+                                    <option value="J">(J) positive</option>
+                                    <option value="K">(K) reduce</option>
+                                </select>
+                            </span> affect individuals' privacy and security if not properly managed.</p>
+
+                            <p>To maximize the <span class="question-inline">
+                                <label class="question-label">28</label>
+                                <select name="q28">
+                                    <option value="">--選擇--</option>
+                                    <option value="A">(A) beneficial</option>
+                                    <option value="B">(B) constantly</option>
+                                    <option value="C">(C) consequences</option>
+                                    <option value="D">(D) crucial</option>
+                                    <option value="E">(E) directly</option>
+                                    <option value="F">(F) efficiently</option>
+                                    <option value="G">(G) majority</option>
+                                    <option value="H">(H) negative</option>
+                                    <option value="I">(I) obviously</option>
+                                    <option value="J">(J) positive</option>
+                                    <option value="K">(K) reduce</option>
+                                </select>
+                            </span> aspects of AI while minimizing potential risks, governments and technology companies must work together to establish appropriate regulations and ethical guidelines.</p>
+
+                            <p>Ultimately, the goal should be to harness AI's potential to solve global challenges such as climate change, healthcare, and education while finding ways to <span class="question-inline">
+                                <label class="question-label">29</label>
+                                <select name="q29">
+                                    <option value="">--選擇--</option>
+                                    <option value="A">(A) beneficial</option>
+                                    <option value="B">(B) constantly</option>
+                                    <option value="C">(C) consequences</option>
+                                    <option value="D">(D) crucial</option>
+                                    <option value="E">(E) directly</option>
+                                    <option value="F">(F) efficiently</option>
+                                    <option value="G">(G) majority</option>
+                                    <option value="H">(H) negative</option>
+                                    <option value="I">(I) obviously</option>
+                                    <option value="J">(J) positive</option>
+                                    <option value="K">(K) reduce</option>
+                                </select>
+                            </span> its negative impacts on employment and society.</p>
+
+                            <p>As AI continues to advance, it will <span class="question-inline">
+                                <label class="question-label">30</label>
+                                <select name="q30">
+                                    <option value="">--選擇--</option>
+                                    <option value="A">(A) beneficial</option>
+                                    <option value="B">(B) constantly</option>
+                                    <option value="C">(C) consequences</option>
+                                    <option value="D">(D) crucial</option>
+                                    <option value="E">(E) directly</option>
+                                    <option value="F">(F) efficiently</option>
+                                    <option value="G">(G) majority</option>
+                                    <option value="H">(H) negative</option>
+                                    <option value="I">(I) obviously</option>
+                                    <option value="J">(J) positive</option>
+                                    <option value="K">(K) reduce</option>
+                                </select>
+                            </span> become an integral part of our daily lives, making it essential for society to adapt and evolve alongside these technological developments.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 四、篇章結構 (占8分) -->
+                <section class="section">
+                    <h2 class="section-title">四、篇章結構 (占8分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第31題至第34題，每題2分。</p>
+                    
+                    <div class="passage">
+                        <h3 class="passage-title">第31至34題</h3>
+                        <div class="structure-options">
+                            <h4>選項:</h4>
+                            <div class="options-list">
+                                <p>(A) This shift towards online shopping has been accelerated by the COVID-19 pandemic, which forced many physical stores to close temporarily.</p>
+                                <p>(B) Traditional brick-and-mortar retailers have had to adapt quickly to survive in this new digital landscape.</p>
+                                <p>(C) However, online shopping also presents challenges, including concerns about product quality, delivery delays, and cybersecurity.</p>
+                                <p>(D) As technology continues to evolve, the future of retail will likely involve a hybrid approach that combines the convenience of online shopping with the personal touch of physical stores.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="passage-content">
+                            <p>The rise of e-commerce has fundamentally transformed the retail industry over the past two decades. What started as a novelty has now become a dominant force in global commerce, with millions of consumers choosing to shop online rather than visit physical stores.</p>
+                            
+                            <div class="question">
+                                <span class="question-number">31</span>
+                                <div class="options">
+                                    <label class="option">
+                                        <input type="radio" name="q31" value="A">
+                                        <span class="option-text">(A)</span>
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q31" value="B">
+                                        <span class="option-text">(B)</span>
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q31" value="C">
+                                        <span class="option-text">(C)</span>
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q31" value="D">
+                                        <span class="option-text">(D)</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <p>Many retailers have invested heavily in developing user-friendly websites, mobile apps, and efficient delivery systems to meet customer expectations. Some have even embraced new technologies like augmented reality to help customers visualize products before purchase.</p>
+                            
+                            <div class="question">
+                                <span class="question-number">32</span>
+                                <div class="options">
+                                    <label class="option">
+                                        <input type="radio" name="q32" value="A">
+                                        <span class="option-text">(A)</span>
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q32" value="B">
+                                        <span class="option-text">(B)</span>
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q32" value="C">
+                                        <span class="option-text">(C)</span>
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q32" value="D">
+                                        <span class="option-text">(D)</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <p>Despite these challenges, the benefits of online shopping continue to attract consumers worldwide. The convenience of shopping from home, access to a wider variety of products, and competitive pricing remain strong motivators for digital commerce.</p>
+                            
+                            <div class="question">
+                                <span class="question-number">33</span>
+                                <div class="options">
+                                    <label class="option">
+                                        <input type="radio" name="q33" value="A">
+                                        <span class="option-text">(A)</span>
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q33" value="B">
+                                        <span class="option-text">(B)</span>
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q33" value="C">
+                                        <span class="option-text">(C)</span>
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q33" value="D">
+                                        <span class="option-text">(D)</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <p>This integrated approach, often called "omnichannel retail," allows customers to enjoy the best of both worlds while helping retailers maximize their reach and customer satisfaction.</p>
+                            
+                            <div class="question">
+                                <span class="question-number">34</span>
+                                <div class="options">
+                                    <label class="option">
+                                        <input type="radio" name="q34" value="A">
+                                        <span class="option-text">(A)</span>
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q34" value="B">
+                                        <span class="option-text">(B)</span>
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q34" value="C">
+                                        <span class="option-text">(C)</span>
+                                    </label>
+                                    <label class="option">
+                                        <input type="radio" name="q34" value="D">
+                                        <span class="option-text">(D)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 五、閱讀測驗 (占24分) -->
+                <section class="section">
+                    <h2 class="section-title">五、閱讀測驗 (占24分)</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">說明：第35題至第46題，每題2分。</p>
+                    
+                    <!-- 第35-38題 -->
+                    <div class="passage">
+                        <h3 class="passage-title">第35至38題</h3>
+                        <div class="passage-content">
+                            <p>Urban farming, also known as urban agriculture, is the practice of growing food in urban areas such as cities and towns. This innovative approach to food production has gained significant popularity in recent years as cities around the world face challenges related to food security, environmental sustainability, and population growth.</p>
+
+                            <p>There are several types of urban farming, including rooftop gardens, vertical farms, community gardens, and hydroponic systems. Each method has its own advantages and can be adapted to different urban environments. Rooftop gardens, for example, make use of unused space on building tops, while vertical farms maximize production in limited space by growing crops in vertically stacked layers.</p>
+
+                            <p>The benefits of urban farming are numerous. First, it reduces the distance food needs to travel from farm to plate, which decreases transportation costs and carbon emissions. Second, it provides fresh, locally grown produce to urban residents, improving food security and nutrition. Third, urban farming can create jobs and stimulate local economic development. Finally, it helps improve air quality and provides green spaces that enhance the urban environment.</p>
+
+                            <p>However, urban farming also faces several challenges. Limited space, high land costs, and soil contamination in urban areas can make it difficult to establish farming operations. Additionally, urban farmers often lack the technical knowledge and resources needed to succeed. Government support and community involvement are essential for overcoming these obstacles and promoting sustainable urban agriculture.</p>
+                        </div>
+                        
+                        <div class="question">
+                            <div class="question-number">35</div>
+                            <div class="question-text">
+                                What is the main purpose of this passage?
+                            </div>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="q35" value="A">
+                                    <span class="option-text">(A) To criticize traditional farming methods</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q35" value="B">
+                                    <span class="option-text">(B) To introduce urban farming and discuss its benefits and challenges</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q35" value="C">
+                                    <span class="option-text">(C) To promote specific urban farming techniques</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q35" value="D">
+                                    <span class="option-text">(D) To compare different cities' farming policies</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <div class="question-number">36</div>
+                            <div class="question-text">
+                                According to the passage, which of the following is NOT mentioned as a type of urban farming?
+                            </div>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="q36" value="A">
+                                    <span class="option-text">(A) Rooftop gardens</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q36" value="B">
+                                    <span class="option-text">(B) Vertical farms</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q36" value="C">
+                                    <span class="option-text">(C) Greenhouse cultivation</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q36" value="D">
+                                    <span class="option-text">(D) Community gardens</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <div class="question-number">37</div>
+                            <div class="question-text">
+                                What is one environmental benefit of urban farming mentioned in the passage?
+                            </div>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="q37" value="A">
+                                    <span class="option-text">(A) It eliminates the need for pesticides</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q37" value="B">
+                                    <span class="option-text">(B) It reduces carbon emissions from transportation</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q37" value="C">
+                                    <span class="option-text">(C) It prevents urban sprawl</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q37" value="D">
+                                    <span class="option-text">(D) It reduces water consumption</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <div class="question-number">38</div>
+                            <div class="question-text">
+                                According to the passage, what is essential for overcoming the challenges of urban farming?
+                            </div>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="q38" value="A">
+                                    <span class="option-text">(A) Advanced technology and expensive equipment</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q38" value="B">
+                                    <span class="option-text">(B) Government support and community involvement</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q38" value="C">
+                                    <span class="option-text">(C) International cooperation and funding</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q38" value="D">
+                                    <span class="option-text">(D) Professional farming experience and large investments</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第39-42題 -->
+                    <div class="passage">
+                        <h3 class="passage-title">第39至42題</h3>
+                        <div class="passage-content">
+                            <p>Sleep is one of the most important aspects of human health, yet many people underestimate its significance. During sleep, our bodies undergo crucial processes that help maintain physical health, mental well-being, and cognitive function. Research has shown that consistently getting adequate sleep is essential for optimal performance in daily activities.</p>
+
+                            <p>The human sleep cycle consists of several stages, including light sleep, deep sleep, and REM (Rapid Eye Movement) sleep. Each stage serves different functions. Light sleep helps the body transition from wakefulness to deeper sleep stages. Deep sleep is crucial for physical recovery, tissue repair, and immune system strengthening. REM sleep, during which most dreaming occurs, is vital for memory consolidation, learning, and emotional regulation.</p>
+
+                            <p>Unfortunately, modern lifestyle factors often interfere with healthy sleep patterns. Excessive screen time, particularly before bedtime, can disrupt the body's natural circadian rhythm by suppressing the production of melatonin, a hormone that regulates sleep. Stress, caffeine consumption, irregular work schedules, and environmental factors like noise and light pollution can also negatively impact sleep quality.</p>
+
+                            <p>The consequences of chronic sleep deprivation are far-reaching. Short-term effects include decreased concentration, impaired judgment, mood swings, and reduced reaction time. Long-term sleep loss has been linked to serious health conditions such as obesity, diabetes, cardiovascular disease, and weakened immune function. Additionally, insufficient sleep can significantly impact academic and work performance, leading to decreased productivity and increased error rates.</p>
+
+                            <p>Fortunately, there are several strategies for improving sleep quality. Establishing a consistent sleep schedule, creating a comfortable sleep environment, limiting screen time before bed, and practicing relaxation techniques can all contribute to better sleep. Regular exercise, while beneficial for sleep, should be avoided close to bedtime as it can be stimulating. If sleep problems persist, consulting a healthcare professional may be necessary to identify and address underlying issues.</p>
+                        </div>
+                        
+                        <div class="question">
+                            <div class="question-number">39</div>
+                            <div class="question-text">
+                                What is the primary function of REM sleep according to the passage?
+                            </div>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="q39" value="A">
+                                    <span class="option-text">(A) Physical recovery and tissue repair</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q39" value="B">
+                                    <span class="option-text">(B) Memory consolidation and emotional regulation</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q39" value="C">
+                                    <span class="option-text">(C) Immune system strengthening</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q39" value="D">
+                                    <span class="option-text">(D) Transitioning from wakefulness to deeper sleep</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <div class="question-number">40</div>
+                            <div class="question-text">
+                                How does excessive screen time affect sleep according to the passage?
+                            </div>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="q40" value="A">
+                                    <span class="option-text">(A) It increases physical fatigue</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q40" value="B">
+                                    <span class="option-text">(B) It disrupts the circadian rhythm by suppressing melatonin production</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q40" value="C">
+                                    <span class="option-text">(C) It causes immediate health problems</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q40" value="D">
+                                    <span class="option-text">(D) It stimulates the immune system</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <div class="question-number">41</div>
+                            <div class="question-text">
+                                Which of the following is NOT mentioned as a long-term consequence of sleep deprivation?
+                            </div>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="q41" value="A">
+                                    <span class="option-text">(A) Obesity</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q41" value="B">
+                                    <span class="option-text">(B) Cardiovascular disease</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q41" value="C">
+                                    <span class="option-text">(C) Memory loss</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q41" value="D">
+                                    <span class="option-text">(D) Diabetes</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <div class="question-number">42</div>
+                            <div class="question-text">
+                                According to the passage, when should exercise be avoided to improve sleep quality?
+                            </div>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="q42" value="A">
+                                    <span class="option-text">(A) In the morning</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q42" value="B">
+                                    <span class="option-text">(B) Close to bedtime</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q42" value="C">
+                                    <span class="option-text">(C) During weekends</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q42" value="D">
+                                    <span class="option-text">(D) After meals</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第43-46題 -->
+                    <div class="passage">
+                        <h3 class="passage-title">第43至46題</h3>
+                        <div class="passage-content">
+                            <p>The concept of sustainable tourism has emerged as a crucial approach to balancing the economic benefits of travel with the need to protect natural environments and local communities. As global tourism continues to grow rapidly, with billions of people traveling internationally each year, the industry faces increasing pressure to address its environmental and social impacts.</p>
+
+                            <p>Traditional mass tourism often leads to overcrowding, environmental degradation, and cultural commodification in popular destinations. Famous landmarks and natural sites frequently suffer from the effects of too many visitors, including pollution, erosion, and disruption of local ecosystems. Additionally, the economic benefits of tourism may not always reach local communities, instead flowing primarily to large international corporations.</p>
+
+                            <p>Sustainable tourism offers an alternative model that aims to minimize negative impacts while maximizing positive contributions to destinations. This approach emphasizes responsible travel practices, such as choosing eco-friendly accommodations, supporting local businesses, respecting cultural traditions, and minimizing waste and resource consumption. Sustainable tourism also promotes education and awareness, helping travelers understand and appreciate the places they visit.</p>
+
+                            <p>Several strategies can help promote sustainable tourism development. Destination management organizations can implement visitor limits, develop alternative attractions to distribute tourist traffic, and invest in infrastructure that supports both tourism and local needs. Governments can create policies that encourage sustainable practices and provide incentives for businesses that adopt environmentally friendly operations. Meanwhile, travelers themselves play a crucial role by making conscious choices about where to go, how to travel, and which businesses to support.</p>
+
+                            <p>The future of tourism depends largely on the industry's ability to embrace sustainability. Climate change, environmental degradation, and social inequality pose significant challenges that require immediate action. By working together, tourism stakeholders can create a more responsible and sustainable industry that benefits both visitors and host communities for generations to come.</p>
+                        </div>
+                        
+                        <div class="question">
+                            <div class="question-number">43</div>
+                            <div class="question-text">
+                                What is the main challenge that sustainable tourism aims to address?
+                            </div>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="q43" value="A">
+                                    <span class="option-text">(A) Declining tourist numbers globally</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q43" value="B">
+                                    <span class="option-text">(B) Balancing economic benefits with environmental and social protection</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q43" value="C">
+                                    <span class="option-text">(C) Competition between international tourism companies</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q43" value="D">
+                                    <span class="option-text">(D) Lack of tourist attractions in developing countries</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <div class="question-number">44</div>
+                            <div class="question-text">
+                                According to the passage, what is one problem with traditional mass tourism?
+                            </div>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="q44" value="A">
+                                    <span class="option-text">(A) It is too expensive for most travelers</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q44" value="B">
+                                    <span class="option-text">(B) Economic benefits may not reach local communities</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q44" value="C">
+                                    <span class="option-text">(C) It focuses only on cultural experiences</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q44" value="D">
+                                    <span class="option-text">(D) It requires too much planning and preparation</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <div class="question-number">45</div>
+                            <div class="question-text">
+                                What role do destination management organizations play in promoting sustainable tourism?
+                            </div>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="q45" value="A">
+                                    <span class="option-text">(A) They provide free transportation for tourists</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q45" value="B">
+                                    <span class="option-text">(B) They can implement visitor limits and develop alternative attractions</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q45" value="C">
+                                    <span class="option-text">(C) They focus on attracting more international visitors</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q45" value="D">
+                                    <span class="option-text">(D) They compete with local businesses</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <div class="question-number">46</div>
+                            <div class="question-text">
+                                According to the passage, what is necessary for the future of sustainable tourism?
+                            </div>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="q46" value="A">
+                                    <span class="option-text">(A) Reducing the number of international flights</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q46" value="B">
+                                    <span class="option-text">(B) Cooperation among tourism stakeholders</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q46" value="C">
+                                    <span class="option-text">(C) Building more luxury hotels</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="q46" value="D">
+                                    <span class="option-text">(D) Focusing only on domestic tourism</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </form>
         </div>
     </main>
 
@@ -77,11 +1082,13 @@
         <div class="container">
             <div class="control-buttons">
                 <a href="../index.html" class="btn btn-secondary">← 返回首頁</a>
-                <a href="114.html" class="btn btn-primary">完整功能版</a>
+                <button type="button" class="btn btn-primary" onclick="window.exam.showAnswers()">查看答案</button>
+                <button type="button" class="btn btn-success" onclick="window.exam.submitExam()">提交考卷</button>
+                <button type="button" class="btn btn-warning" onclick="window.exam.resetExam()">重新開始</button>
             </div>
         </div>
     </div>
 
-    <script>console.log('105學年度學測英文頁面已載入 - 歷年試題系列最早版本');</script>
+    <script src="../scripts/exam-105.js"></script>
 </body>
 </html>
