@@ -1,339 +1,254 @@
-class Exam111 {
+// 111年學測英文試題 - 答案與學習建議
+const answers111 = {
+    // 詞彙題 (1-10題)
+    q1: 'B', q2: 'A', q3: 'C', q4: 'A', q5: 'A',
+    q6: 'C', q7: 'B', q8: 'D', q9: 'D', q10: 'B',
+    
+    // 綜合測驗 (11-20題)
+    q11: 'A', q12: 'D', q13: 'C', q14: 'B', q15: 'D',
+    q16: 'D', q17: 'A', q18: 'D', q19: 'C', q20: 'A',
+    
+    // 文意選填 (21-30題)
+    q21: 'C', q22: 'I', q23: 'F', q24: 'H', q25: 'D',
+    q26: 'G', q27: 'J', q28: 'E', q29: 'A', q30: 'B',
+    
+    // 篇章結構 (31-34題)
+    q31: 'D', q32: 'A', q33: 'C', q34: 'B',
+    
+    // 閱讀測驗 (35-46題)
+    q35: 'B', q36: 'A', q37: 'C', q38: 'C', q39: 'D',
+    q40: 'A', q41: 'B', q42: 'B', q43: 'D', q44: 'C',
+    q45: 'A', q46: 'D',
+    
+    // 混合題型 (47-49題)
+    q47: 'participating',  // 第47題填空
+    'q47b': 'abuse',       // 第47題第二空
+    q48: 'asylum',         // 第48題填空
+    q49: ['C', 'D']        // 第49題多選
+};
+
+const learningAdvice111 = {
+    vocabulary: {
+        title: "詞彙題",
+        advice: [
+            "111年詞彙題注重基礎詞彙的精確掌握",
+            "詞彙搭配和語境理解是關鍵",
+            "名詞、動詞、形容詞的詞性轉換要熟練",
+            "同義詞辨析和反義詞對比練習"
+        ]
+    },
+    cloze: {
+        title: "綜合測驗",
+        advice: [
+            "綜合測驗涵蓋多元主題的語境理解",
+            "上下文邏輯關係和語意連貫重要",
+            "動詞時態、語態的正確選用",
+            "連接詞和轉承詞的適當運用"
+        ]
+    },
+    fill: {
+        title: "文意選填",
+        advice: [
+            "文意選填需要整體文章結構的理解",
+            "段落間的邏輯關係和語意銜接",
+            "關鍵詞彙的前後呼應關係",
+            "主題句和支撐句的識別能力"
+        ]
+    },
+    structure: {
+        title: "篇章結構",
+        advice: [
+            "篇章結構著重文章組織邏輯",
+            "段落順序和論述層次的安排",
+            "引言、發展、結論的完整架構",
+            "轉折、因果、對比關係的掌握"
+        ]
+    },
+    reading: {
+        title: "閱讀測驗",
+        advice: [
+            "閱讀測驗涵蓋不同文體和主題",
+            "事實細節和推論理解並重",
+            "作者意圖和文章主旨的掌握",
+            "圖表資訊和文字內容的整合理解"
+        ]
+    },
+    mixed: {
+        title: "混合題",
+        advice: [
+            "混合題結合填空和選擇題型",
+            "第47-48題注重詞彙的正確拼寫",
+            "第49題為多選題，需選出所有正確答案",
+            "仔細閱讀題目要求，避免作答錯誤"
+        ]
+    }
+};
+
+// 111年考試結構配置
+const examConfig111 = {
+    year: '111',
+    totalQuestions: 49,
+    sections: {
+        vocabulary: { start: 1, end: 10, points: 1 },
+        cloze: { start: 11, end: 20, points: 1 },
+        fill: { start: 21, end: 30, points: 1 },
+        structure: { start: 31, end: 34, points: 2 },
+        reading: { start: 35, end: 46, points: 2 },
+        mixed: { start: 47, end: 49, points: 2 }
+    }
+};
+
+// 繼承GSATExamBase建立111年考試
+class Exam111 extends GSATExamBase {
     constructor() {
-        this.answers = {
-            1: 'B', 2: 'A', 3: 'C', 4: 'A', 5: 'A',
-            6: 'C', 7: 'B', 8: 'D', 9: 'D', 10: 'B',
-            11: 'A', 12: 'D', 13: 'C', 14: 'B', 15: 'D',
-            16: 'D', 17: 'A', 18: 'D', 19: 'C', 20: 'A',
-            21: 'C', 22: 'I', 23: 'F', 24: 'H', 25: 'D',
-            26: 'G', 27: 'J', 28: 'E', 29: 'A', 30: 'B',
-            31: 'D', 32: 'A', 33: 'C', 34: 'B',
-            35: 'B', 36: 'A', 37: 'C', 38: 'C', 39: 'D',
-            40: 'A', 41: 'B', 42: 'B', 43: 'D', 44: 'C',
-            45: 'A', 46: 'D',
-            47: 'participating', '47b': 'abuse',
-            48: 'asylum',
-            49: 'CD'
+        super('111', answers111, learningAdvice111, examConfig111);
+    }
+    
+    // 重寫計分方法以適應111年的混合題型
+    calculateSectionScores(formData) {
+        const sectionScores = {
+            vocabulary: 0,  // 1-10
+            cloze: 0,       // 11-20
+            fill: 0,        // 21-30
+            structure: 0,   // 31-34
+            reading: 0,     // 35-46
+            mixed: 0        // 47-49
         };
         
-        this.totalQuestions = 49;
-        this.timeLimit = 100 * 60;
-        this.userAnswers = this.loadAnswers();
-        this.startTime = Date.now();
-        
-        this.initializeExam();
-        this.startTimer();
-        this.bindEvents();
-    }
-
-    initializeExam() {
-        this.loadAnswers();
-        this.updateProgress();
-        
-        const savedTime = localStorage.getItem('exam111_remainingTime');
-        if (savedTime) {
-            this.timeLimit = parseInt(savedTime);
-        }
-    }
-
-    startTimer() {
-        this.timerInterval = setInterval(() => {
-            this.timeLimit--;
-            this.updateTimerDisplay();
-            this.saveProgress();
+        // 檢查每一題
+        for (let i = 1; i <= this.totalQuestions; i++) {
+            const questionName = `q${i}`;
+            const correctAnswer = this.answers[questionName];
+            const userAnswers = formData.getAll(questionName);
             
-            if (this.timeLimit <= 10 * 60) {
-                document.getElementById('timer').style.color = '#e74c3c';
-            }
+            let isCorrect = false;
             
-            if (this.timeLimit <= 0) {
-                this.submitExam();
-            }
-        }, 1000);
-    }
-
-    updateTimerDisplay() {
-        const minutes = Math.floor(this.timeLimit / 60);
-        const seconds = this.timeLimit % 60;
-        const timerElement = document.getElementById('timer');
-        timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-    }
-
-    bindEvents() {
-        document.querySelectorAll('input[type="radio"]').forEach(input => {
-            input.addEventListener('change', (e) => {
-                const questionNum = parseInt(e.target.name.replace('q', ''));
-                this.userAnswers[questionNum] = e.target.value;
-                this.saveAnswers();
-                this.updateProgress();
-            });
-        });
-
-        document.querySelectorAll('input[type="checkbox"]').forEach(input => {
-            input.addEventListener('change', (e) => {
-                const questionNum = e.target.name.replace('q', '');
-                if (!this.userAnswers[questionNum]) {
-                    this.userAnswers[questionNum] = '';
-                }
-                
-                if (e.target.checked) {
-                    this.userAnswers[questionNum] += e.target.value;
-                } else {
-                    this.userAnswers[questionNum] = this.userAnswers[questionNum].replace(e.target.value, '');
-                }
-                
-                this.saveAnswers();
-                this.updateProgress();
-            });
-        });
-
-        document.querySelectorAll('input[type="text"]').forEach(input => {
-            input.addEventListener('input', (e) => {
-                const questionNum = e.target.name.replace('q', '');
-                this.userAnswers[questionNum] = e.target.value.trim();
-                this.saveAnswers();
-                this.updateProgress();
-            });
-        });
-
-        document.querySelectorAll('select').forEach(select => {
-            select.addEventListener('change', (e) => {
-                const questionNum = parseInt(e.target.name.replace('q', ''));
-                this.userAnswers[questionNum] = e.target.value;
-                this.saveAnswers();
-                this.updateProgress();
-            });
-        });
-
-        window.addEventListener('beforeunload', () => {
-            this.saveProgress();
-        });
-    }
-
-    updateProgress() {
-        const answered = Object.keys(this.userAnswers).filter(key => 
-            this.userAnswers[key] && this.userAnswers[key].toString().trim() !== ''
-        ).length;
-        
-        const percentage = (answered / this.totalQuestions) * 100;
-        const progressBar = document.getElementById('progressBar');
-        if (progressBar) {
-            progressBar.style.width = `${percentage}%`;
-        }
-    }
-
-    saveAnswers() {
-        localStorage.setItem('exam111_answers', JSON.stringify(this.userAnswers));
-    }
-
-    loadAnswers() {
-        const saved = localStorage.getItem('exam111_answers');
-        const answers = saved ? JSON.parse(saved) : {};
-        
-        Object.keys(answers).forEach(questionNum => {
-            const value = answers[questionNum];
-            
-            if (questionNum.includes('b') || questionNum === '47' || questionNum === '48') {
-                const input = document.querySelector(`input[name="q${questionNum}"]`);
-                if (input && input.type === 'text') {
-                    input.value = value;
-                }
-            } else if (questionNum === '49') {
-                for (let char of value) {
-                    const checkbox = document.querySelector(`input[name="q${questionNum}"][value="${char}"]`);
-                    if (checkbox) {
-                        checkbox.checked = true;
-                    }
-                }
+            // 處理不同類型的題目
+            if (Array.isArray(correctAnswer)) {
+                // 多選題
+                isCorrect = correctAnswer.length === userAnswers.length && 
+                           correctAnswer.every(ans => userAnswers.includes(ans));
+            } else if (typeof correctAnswer === 'string' && correctAnswer.length > 1 && !['A','B','C','D'].includes(correctAnswer)) {
+                // 填空題
+                isCorrect = userAnswers.length === 1 && userAnswers[0].toLowerCase() === correctAnswer.toLowerCase();
             } else {
-                const input = document.querySelector(`input[name="q${questionNum}"]:not([type="radio"]), select[name="q${questionNum}"]`);
+                // 單選題
+                isCorrect = userAnswers.length === 1 && userAnswers[0] === correctAnswer;
+            }
+            
+            // 處理47題的特殊格式(q47b)
+            if (i === 47) {
+                const q47bAnswer = this.answers['q47b'];
+                const q47bUserAnswer = formData.getAll('q47b');
+                const q47bCorrect = q47bUserAnswer.length === 1 && q47bUserAnswer[0].toLowerCase() === q47bAnswer.toLowerCase();
                 
-                if (input) {
-                    if (input.tagName === 'SELECT') {
-                        input.value = value;
-                    }
+                // 47題需要兩個空格都對才算對
+                isCorrect = isCorrect && q47bCorrect;
+            }
+            
+            if (isCorrect) {
+                // 計算得分
+                if (i <= 10) {
+                    sectionScores.vocabulary += 1;
+                } else if (i <= 20) {
+                    sectionScores.cloze += 1;
+                } else if (i <= 30) {
+                    sectionScores.fill += 1;
+                } else if (i <= 34) {
+                    sectionScores.structure += 2;
+                } else if (i <= 46) {
+                    sectionScores.reading += 2;
                 } else {
-                    const radioInput = document.querySelector(`input[name="q${questionNum}"][value="${value}"]`);
-                    if (radioInput) {
-                        radioInput.checked = true;
-                    }
+                    sectionScores.mixed += 2;
                 }
             }
-        });
+        }
         
-        return answers;
+        return sectionScores;
     }
-
-    saveProgress() {
-        localStorage.setItem('exam111_remainingTime', this.timeLimit.toString());
-        localStorage.setItem('exam111_answers', JSON.stringify(this.userAnswers));
-    }
-
-    submitExam() {
-        clearInterval(this.timerInterval);
-        
-        const results = this.calculateScore();
-        this.displayResults(results);
-        
-        localStorage.removeItem('exam111_remainingTime');
-        localStorage.removeItem('exam111_answers');
-    }
-
-    calculateScore() {
-        let score = 0;
-        const results = {};
-        
-        for (let i = 1; i <= 46; i++) {
-            const userAnswer = this.userAnswers[i];
-            const correctAnswer = this.answers[i];
-            
-            if (userAnswer && userAnswer.toString().toLowerCase() === correctAnswer.toString().toLowerCase()) {
-                results[i] = 'correct';
-                score += (i >= 1 && i <= 10) ? 2 : 
-                         (i >= 11 && i <= 20) ? 2 :
-                         (i >= 21 && i <= 30) ? 1.5 :
-                         (i >= 31 && i <= 34) ? 2 :
-                         (i >= 35 && i <= 46) ? 2 : 0;
-            } else {
-                results[i] = 'incorrect';
-            }
-        }
-        
-        // Mixed questions scoring
-        if (this.userAnswers['47'] && this.userAnswers['47'].toLowerCase().includes('participat')) {
-            results['47'] = 'correct';
-            score += 2;
-        } else {
-            results['47'] = 'incorrect';
-        }
-        
-        if (this.userAnswers['47b'] && this.userAnswers['47b'].toLowerCase().includes('abus')) {
-            results['47b'] = 'correct';
-            score += 2;
-        } else {
-            results['47b'] = 'incorrect';
-        }
-        
-        if (this.userAnswers['48'] && this.userAnswers['48'].toLowerCase() === 'asylum') {
-            results['48'] = 'correct';
-            score += 2;
-        } else {
-            results['48'] = 'incorrect';
-        }
-        
-        if (this.userAnswers['49'] && this.userAnswers['49'].includes('C') && this.userAnswers['49'].includes('D') && this.userAnswers['49'].length === 2) {
-            results['49'] = 'correct';
-            score += 4;
-        } else {
-            results['49'] = 'incorrect';
-        }
-        
-        return { score, results, totalPossible: 72 };
-    }
-
-    displayResults(results) {
-        const percentage = Math.round((results.score / results.totalPossible) * 100);
-        let level = '';
-        
-        if (percentage >= 90) level = '頂標';
-        else if (percentage >= 80) level = '前標';
-        else if (percentage >= 70) level = '均標';
-        else if (percentage >= 60) level = '後標';
-        else level = '底標';
-
-        const correct = Object.values(results.results).filter(r => r === 'correct').length;
-        const incorrect = this.totalQuestions - correct;
-
-        const resultModal = document.createElement('div');
-        resultModal.innerHTML = `
-            <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; display: flex; align-items: center; justify-content: center;">
-                <div style="background: white; padding: 2rem; border-radius: 15px; max-width: 500px; width: 90%; text-align: center;">
-                    <h2 style="color: #2d3436; margin-bottom: 1rem;">📊 測驗結果</h2>
-                    <div style="font-size: 3rem; margin: 1rem 0; color: #00b894;">${percentage}%</div>
-                    <div style="margin: 1rem 0;">
-                        <div style="color: #2d3436; font-size: 1.2rem; margin: 0.5rem 0;">總分：${results.score} / ${results.totalPossible}</div>
-                        <div style="color: #636e72;">等級：${level}</div>
-                    </div>
-                    <div style="display: flex; justify-content: space-around; margin: 1.5rem 0;">
-                        <div>
-                            <div style="color: #00b894; font-size: 1.5rem; font-weight: bold;">${correct}</div>
-                            <div style="color: #636e72; font-size: 0.9rem;">答對</div>
-                        </div>
-                        <div>
-                            <div style="color: #e17055; font-size: 1.5rem; font-weight: bold;">${incorrect}</div>
-                            <div style="color: #636e72; font-size: 0.9rem;">答錯</div>
-                        </div>
-                    </div>
-                    <div style="margin-top: 1.5rem;">
-                        <button onclick="this.parentElement.parentElement.parentElement.remove(); exam.showAnswers();" style="background: #0984e3; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 25px; margin: 0 0.5rem; cursor: pointer;">查看詳解</button>
-                        <button onclick="location.reload()" style="background: #636e72; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 25px; margin: 0 0.5rem; cursor: pointer;">重新測驗</button>
-                    </div>
-                </div>
+    
+    // 重寫結果顯示方法
+    generateResultSummary(sectionScores) {
+        return `
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem;">
+                <div>詞彙題：${sectionScores.vocabulary}/10分</div>
+                <div>綜合測驗：${sectionScores.cloze}/10分</div>
+                <div>文意選填：${sectionScores.fill}/10分</div>
+                <div>篇章結構：${sectionScores.structure}/8分</div>
+                <div>閱讀測驗：${sectionScores.reading}/24分</div>
+                <div>混合題：${sectionScores.mixed}/6分</div>
             </div>
         `;
-        
-        document.body.appendChild(resultModal);
     }
+    
+    // 重寫問題反饋顯示方法，處理特殊題型
+    showQuestionFeedback(questionNum, isCorrect, correctAnswer, userAnswers) {
+        const questionDiv = document.querySelector(`.question:has(input[name="q${questionNum}"])`);
+        if (!questionDiv) return;
 
-    showAnswers() {
-        document.querySelectorAll('.question').forEach(question => {
-            const questionNumText = question.querySelector('.question-number').textContent;
-            const questionNum = questionNumText.includes('-') ? questionNumText.split('-')[0] : questionNumText;
-            const correctAnswer = this.answers[questionNum] || this.answers[parseInt(questionNum)];
-            const userAnswer = this.userAnswers[questionNum] || this.userAnswers[parseInt(questionNum)];
+        // 移除舊的反饋
+        const oldFeedback = questionDiv.querySelector('.feedback');
+        if (oldFeedback) oldFeedback.remove();
+
+        // 創建反饋元素
+        const feedback = document.createElement('div');
+        feedback.className = 'feedback';
+        feedback.style.cssText = 'margin-top: 10px; padding: 10px; border-radius: 5px; font-size: 14px;';
+
+        if (isCorrect) {
+            feedback.style.backgroundColor = '#d4edda';
+            feedback.style.color = '#155724';
+            feedback.innerHTML = '✓ 正確！';
+        } else {
+            feedback.style.backgroundColor = '#f8d7da';
+            feedback.style.color = '#721c24';
             
-            if (correctAnswer) {
-                const answerDiv = document.createElement('div');
-                answerDiv.className = 'answer-explanation';
-                
-                let isCorrect = false;
-                if (userAnswer && userAnswer.toString().toLowerCase().includes(correctAnswer.toString().toLowerCase())) {
-                    isCorrect = true;
-                }
-                
-                answerDiv.innerHTML = `
-                    <div style="background: ${isCorrect ? '#d4edda' : '#f8d7da'}; 
-                                border: 1px solid ${isCorrect ? '#c3e6cb' : '#f5c6cb'}; 
-                                padding: 1rem; margin-top: 1rem; border-radius: 8px;">
-                        <div style="font-weight: bold; color: ${isCorrect ? '#155724' : '#721c24'};">
-                            ${isCorrect ? '✓ 答對了！' : '✗ 答錯了'}
-                        </div>
-                        <div style="margin-top: 0.5rem;">
-                            正確答案：${correctAnswer}
-                            ${userAnswer ? ` | 你的答案：${userAnswer}` : ' | 未作答'}
-                        </div>
-                    </div>
-                `;
-                
-                question.appendChild(answerDiv);
+            let correctText;
+            if (Array.isArray(correctAnswer)) {
+                correctText = correctAnswer.join(', ');
+            } else if (typeof correctAnswer === 'string' && correctAnswer.length > 1 && !['A','B','C','D'].includes(correctAnswer)) {
+                correctText = correctAnswer;
+            } else {
+                correctText = correctAnswer;
             }
-        });
-        
-        document.getElementById('timer').style.display = 'none';
-        const controls = document.querySelector('.controls');
-        if (controls) {
-            controls.innerHTML = `
-                <div class="container">
-                    <div class="control-buttons">
-                        <a href="../index.html" class="btn btn-secondary">← 返回首頁</a>
-                        <button onclick="location.reload()" class="btn btn-primary">重新測驗</button>
-                        <button onclick="window.print()" class="btn btn-secondary">列印結果</button>
-                    </div>
-                </div>
-            `;
+            
+            // 處理47題特殊格式
+            if (questionNum === 47) {
+                const q47bAnswer = this.answers['q47b'];
+                correctText = `第一空: ${correctAnswer}, 第二空: ${q47bAnswer}`;
+            }
+            
+            feedback.innerHTML = `✗ 錯誤。正確答案：${correctText}`;
         }
-    }
 
-    resetExam() {
-        if (confirm('確定要重新開始測驗嗎？所有進度將會清除。')) {
-            localStorage.removeItem('exam111_answers');
-            localStorage.removeItem('exam111_remainingTime');
-            location.reload();
+        questionDiv.appendChild(feedback);
+
+        // 標記選項（僅針對選擇題）
+        if (['A','B','C','D'].includes(correctAnswer) || Array.isArray(correctAnswer)) {
+            const options = questionDiv.querySelectorAll('.option');
+            options.forEach(option => {
+                const input = option.querySelector('input');
+                if (!input) return;
+                
+                const value = input.value;
+                
+                if (Array.isArray(correctAnswer)) {
+                    if (correctAnswer.includes(value)) {
+                        option.style.backgroundColor = '#d4edda';
+                    }
+                } else {
+                    if (value === correctAnswer) {
+                        option.style.backgroundColor = '#d4edda';
+                    } else if (userAnswers.includes(value)) {
+                        option.style.backgroundColor = '#f8d7da';
+                    }
+                }
+            });
         }
     }
 }
 
+// 頁面載入完成後初始化
 document.addEventListener('DOMContentLoaded', () => {
     window.exam = new Exam111();
-    console.log('111學年度學測英文互動系統已啟動');
 });
