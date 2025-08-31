@@ -472,14 +472,17 @@ class GSATExamBase {
             // 進入專注模式
             body.classList.add('focus-mode');
             modeBtn.textContent = '退出專注';
-            banner.textContent = '📚 專注模式已開啟 - 隱藏干擾元素，專心答題';
+            banner.textContent = '📚 專注模式已開啟 - 統計面板已隱藏，專心答題';
             banner.style.display = 'block';
             this.currentMode = 'focus';
             
             // 隱藏統計資訊
-            document.querySelector('.progress-stats')?.classList.add('hidden');
+            const statsElement = document.querySelector('.progress-stats') || document.querySelector('.stats');
+            if (statsElement) {
+                statsElement.classList.add('hidden');
+            }
             
-            this.showNotification('已進入專注模式，按 ESC 可退出', 'info');
+            this.showNotification('專注模式：統計面板已隱藏。按住空格鍵可暫時查看統計，按 ESC 退出', 'info');
         } else {
             // 退出專注模式
             body.classList.remove('focus-mode');
@@ -488,7 +491,10 @@ class GSATExamBase {
             this.currentMode = 'normal';
             
             // 顯示統計資訊
-            document.querySelector('.progress-stats')?.classList.remove('hidden');
+            const statsElement = document.querySelector('.progress-stats') || document.querySelector('.stats');
+            if (statsElement) {
+                statsElement.classList.remove('hidden');
+            }
         }
     }
 
@@ -500,6 +506,19 @@ class GSATExamBase {
             // 專注模式：ESC 退出
             if (e.key === 'Escape' && this.currentMode === 'focus') {
                 this.toggleFocusMode();
+                return;
+            }
+
+            // 專注模式：空格鍵暫時顯示統計（按住時顯示）
+            if (e.key === ' ' && this.currentMode === 'focus' && !e.target.matches('input, select, textarea')) {
+                e.preventDefault();
+                const statsElement = document.querySelector('.progress-stats') || document.querySelector('.stats');
+                if (statsElement) {
+                    statsElement.classList.remove('hidden');
+                    statsElement.style.opacity = '0.9';
+                    statsElement.style.transform = 'scale(0.95)';
+                    statsElement.style.transition = 'all 0.2s ease';
+                }
                 return;
             }
 
@@ -532,6 +551,19 @@ class GSATExamBase {
                     if (bookmarkBtn) {
                         bookmarkBtn.click();
                     }
+                }
+            }
+        });
+
+        // 空格鍵放開時隱藏統計面板
+        document.addEventListener('keyup', (e) => {
+            if (e.key === ' ' && this.currentMode === 'focus') {
+                const statsElement = document.querySelector('.progress-stats') || document.querySelector('.stats');
+                if (statsElement) {
+                    statsElement.classList.add('hidden');
+                    statsElement.style.opacity = '';
+                    statsElement.style.transform = '';
+                    statsElement.style.transition = '';
                 }
             }
         });

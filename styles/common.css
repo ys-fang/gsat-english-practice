@@ -916,6 +916,15 @@ select.incorrect {
     display: none;
 }
 
+.focus-mode .progress-stats,
+.focus-mode .stats {
+    display: none !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
 .bookmark-btn {
     position: absolute;
     top: 10px;
