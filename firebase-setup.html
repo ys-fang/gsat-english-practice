@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase 設置指南 - 學測英文練習系統</title>
+    <link rel="stylesheet" href="styles/common.css">
+    <style>
+        .setup-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+        
+        .step {
+            background: white;
+            border: 2px solid var(--jutor-primary);
+            border-radius: 12px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        
+        .step-header {
+            background: var(--jutor-gradient);
+            color: white;
+            padding: 1rem 1.5rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .step-content {
+            padding: 1.5rem;
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .config-form {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--jutor-primary-dark);
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--jutor-primary);
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        .generate-btn {
+            background: var(--jutor-primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+        
+        .generate-btn:hover {
+            background: var(--jutor-primary-dark);
+        }
+        
+        #generatedConfig {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="brand-logo">
+                <span class="brand-text">Jutor</span>
+                <span class="brand-separator">|</span>
+            </div>
+            <h1>Firebase 數據分析設置指南</h1>
+            <p class="subtitle">為學測英文練習系統啟用數據收集與分析功能</p>
+        </div>
+    </header>
+
+    <main class="setup-container">
+        <div class="step">
+            <div class="step-header">🚀 步驟 1：創建 Firebase 專案</div>
+            <div class="step-content">
+                <ol>
+                    <li>前往 <a href="https://console.firebase.google.com/" target="_blank" style="color: var(--jutor-primary);">Firebase Console</a></li>
+                    <li>點擊「創建專案」或「Add project」</li>
+                    <li>專案名稱建議：<code>gsat-english-practice</code></li>
+                    <li>啟用 Google Analytics（推薦）</li>
+                    <li>完成創建</li>
+                </ol>
+                
+                <div class="warning">
+                    <strong>💡 提示：</strong> 確保你有 Google 帳號，並且已登入 Firebase Console。
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-header">🔧 步驟 2：設置 Firestore 資料庫</div>
+            <div class="step-content">
+                <ol>
+                    <li>在 Firebase Console 左側選單中，點擊「Firestore Database」</li>
+                    <li>點擊「建立資料庫」</li>
+                    <li>選擇「以測試模式啟動」（稍後會設置安全規則）</li>
+                    <li>選擇資料庫位置（建議選擇 <code>asia-east1</code> 或最近的位置）</li>
+                </ol>
+                
+                <div class="warning">
+                    <strong>⚠️ 安全提醒：</strong> 測試模式讓任何人都能讀寫你的資料庫。記得在生產環境中設置適當的安全規則。
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-header">⚙️ 步驟 3：取得配置資訊</div>
+            <div class="step-content">
+                <ol>
+                    <li>在 Firebase Console 中點擊專案設定（齒輪圖示）</li>
+                    <li>在「一般」標籤頁下滑到「你的應用程式」部分</li>
+                    <li>點擊「</> 網站」圖示來添加網站應用程式</li>
+                    <li>應用程式名稱：<code>GSAT English Practice</code></li>
+                    <li>複製配置物件中的資訊</li>
+                </ol>
+                
+                <div class="code-block">
+// 你會看到類似這樣的配置：
+const firebaseConfig = {
+  apiKey: "AIzaSyC...",
+  authDomain: "your-project.firebaseapp.com",
+  projectId: "your-project-id",
+  storageBucket: "your-project.appspot.com",
+  messagingSenderId: "123456789",
+  appId: "1:123456789:web:abc123"
+};
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-header">📝 步驟 4：配置應用程式</div>
+            <div class="step-content">
+                <p>使用下面的表單來生成你的配置檔案：</p>
+                
+                <div class="config-form">
+                    <div class="form-group">
+                        <label for="apiKey">API Key:</label>
+                        <input type="text" id="apiKey" placeholder="AIzaSyC...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="authDomain">Auth Domain:</label>
+                        <input type="text" id="authDomain" placeholder="your-project.firebaseapp.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="projectId">Project ID:</label>
+                        <input type="text" id="projectId" placeholder="your-project-id">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="storageBucket">Storage Bucket:</label>
+                        <input type="text" id="storageBucket" placeholder="your-project.appspot.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="messagingSenderId">Messaging Sender ID:</label>
+                        <input type="text" id="messagingSenderId" placeholder="123456789">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="appId">App ID:</label>
+                        <input type="text" id="appId" placeholder="1:123456789:web:abc123">
+                    </div>
+                    
+                    <button class="generate-btn" onclick="generateConfig()">生成配置檔案</button>
+                </div>
+                
+                <div id="generatedConfig" class="success">
+                    <h4>✅ 生成的配置檔案：</h4>
+                    <p>請將以下內容複製並替換 <code>firebase/config.js</code> 中的配置：</p>
+                    <div class="code-block" id="configOutput"></div>
+                    <button class="btn btn-primary" onclick="copyConfig()">📋 複製配置</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-header">🔒 步驟 5：設置安全規則</div>
+            <div class="step-content">
+                <p>在 Firestore Database 的「Rules」標籤中，使用以下規則：</p>
+                
+                <div class="code-block">
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 允許讀寫用戶自己的數據
+    match /users/{userId} {
+      allow read, write: if true; // 匿名用戶，暫時允許所有操作
+    }
+    
+    // 允許寫入答題記錄，但不允許讀取他人數據
+    match /exam_answers/{document} {
+      allow write: if true;
+      allow read: if resource.data.user_id == request.auth.uid;
+    }
+    
+    // 允許寫入考試會話
+    match /exam_sessions/{document} {
+      allow write: if true;
+      allow read: if resource.data.user_id == request.auth.uid;
+    }
+    
+    // 學習分析數據（僅寫入）
+    match /learning_analytics/{document} {
+      allow write: if true;
+    }
+  }
+}
+                </div>
+                
+                <div class="warning">
+                    <strong>🔧 說明：</strong> 這些規則允許匿名寫入數據，但限制讀取權限。在生產環境中，你可能需要更嚴格的規則。
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-header">🧪 步驟 6：測試整合</div>
+            <div class="step-content">
+                <ol>
+                    <li>確保所有 Firebase 相關檔案都已正確配置</li>
+                    <li>在瀏覽器中開啟任一考試頁面</li>
+                    <li>開啟瀏覽器開發者工具的 Console</li>
+                    <li>查看是否有 Firebase 初始化成功的訊息</li>
+                    <li>作答幾題，檢查數據是否正常收集</li>
+                </ol>
+                
+                <div class="success">
+                    <strong>🎉 成功標誌：</strong>
+                    <ul>
+                        <li>Console 顯示「✅ GSAT Analytics 已初始化」</li>
+                        <li>答題後顯示「📝 記錄答題」訊息</li>
+                        <li>Firestore 中出現新的數據記錄</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-header">📊 步驟 7：查看數據</div>
+            <div class="step-content">
+                <p>配置完成後，你可以在以下位置查看收集到的數據：</p>
+                
+                <ul>
+                    <li><strong>Firestore Database</strong>：在 Firebase Console 中查看原始數據</li>
+                    <li><strong>Analytics Dashboard</strong>：如果啟用了 Google Analytics</li>
+                    <li><strong>自訂報告</strong>：未來可以建立自訂的數據分析儀表板</li>
+                </ul>
+                
+                <div class="warning">
+                    <strong>📈 數據結構：</strong>
+                    <ul>
+                        <li><code>users</code>：用戶統計資訊</li>
+                        <li><code>exam_answers</code>：答題記錄（批次）</li>
+                        <li><code>exam_sessions</code>：完整考試會話</li>
+                        <li><code>learning_analytics</code>：學習分析數據</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="index.html" class="btn btn-primary">回到首頁開始測試</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 學測英文練習系統 - 資料來源：大學入學考試中心</p>
+            <p class="brand-footer">Powered by <strong>Jutor</strong> - 智慧學習平台</p>
+        </div>
+    </footer>
+
+    <script>
+        function generateConfig() {
+            const apiKey = document.getElementById('apiKey').value;
+            const authDomain = document.getElementById('authDomain').value;
+            const projectId = document.getElementById('projectId').value;
+            const storageBucket = document.getElementById('storageBucket').value;
+            const messagingSenderId = document.getElementById('messagingSenderId').value;
+            const appId = document.getElementById('appId').value;
+
+            if (!apiKey || !authDomain || !projectId) {
+                alert('請填寫必要的配置資訊（API Key、Auth Domain、Project ID）');
+                return;
+            }
+
+            const configCode = `// Firebase 配置 - 自動生成於 ${new Date().toLocaleString()}
+const firebaseConfig = {
+  apiKey: "${apiKey}",
+  authDomain: "${authDomain}",
+  projectId: "${projectId}",
+  storageBucket: "${storageBucket}",
+  messagingSenderId: "${messagingSenderId}",
+  appId: "${appId}"
+};`;
+
+            document.getElementById('configOutput').textContent = configCode;
+            document.getElementById('generatedConfig').style.display = 'block';
+            
+            // 滾動到配置區域
+            document.getElementById('generatedConfig').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function copyConfig() {
+            const configText = document.getElementById('configOutput').textContent;
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(configText).then(() => {
+                    alert('✅ 配置已複製到剪貼簿！');
+                });
+            } else {
+                // 降級方案
+                const textArea = document.createElement('textarea');
+                textArea.value = configText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('✅ 配置已複製到剪貼簿！');
+            }
+        }
+    </script>
+</body>
+</html>

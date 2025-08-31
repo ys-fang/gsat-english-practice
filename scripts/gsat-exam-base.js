@@ -4,6 +4,7 @@
  * 
  * 提供一致的用戶體驗和增強的學習功能
  * Professional exam-style experience with learning enhancements
+ * 整合 Firebase 數據分析功能
  */
 
 class GSATExamBase {
@@ -31,7 +32,11 @@ class GSATExamBase {
         this.bookmarkedQuestions = new Set();
         this.questionTimes = {}; // 記錄每題作答時間
         
-        // 學習分析系統
+        // Firebase 學習分析系統
+        this.firebaseAnalytics = null;
+        this.analyticsEnabled = config.enableAnalytics !== false; // 預設啟用
+        
+        // 向後兼容的分析系統
         this.analytics = typeof GSATAnalytics !== 'undefined' ? new GSATAnalytics() : null;
         
         // 初始化
@@ -47,7 +52,39 @@ class GSATExamBase {
         this.bindEvents();
         this.loadProgress();
         this.setupKeyboardShortcuts();
+        
+        // 初始化 Firebase 分析（異步）
+        if (this.analyticsEnabled) {
+            this.initializeFirebaseAnalytics();
+        }
+        
         console.log(`${this.year}學年度學測英文互動系統已載入 - 專業考試模式`);
+    }
+
+    /**
+     * 初始化 Firebase 分析系統
+     */
+    async initializeFirebaseAnalytics() {
+        try {
+            // 檢查是否已載入 Firebase 分析模組
+            if (typeof gsatAnalytics !== 'undefined') {
+                this.firebaseAnalytics = gsatAnalytics;
+                const success = await this.firebaseAnalytics.initialize(this.year, {
+                    debug: window.location.hostname === 'localhost'
+                });
+                
+                if (success) {
+                    console.log('🔥 Firebase 分析已啟用');
+                } else {
+                    console.warn('⚠️ Firebase 分析初始化失敗，繼續使用離線模式');
+                }
+            } else {
+                console.log('📊 Firebase 分析模組未載入，跳過數據收集');
+            }
+        } catch (error) {
+            console.error('❌ Firebase 分析初始化錯誤:', error);
+            this.firebaseAnalytics = null;
+        }
     }
 
     /**
@@ -619,6 +656,19 @@ class GSATExamBase {
                 sectionResults[section].correct++;
             }
 
+            // 記錄答題到 Firebase（異步，不阻塞UI）
+            if (this.firebaseAnalytics && userAnswer) {
+                const timeSpent = this.questionTimes[questionNumber] || 0;
+                this.firebaseAnalytics.recordAnswer(
+                    questionNumber, 
+                    userAnswer, 
+                    correctAnswer, 
+                    timeSpent
+                ).catch(error => {
+                    console.warn(`⚠️ Firebase 記錄 Q${questionNumber} 失敗:`, error);
+                });
+            }
+
             // 顯示答案反饋
             this.highlightAnswer(questionName, userAnswer, correctAnswer, isCorrect);
         });
@@ -638,6 +688,20 @@ class GSATExamBase {
                 bookmarkedQuestions: Array.from(this.bookmarkedQuestions)
             };
             this.analytics.saveExamResult(this.year, examData);
+        }
+        
+        // 完成 Firebase 考試記錄（異步）
+        if (this.firebaseAnalytics) {
+            const totalTime = Date.now() - this.startTime;
+            this.firebaseAnalytics.finalizeExam(totalScore, totalTime)
+                .then(sessionId => {
+                    if (sessionId) {
+                        console.log(`🎯 Firebase 考試記錄已保存: ${sessionId.substring(0, 8)}...`);
+                    }
+                })
+                .catch(error => {
+                    console.warn('⚠️ Firebase 考試完成記錄失敗:', error);
+                });
         }
         
         // 清除計時器
