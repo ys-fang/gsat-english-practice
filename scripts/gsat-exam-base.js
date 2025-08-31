@@ -31,6 +31,9 @@ class GSATExamBase {
         this.bookmarkedQuestions = new Set();
         this.questionTimes = {}; // 記錄每題作答時間
         
+        // 學習分析系統
+        this.analytics = typeof GSATAnalytics !== 'undefined' ? new GSATAnalytics() : null;
+        
         // 初始化
         this.init();
     }
@@ -212,6 +215,9 @@ class GSATExamBase {
                 <button type="button" class="btn btn-secondary" id="focusModeBtn">
                     專注模式
                 </button>
+                <button type="button" class="btn btn-info" id="crossYearBtn">
+                    學習分析
+                </button>
             `;
         }
 
@@ -220,6 +226,7 @@ class GSATExamBase {
         document.getElementById('submitExamBtn')?.addEventListener('click', () => this.submitExam());
         document.getElementById('resetExamBtn')?.addEventListener('click', () => this.resetExam());
         document.getElementById('focusModeBtn')?.addEventListener('click', () => this.toggleFocusMode());
+        document.getElementById('crossYearBtn')?.addEventListener('click', () => this.showCrossYearComparison());
     }
 
     /**
@@ -587,6 +594,20 @@ class GSATExamBase {
         // 顯示結果
         this.showResultSummary(totalScore, maxScore, sectionResults);
         
+        // 保存到分析系統
+        if (this.analytics) {
+            const examData = {
+                totalScore,
+                maxScore,
+                sectionResults,
+                startTime: this.startTime,
+                questionTimes: this.questionTimes,
+                answeredQuestions: Array.from(formData.entries()).filter(([key, value]) => value !== '').length,
+                bookmarkedQuestions: Array.from(this.bookmarkedQuestions)
+            };
+            this.analytics.saveExamResult(this.year, examData);
+        }
+        
         // 清除計時器
         clearInterval(this.timerInterval);
         
@@ -858,6 +879,228 @@ class GSATExamBase {
         };
         
         return advice[sectionKey];
+    }
+
+    /**
+     * 顯示跨年度進度比較
+     */
+    showCrossYearComparison() {
+        if (!this.analytics) {
+            this.showNotification('分析系統未載入', 'warning');
+            return;
+        }
+
+        const comparison = this.analytics.getCrossYearComparison();
+        const progressSummary = this.analytics.getProgressSummary();
+        
+        if (Object.keys(comparison).length === 0) {
+            this.showNotification('暫無跨年度資料可比較', 'info');
+            return;
+        }
+
+        this.createComparisonModal(comparison, progressSummary);
+    }
+
+    /**
+     * 創建比較模態框
+     */
+    createComparisonModal(comparison, progressSummary) {
+        // 移除現有模態框
+        const existing = document.getElementById('crossYearModal');
+        if (existing) existing.remove();
+
+        const modal = document.createElement('div');
+        modal.id = 'crossYearModal';
+        modal.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        `;
+
+        const content = document.createElement('div');
+        content.style.cssText = `
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            max-width: 900px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        `;
+
+        content.innerHTML = `
+            <button id="closeModal" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer;">×</button>
+            
+            <h2 style="margin-bottom: 2rem; color: #333;">跨年度學習進度分析</h2>
+            
+            <div style="margin-bottom: 2rem;">
+                <h3 style="color: #666; margin-bottom: 1rem;">整體學習概況</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 4px; text-align: center;">
+                        <div style="font-size: 2rem; font-weight: bold; color: #007bff;">${progressSummary.totalExamYears}</div>
+                        <div style="color: #666;">已練習年份</div>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 4px; text-align: center;">
+                        <div style="font-size: 2rem; font-weight: bold; color: #28a745;">${progressSummary.profile.examsTaken}</div>
+                        <div style="color: #666;">總測驗次數</div>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 4px; text-align: center;">
+                        <div style="font-size: 2rem; font-weight: bold; color: #ffc107;">${progressSummary.profile.averageScore}%</div>
+                        <div style="color: #666;">平均分數</div>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 4px; text-align: center;">
+                        <div style="font-size: 2rem; font-weight: bold; color: #17a2b8;">${Math.round(progressSummary.profile.totalPracticeTime / 60)}h</div>
+                        <div style="color: #666;">總練習時數</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <h3 style="color: #666; margin-bottom: 1rem;">各年度表現比較</h3>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 1rem;">
+                        <thead>
+                            <tr style="background: #f8f9fa;">
+                                <th style="padding: 0.5rem; border: 1px solid #dee2e6; text-align: left;">年度</th>
+                                <th style="padding: 0.5rem; border: 1px solid #dee2e6; text-align: center;">練習次數</th>
+                                <th style="padding: 0.5rem; border: 1px solid #dee2e6; text-align: center;">平均分數</th>
+                                <th style="padding: 0.5rem; border: 1px solid #dee2e6; text-align: center;">最佳成績</th>
+                                <th style="padding: 0.5rem; border: 1px solid #dee2e6; text-align: center;">平均用時</th>
+                                <th style="padding: 0.5rem; border: 1px solid #dee2e6; text-align: center;">最近練習</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${Object.entries(comparison).sort(([a], [b]) => parseInt(b) - parseInt(a)).map(([year, data]) => `
+                                <tr>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6; font-weight: bold;">${year}年</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6; text-align: center;">${data.attemptCount}次</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6; text-align: center;">
+                                        <span style="color: ${this.getScoreColor(data.averageScore)}; font-weight: bold;">${data.averageScore}%</span>
+                                    </td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6; text-align: center;">
+                                        <span style="color: ${this.getScoreColor(data.bestScore)}; font-weight: bold;">${data.bestScore}%</span>
+                                    </td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6; text-align: center;">${data.averageTime}分鐘</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6; text-align: center;">${data.lastAttempt}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            ${this.generateSectionComparisonChart(comparison)}
+            
+            <div style="margin-top: 2rem;">
+                <h3 style="color: #666; margin-bottom: 1rem;">學習進步分析</h3>
+                <div style="background: #f8f9fa; padding: 1rem; border-radius: 4px;">
+                    <p><strong>最強項目：</strong> ${progressSummary.profile.strongestSection}</p>
+                    <p><strong>待加強項目：</strong> ${progressSummary.profile.weakestSection}</p>
+                    <p><strong>進步率：</strong> 
+                        <span style="color: ${parseFloat(progressSummary.profile.improvementRate) >= 0 ? '#28a745' : '#dc3545'}; font-weight: bold;">
+                            ${progressSummary.profile.improvementRate}%
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <button id="exportData" style="background: #007bff; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; margin-right: 1rem;">導出數據</button>
+                <button id="viewAnalytics" style="background: #28a745; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;">詳細分析</button>
+            </div>
+        `;
+
+        modal.appendChild(content);
+        document.body.appendChild(modal);
+
+        // 綁定事件
+        document.getElementById('closeModal').onclick = () => modal.remove();
+        document.getElementById('exportData').onclick = () => {
+            this.analytics.exportData();
+            this.showNotification('數據導出完成', 'success');
+        };
+        document.getElementById('viewAnalytics').onclick = () => {
+            modal.remove();
+            this.showDetailedAnalytics();
+        };
+
+        // 點擊外部關閉
+        modal.onclick = (e) => {
+            if (e.target === modal) modal.remove();
+        };
+    }
+
+    /**
+     * 獲取分數顏色
+     */
+    getScoreColor(score) {
+        const numScore = parseFloat(score);
+        if (numScore >= 80) return '#28a745'; // 綠色
+        if (numScore >= 60) return '#ffc107'; // 黃色
+        return '#dc3545'; // 紅色
+    }
+
+    /**
+     * 生成各題型比較圖表
+     */
+    generateSectionComparisonChart(comparison) {
+        const sectionNames = {
+            vocabulary: '詞彙題',
+            cloze: '綜合測驗',
+            fill: '文意選填', 
+            structure: '篇章結構',
+            reading: '閱讀測驗'
+        };
+
+        return `
+            <div style="margin-bottom: 2rem;">
+                <h3 style="color: #666; margin-bottom: 1rem;">各題型表現趨勢</h3>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background: #f8f9fa;">
+                                <th style="padding: 0.5rem; border: 1px solid #dee2e6; text-align: left;">題型</th>
+                                ${Object.keys(comparison).sort((a, b) => parseInt(b) - parseInt(a)).map(year => 
+                                    `<th style="padding: 0.5rem; border: 1px solid #dee2e6; text-align: center;">${year}年</th>`
+                                ).join('')}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${Object.entries(sectionNames).map(([sectionKey, sectionName]) => `
+                                <tr>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6; font-weight: bold;">${sectionName}</td>
+                                    ${Object.keys(comparison).sort((a, b) => parseInt(b) - parseInt(a)).map(year => {
+                                        const performance = comparison[year].sectionPerformance[sectionKey];
+                                        return `<td style="padding: 0.5rem; border: 1px solid #dee2e6; text-align: center;">
+                                            <span style="color: ${this.getScoreColor(performance)}; font-weight: bold;">
+                                                ${performance || '0'}%
+                                            </span>
+                                        </td>`;
+                                    }).join('')}
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        `;
+    }
+
+    /**
+     * 顯示詳細分析頁面
+     */
+    showDetailedAnalytics() {
+        // 這個方法將在創建分析頁面時實現
+        this.showNotification('詳細分析頁面開發中...', 'info');
     }
 
     /**

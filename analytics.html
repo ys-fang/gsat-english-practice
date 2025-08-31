@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>學習分析 - 學測英文歷年試題練習</title>
+    <link rel="stylesheet" href="styles/common.css">
+    <style>
+        .analytics-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .analytics-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .analytics-header h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .analytics-header .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .dashboard-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f1f3f4;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        .card-content {
+            min-height: 200px;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .controls-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .controls-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            align-items: end;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .control-group label {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .control-group select,
+        .control-group input {
+            padding: 0.5rem;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+
+        .btn-success {
+            background: #28a745;
+        }
+
+        .btn-success:hover {
+            background: #1e7e34;
+        }
+
+        .btn-danger {
+            background: #dc3545;
+        }
+
+        .btn-danger:hover {
+            background: #c82333;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 8px;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        .no-data-message {
+            text-align: center;
+            padding: 3rem;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .back-link {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 1000;
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .analytics-container {
+                padding: 1rem;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .controls-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .back-link {
+                position: static;
+                margin-bottom: 2rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+
+        /* 圖表樣式 */
+        .gsat-chart .chart-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .loading {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-link">
+        <a href="index.html" class="btn btn-secondary">← 返回首頁</a>
+    </div>
+
+    <div class="analytics-container">
+        <header class="analytics-header">
+            <h1>📊 學習分析儀表板</h1>
+            <p class="subtitle">深度了解您的學習進度和表現趨勢</p>
+        </header>
+
+        <!-- 控制面板 -->
+        <section class="controls-section">
+            <div class="controls-grid">
+                <div class="control-group">
+                    <label for="yearFilter">篩選年度:</label>
+                    <select id="yearFilter">
+                        <option value="">全部年度</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="targetScore">目標分數:</label>
+                    <input type="number" id="targetScore" value="80" min="0" max="100">
+                </div>
+                <div class="control-group">
+                    <button class="btn" onclick="refreshAnalytics()">更新分析</button>
+                </div>
+                <div class="control-group">
+                    <button class="btn btn-success" onclick="exportData()">導出數據</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 儀表板網格 -->
+        <div class="dashboard-grid">
+            <!-- 整體概況卡片 -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">📈</div>
+                    <h2 class="card-title">學習概況</h2>
+                </div>
+                <div class="card-content">
+                    <div class="stat-grid" id="overallStats">
+                        <div class="loading">載入中...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 分數趨勢卡片 -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">📊</div>
+                    <h2 class="card-title">分數趨勢</h2>
+                </div>
+                <div class="card-content">
+                    <div id="scoreTrendChart" class="chart-container">
+                        載入圖表中...
+                    </div>
+                </div>
+            </div>
+
+            <!-- 題型表現卡片 -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">📋</div>
+                    <h2 class="card-title">題型表現</h2>
+                </div>
+                <div class="card-content">
+                    <div id="sectionPerformanceChart" class="chart-container">
+                        載入圖表中...
+                    </div>
+                </div>
+            </div>
+
+            <!-- 進度指標卡片 -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">🎯</div>
+                    <h2 class="card-title">目標進度</h2>
+                </div>
+                <div class="card-content">
+                    <div id="progressIndicator" class="chart-container">
+                        載入圖表中...
+                    </div>
+                </div>
+            </div>
+
+            <!-- 時間分佈卡片 -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">⏱️</div>
+                    <h2 class="card-title">練習時間分佈</h2>
+                </div>
+                <div class="card-content">
+                    <div id="timeDistributionChart" class="chart-container">
+                        載入圖表中...
+                    </div>
+                </div>
+            </div>
+
+            <!-- 學習活動熱力圖卡片 -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">🔥</div>
+                    <h2 class="card-title">學習活動</h2>
+                </div>
+                <div class="card-content">
+                    <div id="activityHeatmap" class="chart-container">
+                        載入熱力圖中...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 跨年度比較圖表 -->
+        <div class="dashboard-card" style="margin-bottom: 2rem;">
+            <div class="card-header">
+                <div class="card-icon" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">📈</div>
+                <h2 class="card-title">跨年度題型表現比較</h2>
+            </div>
+            <div class="card-content">
+                <div id="crossYearChart" class="chart-container" style="height: 400px;">
+                    載入跨年度比較圖表中...
+                </div>
+            </div>
+        </div>
+
+        <!-- 操作按鈕 -->
+        <div class="action-buttons">
+            <button class="btn btn-secondary" onclick="clearAllData()">清除所有資料</button>
+            <button class="btn btn-secondary" onclick="location.reload()">重新載入</button>
+            <a href="index.html" class="btn">開始練習</a>
+        </div>
+    </div>
+
+    <!-- 載入必要的腳本 -->
+    <script src="scripts/gsat-charts.js"></script>
+    <script src="scripts/gsat-analytics.js"></script>
+    
+    <script>
+        // 全局變數
+        let analytics;
+        let charts;
+
+        // 頁面載入時初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化分析系統
+            analytics = new GSATAnalytics();
+            charts = new GSATCharts();
+
+            // 載入分析數據
+            loadAnalytics();
+            
+            // 設置事件監聽器
+            setupEventListeners();
+
+            console.log('學習分析頁面已載入');
+        });
+
+        /**
+         * 載入分析數據
+         */
+        function loadAnalytics() {
+            try {
+                // 載入年度選項
+                loadYearOptions();
+                
+                // 載入整體統計
+                loadOverallStats();
+                
+                // 載入所有圖表
+                loadAllCharts();
+            } catch (error) {
+                console.error('載入分析數據失敗:', error);
+                showNoDataMessage();
+            }
+        }
+
+        /**
+         * 載入年度選項
+         */
+        function loadYearOptions() {
+            const yearFilter = document.getElementById('yearFilter');
+            const comparison = analytics.getCrossYearComparison();
+            
+            // 清除現有選項
+            yearFilter.innerHTML = '<option value="">全部年度</option>';
+            
+            // 添加年度選項
+            Object.keys(comparison)
+                .sort((a, b) => parseInt(b) - parseInt(a))
+                .forEach(year => {
+                    const option = document.createElement('option');
+                    option.value = year;
+                    option.textContent = `${year}年`;
+                    yearFilter.appendChild(option);
+                });
+        }
+
+        /**
+         * 載入整體統計
+         */
+        function loadOverallStats() {
+            const progressSummary = analytics.getProgressSummary();
+            const statsContainer = document.getElementById('overallStats');
+            
+            if (!progressSummary || progressSummary.profile.examsTaken === 0) {
+                statsContainer.innerHTML = '<div class="no-data-message">暫無練習數據</div>';
+                return;
+            }
+
+            statsContainer.innerHTML = `
+                <div class="stat-item">
+                    <span class="stat-value">${progressSummary.totalExamYears}</span>
+                    <span class="stat-label">練習年份</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">${progressSummary.profile.examsTaken}</span>
+                    <span class="stat-label">總測驗次數</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">${progressSummary.profile.averageScore}%</span>
+                    <span class="stat-label">平均分數</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">${Math.round(progressSummary.profile.totalPracticeTime / 60)}h</span>
+                    <span class="stat-label">總練習時數</span>
+                </div>
+            `;
+        }
+
+        /**
+         * 載入所有圖表
+         */
+        function loadAllCharts() {
+            const yearFilter = document.getElementById('yearFilter').value;
+            const targetScore = parseInt(document.getElementById('targetScore').value) || 80;
+
+            // 分數趨勢圖
+            analytics.generateScoreTrendChart('scoreTrendChart', yearFilter || null);
+            
+            // 題型表現圖
+            analytics.generateSectionPerformanceChart('sectionPerformanceChart', yearFilter || null);
+            
+            // 進度指標
+            analytics.generateProgressIndicator('progressIndicator', targetScore);
+            
+            // 時間分佈圖
+            analytics.generateTimeDistributionChart('timeDistributionChart');
+            
+            // 學習活動熱力圖
+            analytics.createActivityHeatmap('activityHeatmap');
+            
+            // 跨年度比較圖
+            analytics.generateCrossYearChart('crossYearChart');
+        }
+
+        /**
+         * 設置事件監聽器
+         */
+        function setupEventListeners() {
+            // 年度篩選器變更
+            document.getElementById('yearFilter').addEventListener('change', loadAllCharts);
+            
+            // 目標分數變更
+            document.getElementById('targetScore').addEventListener('change', function() {
+                const targetScore = parseInt(this.value) || 80;
+                analytics.generateProgressIndicator('progressIndicator', targetScore);
+            });
+        }
+
+        /**
+         * 刷新分析數據
+         */
+        function refreshAnalytics() {
+            // 顯示載入狀態
+            document.querySelectorAll('.chart-container').forEach(container => {
+                container.innerHTML = '更新中...';
+            });
+
+            // 重新載入數據
+            setTimeout(() => {
+                loadAnalytics();
+            }, 500);
+        }
+
+        /**
+         * 導出數據
+         */
+        function exportData() {
+            try {
+                analytics.exportData();
+                alert('數據導出完成！');
+            } catch (error) {
+                console.error('導出數據失敗:', error);
+                alert('導出數據失敗，請稍後再試。');
+            }
+        }
+
+        /**
+         * 清除所有資料
+         */
+        function clearAllData() {
+            const confirmed = confirm('確定要清除所有學習分析資料嗎？\n\n此操作無法復原，將清除所有練習記錄和分析數據。');
+            if (!confirmed) return;
+
+            const doubleConfirm = confirm('最後確認：真的要清除所有資料嗎？');
+            if (!doubleConfirm) return;
+
+            try {
+                analytics.clearAllData();
+                alert('所有資料已清除！');
+                location.reload();
+            } catch (error) {
+                console.error('清除資料失敗:', error);
+                alert('清除資料失敗，請稍後再試。');
+            }
+        }
+
+        /**
+         * 顯示無數據訊息
+         */
+        function showNoDataMessage() {
+            document.querySelectorAll('.chart-container').forEach(container => {
+                container.innerHTML = `
+                    <div class="no-data-message">
+                        <p>📊 尚無學習數據</p>
+                        <p>完成幾次練習後，這裡將顯示詳細的學習分析</p>
+                        <a href="index.html" class="btn" style="margin-top: 1rem;">開始練習</a>
+                    </div>
+                `;
+            });
+        }
+    </script>
+</body>
+</html>
