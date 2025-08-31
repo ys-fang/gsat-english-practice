@@ -1,7 +1,37 @@
 /* =================================
    學測英文練習系統 - 專業考試風格
    Professional Exam Style CSS
+   Jutor 品牌整合版本
    ================================= */
+
+/* ========== Jutor 品牌色彩變數 ========== */
+:root {
+    /* Jutor 主要品牌色彩 */
+    --jutor-primary: #32BAAE;
+    --jutor-primary-light: #4AC5B9;
+    --jutor-primary-dark: #289B91;
+    
+    /* Jutor 漸層背景 */
+    --jutor-gradient: linear-gradient(135deg, #32BAAE 0%, #4AC5B9 50%, #87CEEB 100%);
+    --jutor-gradient-soft: linear-gradient(135deg, rgba(50, 186, 174, 0.1) 0%, rgba(255, 255, 255, 0.95) 100%);
+    
+    /* Jutor 輔助色彩 */
+    --jutor-accent: #87CEEB;
+    --jutor-neutral-light: #F8FAFB;
+    --jutor-neutral-medium: #E5F0F0;
+    
+    /* 專業考試色彩（保持不變） */
+    --exam-black: #000;
+    --exam-white: #fff;
+    --exam-gray-light: #f8f9fa;
+    --exam-gray-medium: #dee2e6;
+    --exam-gray-dark: #6c757d;
+    
+    /* 狀態色彩 */
+    --correct-color: #28a745;
+    --incorrect-color: #dc3545;
+    --warning-color: #ffc107;
+}
 
 /* ========== 基礎設定 ========== */
 * {
@@ -46,26 +76,52 @@ body {
 
 /* ========== 首頁樣式 ========== */
 .header {
-    background: #fff;
-    border-bottom: 3px solid #000;
+    background: var(--jutor-gradient);
+    border-bottom: 3px solid var(--jutor-primary-dark);
     padding: 2rem 0;
     text-align: center;
     margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(50, 186, 174, 0.2);
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.brand-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--exam-white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    letter-spacing: -0.5px;
+}
+
+.brand-separator {
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
 }
 
 .header h1 {
     font-size: 2.2rem;
-    color: #000;
+    color: var(--exam-white);
     margin-bottom: 0.5rem;
     font-weight: 700;
     letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
-    color: #666;
+    color: rgba(255, 255, 255, 0.9);
     font-size: 1rem;
     letter-spacing: 1px;
     font-style: italic;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* ========== 年份選擇區域 ========== */
@@ -95,27 +151,48 @@ body {
 }
 
 .year-card {
-    background: #fff;
-    border: 2px solid #333;
+    background: var(--exam-white);
+    border: 2px solid var(--jutor-primary);
     padding: 1.5rem;
     text-decoration: none;
-    color: #000;
-    transition: all 0.2s ease;
+    color: var(--exam-black);
+    transition: all 0.3s ease;
     text-align: center;
     position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.year-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--jutor-gradient);
+    transition: height 0.3s ease;
 }
 
 .year-card:hover {
-    background: #f0f0f0;
-    border-color: #000;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    background: var(--jutor-neutral-light);
+    border-color: var(--jutor-primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(50, 186, 174, 0.25);
+}
+
+.year-card:hover::before {
+    height: 8px;
 }
 
 .year-card.latest {
-    background: #e9ecef;
-    border-color: #000;
+    background: var(--jutor-gradient-soft);
+    border-color: var(--jutor-primary-dark);
     border-width: 3px;
+}
+
+.year-card.latest::before {
+    height: 6px;
 }
 
 .year-card.latest::after {
@@ -123,20 +200,27 @@ body {
     position: absolute;
     top: -1px;
     right: -1px;
-    background: #000;
-    color: #fff;
-    padding: 4px 8px;
+    background: var(--jutor-primary);
+    color: var(--exam-white);
+    padding: 6px 12px;
     font-size: 0.7rem;
     font-weight: bold;
     letter-spacing: 1px;
+    border-radius: 0 12px 0 12px;
+    box-shadow: 0 2px 8px rgba(50, 186, 174, 0.3);
 }
 
 .year-number {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #000;
+    color: var(--jutor-primary-dark);
     margin-bottom: 0.5rem;
     font-family: 'Arial', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.year-card:hover .year-number {
+    color: var(--jutor-primary);
 }
 
 .year-info {
@@ -199,23 +283,35 @@ body {
 
 /* ========== 頁尾 ========== */
 .footer {
-    background: #000;
-    color: #fff;
+    background: var(--exam-black);
+    color: var(--exam-white);
     text-align: center;
     padding: 1.5rem 0;
     margin-top: 2rem;
     font-size: 0.9rem;
 }
 
+.brand-footer {
+    margin-top: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+}
+
+.brand-footer strong {
+    color: var(--jutor-primary-light);
+    font-weight: 600;
+}
+
 /* ========== 考試頁面樣式 ========== */
 .exam-header {
-    background: #fff;
-    border-bottom: 3px solid #000;
+    background: var(--jutor-gradient-soft);
+    border-bottom: 3px solid var(--jutor-primary);
     padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(50, 186, 174, 0.15);
+    backdrop-filter: blur(10px);
 }
 
 .exam-info {
@@ -229,50 +325,92 @@ body {
 .exam-title {
     font-size: 1.3rem;
     font-weight: bold;
-    color: #000;
+    color: var(--exam-black);
     letter-spacing: 1px;
+}
+
+.brand-mini {
+    display: inline-block;
+    background: var(--jutor-primary);
+    color: var(--exam-white);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.3px;
 }
 
 .timer {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #000;
+    color: var(--jutor-primary-dark);
     font-family: 'Courier New', monospace;
-    background: #f8f9fa;
+    background: var(--exam-white);
     padding: 0.5rem 1rem;
-    border: 2px solid #333;
+    border: 2px solid var(--jutor-primary);
     min-width: 100px;
     text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(50, 186, 174, 0.1);
 }
 
 .timer.warning {
-    color: #dc3545;
-    border-color: #dc3545;
+    color: var(--incorrect-color);
+    border-color: var(--incorrect-color);
     background: #fff5f5;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
 }
 
 .score-display {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #000;
-    background: #e9ecef;
+    color: var(--jutor-primary-dark);
+    background: var(--jutor-neutral-light);
     padding: 0.5rem 1rem;
-    border: 2px solid #000;
+    border: 2px solid var(--jutor-primary);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(50, 186, 174, 0.1);
 }
 
 .progress-container {
     margin-top: 1rem;
-    background: #e9ecef;
+    background: var(--jutor-neutral-medium);
     height: 8px;
-    border: 1px solid #333;
+    border: 1px solid var(--jutor-primary);
+    border-radius: 4px;
     overflow: hidden;
 }
 
 .progress-bar {
     height: 100%;
-    background: #000;
-    transition: width 0.3s ease;
+    background: var(--jutor-gradient);
+    transition: width 0.5s ease;
     width: 0%;
+    position: relative;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
 
 /* ========== 考試內容區域 ========== */
@@ -640,33 +778,37 @@ select.incorrect {
     padding: 0.8rem 2rem;
     font-size: 1rem;
     font-weight: bold;
-    border: 2px solid #333;
-    background: #fff;
-    color: #000;
+    border: 2px solid var(--jutor-primary);
+    background: var(--exam-white);
+    color: var(--jutor-primary-dark);
     text-decoration: none;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     text-align: center;
     display: inline-block;
     min-width: 120px;
     letter-spacing: 0.5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(50, 186, 174, 0.1);
 }
 
 .btn:hover {
-    background: #000;
-    color: #fff;
-    transform: translateY(-1px);
+    background: var(--jutor-primary);
+    color: var(--exam-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(50, 186, 174, 0.3);
 }
 
 .btn-primary {
-    background: #0066cc;
-    color: #fff;
-    border-color: #0066cc;
+    background: var(--jutor-primary);
+    color: var(--exam-white);
+    border-color: var(--jutor-primary);
 }
 
 .btn-primary:hover {
-    background: #004499;
-    border-color: #004499;
+    background: var(--jutor-primary-dark);
+    border-color: var(--jutor-primary-dark);
+    box-shadow: 0 4px 16px rgba(50, 186, 174, 0.4);
 }
 
 .btn-success {
