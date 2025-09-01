@@ -5,9 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>114學年度學測英文 - 互動練習</title>
     <link rel="stylesheet" href="../styles/common.css">
-    <script src="../scripts/gsat-charts.js"></script>
-    <script src="../scripts/gsat-analytics.js"></script>
-    <script src="../scripts/gsat-exam-base.js"></script>
+    <script src="../scripts/gsat-charts.js?v=2"></script>
+    <script src="../scripts/gsat-analytics.js?v=2"></script>
+    <script src="../scripts/gsat-exam-base.js?v=2"></script>
+    <script>
+    // Clear potential corrupted localStorage data
+    if (localStorage.getItem('gsat_practice_stats')) {
+        try {
+            const stats = JSON.parse(localStorage.getItem('gsat_practice_stats'));
+            // Check if old Set-based data exists and clear it
+            if (stats.yearlyStats) {
+                Object.keys(stats.yearlyStats).forEach(year => {
+                    if (stats.yearlyStats[year].yearsCovered && 
+                        typeof stats.yearlyStats[year].yearsCovered === 'object' && 
+                        !Array.isArray(stats.yearlyStats[year].yearsCovered)) {
+                        console.log('清理舊的統計資料格式');
+                        localStorage.removeItem('gsat_practice_stats');
+                    }
+                });
+            }
+        } catch (e) {
+            console.log('清理損壞的統計資料');
+            localStorage.removeItem('gsat_practice_stats');
+        }
+    }
+    </script>
 </head>
 <body>
     <header class="exam-header">

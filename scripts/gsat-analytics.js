@@ -38,6 +38,113 @@ class GSATAnalytics {
     }
 
     /**
+     * 初始化 Firebase 分析 (用於考試系統整合)
+     */
+    async initialize(year, options = {}) {
+        try {
+            // 設置當前考試年份
+            this.currentYear = year;
+            this.debugMode = options.debug || false;
+            
+            // 初始化本地存儲結構和考試會話
+            this.init();
+            this.currentSession = {
+                year: year,
+                startTime: Date.now(),
+                answers: [],
+                sessionId: this.generateSessionId()
+            };
+            
+            if (this.debugMode) {
+                console.log(`🔥 GSAT Firebase 分析已初始化 - 年份: ${year}, SessionID: ${this.currentSession.sessionId}`);
+            }
+            
+            return true; // 初始化成功
+        } catch (error) {
+            console.error('❌ GSAT 分析初始化失敗:', error);
+            return false; // 初始化失敗
+        }
+    }
+
+    /**
+     * 記錄單題答案 (用於考試系統整合)
+     */
+    async recordAnswer(questionNumber, userAnswer, correctAnswer, timeSpent) {
+        try {
+            if (!this.currentSession) {
+                throw new Error('考試會話尚未初始化');
+            }
+
+            const answerRecord = {
+                questionNumber,
+                userAnswer,
+                correctAnswer,
+                isCorrect: userAnswer === correctAnswer,
+                timeSpent,
+                timestamp: Date.now()
+            };
+
+            this.currentSession.answers.push(answerRecord);
+
+            if (this.debugMode) {
+                console.log(`📝 記錄答案 Q${questionNumber}: ${userAnswer} (正確: ${correctAnswer}, 耗時: ${timeSpent}ms)`);
+            }
+
+            return true;
+        } catch (error) {
+            console.error('❌ 記錄答案失敗:', error);
+            return false;
+        }
+    }
+
+    /**
+     * 完成考試並儲存結果 (用於考試系統整合)
+     */
+    async finalizeExam(totalScore, totalTime) {
+        try {
+            if (!this.currentSession) {
+                throw new Error('考試會話尚未初始化');
+            }
+
+            // 準備考試結果資料
+            const examResult = {
+                year: this.currentSession.year,
+                score: totalScore,
+                timeSpent: totalTime,
+                completedAt: new Date().toISOString(),
+                answers: this.currentSession.answers,
+                sessionId: this.currentSession.sessionId
+            };
+
+            // 儲存到現有的 saveExamResult 方法
+            await this.saveExamResult(this.currentSession.year, examResult);
+
+            if (this.debugMode) {
+                console.log(`🎯 考試完成 - 分數: ${totalScore}, 時間: ${totalTime}ms, SessionID: ${this.currentSession.sessionId}`);
+            }
+
+            const sessionId = this.currentSession.sessionId;
+            
+            // 清理當前會話
+            this.currentSession = null;
+
+            return sessionId;
+        } catch (error) {
+            console.error('❌ 完成考試記錄失敗:', error);
+            return null;
+        }
+    }
+
+    /**
+     * 產生會話ID
+     */
+    generateSessionId() {
+        const timestamp = Date.now().toString(36);
+        const random = Math.random().toString(36).substring(2, 8);
+        return `session_${timestamp}_${random}`;
+    }
+
+    /**
      * 確保儲存結構存在
      */
     ensureStorageStructure() {
@@ -746,4 +853,7 @@ class GSATAnalytics {
 // 導出分析類
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = GSATAnalytics;
+} else {
+    // 瀏覽器環境中創建全域變數
+    window.gsatAnalytics = new GSATAnalytics();
 }
