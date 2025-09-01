@@ -188,13 +188,13 @@ class SafeFirebaseWrapper {
     /**
      * 安全完成考試
      */
-    async safeFinalizeExam(analytics, finalScore, totalTime) {
+    async safeFinalizeExam(analytics, finalScore, totalTime, maxScore = null, sectionResults = null) {
         return this.safeExecute(
-            () => analytics.finalizeExam(finalScore, totalTime),
+            () => analytics.finalizeExam(finalScore, totalTime, maxScore, sectionResults),
             () => {
                 // Fallback: 保存完整考試記錄到本地
                 this.saveToLocalBackup('exam_complete', {
-                    finalScore, totalTime, timestamp: Date.now()
+                    finalScore, totalTime, maxScore, sectionResults, timestamp: Date.now()
                 });
                 console.log('💾 考試完成記錄已保存到本地備份');
                 return 'local_backup_' + Date.now();

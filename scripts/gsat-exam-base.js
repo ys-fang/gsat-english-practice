@@ -1,11 +1,13 @@
 /**
  * 學測英文練習系統 - 統一基礎類
  * GSAT English Practice System - Unified Base Class
+ * VERSION: 6.1 - sectionResults debug fix
  * 
  * 提供一致的用戶體驗和增強的學習功能
  * Professional exam-style experience with learning enhancements
  * 整合 Firebase 數據分析功能
  */
+console.log('🔧 gsat-exam-base.js VERSION 6.1 已載入 - sectionResults debug fix');
 
 class GSATExamBase {
     constructor(year, answers, config = {}) {
@@ -632,13 +634,16 @@ class GSATExamBase {
         const sectionResults = {};
         
         // 計算各部分分數
+        console.log('🔍 初始化分區結果，scores:', this.scores);
         Object.entries(this.scores).forEach(([sectionName, config]) => {
             sectionResults[sectionName] = {
                 correct: 0,
                 total: config.range[1] - config.range[0] + 1,
                 points: config.points
             };
+            console.log(`🔍 初始化區段 ${sectionName}:`, sectionResults[sectionName]);
         });
+        console.log('🔍 所有分區結果初始化完成:', sectionResults);
 
         // 檢查每個答案
         Object.entries(this.answers).forEach(([questionName, correctAnswer]) => {
@@ -657,16 +662,32 @@ class GSATExamBase {
             }
 
             // 記錄答題到 Firebase（異步，不阻塞UI）
-            if (this.firebaseAnalytics && userAnswer) {
-                const timeSpent = this.questionTimes[questionNumber] || 0;
+            if (this.firebaseAnalytics) {
+                // 計算時間：如果 questionTimes 沒有資料，使用當前時間 - 開始時間 / 題目數的估算
+                let timeSpent = this.questionTimes[questionNumber] || 0;
+                if (timeSpent === 0 && this.startTime) {
+                    const totalTimeElapsed = Date.now() - this.startTime;
+                    const currentQuestionIndex = parseInt(questionNumber) || 1;
+                    timeSpent = Math.round(totalTimeElapsed / currentQuestionIndex);
+                }
+                
+                // 記錄所有答案，包括空答案（未作答）
+                const answerToRecord = userAnswer || '未作答';
+                
+                // Debug: 檢查時間記錄
+                console.log(`🕒 Q${questionNumber} timeSpent: ${timeSpent}ms (原始: ${this.questionTimes[questionNumber] || 0}, 計算: ${timeSpent})`);
+                
                 this.firebaseAnalytics.recordAnswer(
                     questionNumber, 
-                    userAnswer, 
+                    answerToRecord, 
                     correctAnswer, 
                     timeSpent
                 ).catch(error => {
                     console.warn(`⚠️ Firebase 記錄 Q${questionNumber} 失敗:`, error);
                 });
+                
+                // Debug 日誌 (暫時開啟以檢查答案收集)
+                console.log(`🔍 記錄答案 Q${questionNumber}: "${answerToRecord}" (原始: "${userAnswer}") 正確答案: "${correctAnswer}"`);
             }
 
             // 顯示答案反饋
@@ -677,23 +698,16 @@ class GSATExamBase {
         this.showResultSummary(totalScore, maxScore, sectionResults);
         
         // 保存到分析系統
-        if (this.analytics) {
-            const examData = {
-                totalScore,
-                maxScore,
-                sectionResults,
-                startTime: this.startTime,
-                questionTimes: this.questionTimes,
-                answeredQuestions: Array.from(formData.entries()).filter(([key, value]) => value !== '').length,
-                bookmarkedQuestions: Array.from(this.bookmarkedQuestions)
-            };
-            this.analytics.saveExamResult(this.year, examData);
-        }
+        // 舊的分析系統已被 Firebase 系統取代，避免重複儲存
+        // Firebase 系統會在 finalizeExam 中處理完整的答案記錄
+        console.log('📊 舊分析系統呼叫已停用，使用 Firebase 系統');
         
         // 完成 Firebase 考試記錄（異步）
         if (this.firebaseAnalytics) {
             const totalTime = Date.now() - this.startTime;
-            this.firebaseAnalytics.finalizeExam(totalScore, totalTime)
+            console.log(`🔍 傳遞給 Firebase 的分數: ${totalScore}/${maxScore} (${((totalScore/maxScore)*100).toFixed(1)}%)`);
+            console.log(`🔍 分區結果:`, sectionResults);
+            this.firebaseAnalytics.finalizeExam(totalScore, totalTime, maxScore, sectionResults)
                 .then(sessionId => {
                     if (sessionId) {
                         console.log(`🎯 Firebase 考試記錄已保存: ${sessionId.substring(0, 8)}...`);

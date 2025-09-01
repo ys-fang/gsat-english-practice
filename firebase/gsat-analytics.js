@@ -92,20 +92,22 @@ export class GSATAnalytics {
   /**
    * 完成考試 - 主要API
    */
-  async finalizeExam(finalScore, totalTime) {
+  async finalizeExam(finalScore, totalTime, maxScore = null, sectionResults = null) {
     if (!this.isInitialized || !this.collector) {
       console.warn('⚠️ Analytics 未初始化，無法完成考試記錄');
       return null;
     }
 
     try {
-      const sessionId = await this.collector.finalizeExam(finalScore, totalTime);
+      const sessionId = await this.collector.finalizeExam(finalScore, totalTime, maxScore, sectionResults);
       
       if (this.debugMode) {
         console.log('🎯 考試完成:', {
           sessionId: sessionId,
           finalScore: finalScore,
           totalTime: totalTime,
+          maxScore: maxScore,
+          sectionResults: sectionResults,
           examYear: this.currentExamYear
         });
       }

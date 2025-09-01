@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>114學年度學測英文 - 互動練習</title>
     <link rel="stylesheet" href="../styles/common.css">
-    <script src="../scripts/gsat-charts.js?v=2"></script>
-    <script src="../scripts/gsat-analytics.js?v=2"></script>
-    <script src="../scripts/gsat-exam-base.js?v=2"></script>
+    <script>
+        // 強制清除 JavaScript 緩存
+        const timestamp = new Date().getTime();
+        console.log('🔄 強制刷新 JavaScript 緩存:', timestamp);
+    </script>
+    <script src="../scripts/gsat-charts.js?v=9&fix=timestamp"></script>
+    <script src="../scripts/gsat-analytics.js?v=9&fix=timestamp"></script>
+    <script src="../scripts/gsat-exam-base.js?v=9&fix=timestamp"></script>
     <script>
     // Clear potential corrupted localStorage data
     if (localStorage.getItem('gsat_practice_stats')) {

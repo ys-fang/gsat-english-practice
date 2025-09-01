@@ -227,7 +227,7 @@ export class AnswerCollector {
   /**
    * 完成考試
    */
-  async finalizeExam(finalScore, totalTime) {
+  async finalizeExam(finalScore, totalTime, maxScore = null, sectionResults = null) {
     // 先保存任何待處理的答案
     if (this.pendingAnswers.length > 0) {
       await this.flushBatch();
@@ -240,14 +240,15 @@ export class AnswerCollector {
       exam_year: this.examYear,
       completed_at: serverTimestamp(),
       final_score: finalScore,
+      max_score: maxScore || this.sessionData.total_questions,
       total_time: totalTime,
       total_questions: this.sessionData.total_questions,
       completed_questions: this.sessionData.completed_questions,
       accuracy: this.sessionData.completed_questions > 0 ? 
         (Object.values(this.allAnswers).filter(a => a.is_correct).length / this.sessionData.completed_questions) : 0,
       
-      // 詳細統計
-      section_performance: this.calculateSectionPerformance(),
+      // 詳細統計 - 優先使用傳入的 sectionResults，否則使用內部計算的
+      section_performance: sectionResults || this.calculateSectionPerformance(),
       time_analysis: {
         total_time: totalTime,
         average_time_per_question: totalTime / this.sessionData.completed_questions,

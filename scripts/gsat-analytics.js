@@ -1,11 +1,13 @@
 /**
  * 學測英文練習系統 - 學習分析模組
  * GSAT English Practice System - Learning Analytics Module
+ * VERSION: 7.1 - sectionResults fix
  * 
  * 提供詳細的學習分析和跨年度比較功能
  * Enhanced learning analytics with cross-year comparison
  * 支援 Firebase Firestore 後端整合
  */
+console.log('🔧 gsat-analytics.js VERSION 7.2 已載入 - timestamp fix');
 
 // Firebase 動態匯入 - 避免阻塞頁面載入
 let firebaseApp = null;
@@ -118,11 +120,17 @@ class GSATAnalytics {
                 timeSpent,
                 timestamp: Date.now()
             };
+            
+            // Debug: 檢查答案比較
+            if (this.debugMode || window.location.hostname !== 'localhost') {
+                console.log(`🔍 Q${questionNumber}: "${userAnswer}" vs "${correctAnswer}" = ${userAnswer === correctAnswer}`);
+            }
 
             this.currentSession.answers.push(answerRecord);
 
             if (this.debugMode) {
                 console.log(`📝 記錄答案 Q${questionNumber}: ${userAnswer} (正確: ${correctAnswer}, 耗時: ${timeSpent}ms)`);
+                console.log(`📝 當前 session 答案總數: ${this.currentSession.answers.length}`);
             }
 
             return true;
@@ -135,7 +143,7 @@ class GSATAnalytics {
     /**
      * 完成考試並儲存結果 (用於考試系統整合)
      */
-    async finalizeExam(totalScore, totalTime) {
+    async finalizeExam(totalScore, totalTime, maxScore = null, sectionResults = null) {
         try {
             if (!this.currentSession) {
                 throw new Error('考試會話尚未初始化');
@@ -145,22 +153,30 @@ class GSATAnalytics {
             const examResult = {
                 year: this.currentSession.year,
                 score: totalScore,
+                totalScore: totalScore,  // 同時提供 totalScore 欄位
+                maxScore: maxScore || this.currentSession.maxScore, // 使用傳入的 maxScore
                 timeSpent: totalTime,
                 completedAt: new Date().toISOString(),
                 answers: this.currentSession.answers,
-                sessionId: this.currentSession.sessionId
+                sessionId: this.currentSession.sessionId,
+                sectionResults: sectionResults || {}  // 添加 sectionResults
             };
+            
+            console.log(`🔍 finalizeExam 收到參數: totalScore=${totalScore}, maxScore=${maxScore}, totalTime=${totalTime}`);
+            console.log(`🔍 sectionResults:`, sectionResults);
 
-            // 儲存到現有的 saveExamResult 方法
-            await this.saveExamResult(this.currentSession.year, examResult);
-
-            if (this.debugMode) {
-                console.log(`🎯 考試完成 - 分數: ${totalScore}, 時間: ${totalTime}ms, SessionID: ${this.currentSession.sessionId}`);
-            }
-
+            // 先保存 sessionId，避免被清理
             const sessionId = this.currentSession.sessionId;
             
-            // 清理當前會話
+            if (this.debugMode) {
+                console.log(`🎯 考試完成 - 分數: ${totalScore}, 時間: ${totalTime}ms, SessionID: ${sessionId}`);
+                console.log(`🔍 即將儲存 ${examResult.answers.length} 個答案`);
+            }
+
+            // 儲存到現有的 saveExamResult 方法（等待完成後再清理 session）
+            await this.saveExamResult(this.currentSession.year, examResult);
+
+            // 清理當前會話（在儲存完成後）
             this.currentSession = null;
 
             return sessionId;
@@ -259,10 +275,12 @@ class GSATAnalytics {
         // 更新練習統計
         this.updatePracticeStats(examResult);
 
-        // Firebase 後端同步 (非同步，不阻塞用戶體驗)
-        this.syncToFirestore(examResult).catch(error => {
+        // Firebase 後端同步 (等待完成以確保 session 資料完整)
+        try {
+            await this.syncToFirestore(examResult);
+        } catch (error) {
             console.warn('⚠️ Firebase 同步失敗，數據已保存至本地:', error);
-        });
+        }
 
         return examResult;
     }
@@ -283,19 +301,27 @@ class GSATAnalytics {
             const userId = await this.generateUserId();
             
             // 準備要儲存的數據 (過濾 undefined 值)
+            const score = examResult.totalScore || examResult.score || 0;
+            const maxScore = examResult.maxScore || 100;
+            const percentage = maxScore > 0 ? parseFloat(((score / maxScore) * 100).toFixed(1)) : 0;
+            
+            const currentTime = new Date().toISOString();
+            
             const firestoreData = {
                 userId: userId,
                 year: examResult.year || 0,
-                score: examResult.totalScore || examResult.score || 0,
-                maxScore: examResult.maxScore || 100,
-                percentage: parseFloat(examResult.percentage) || 0,
+                score: score,
+                maxScore: maxScore,
+                percentage: percentage,
                 timeSpent: examResult.timeSpent || 0,
-                completedAt: serverTimestamp(),
-                date: examResult.date || new Date().toISOString().split('T')[0],
-                answers: Array.isArray(examResult.answers) ? examResult.answers : [],
+                completedAt: currentTime,
+                date: examResult.date || currentTime.split('T')[0],
+                answers: Array.isArray(examResult.answers) ? examResult.answers : 
+                         (this.currentSession && Array.isArray(this.currentSession.answers) ? this.currentSession.answers : []),
                 sessionId: examResult.sessionId || `session_${Date.now()}`,
                 sectionResults: examResult.sectionResults || {},
-                createdAt: serverTimestamp()
+                createdAt: currentTime,
+                timestamp: Date.now() // 額外添加 Unix 時間戳用於排序
             };
 
             // 移除任何 undefined 值
@@ -305,9 +331,14 @@ class GSATAnalytics {
                 }
             });
 
-            // Debug 日誌
-            if (this.debugMode) {
-                console.log('🔍 準備發送到 Firebase 的數據:', firestoreData);
+            // Debug 日誌 (暫時強制顯示以調試答案收集)
+            console.log('🔍 準備發送到 Firebase 的數據:', firestoreData);
+            console.log(`🔍 答案數量: ${firestoreData.answers.length}`);
+            if (firestoreData.answers.length > 0) {
+                console.log(`🔍 前3題答案範例:`, firestoreData.answers.slice(0, 3));
+            } else {
+                console.warn('⚠️ 警告：沒有答案被記錄！檢查 recordAnswer 是否正常運作');
+                console.log('🔍 當前 session 狀態:', this.currentSession);
                 console.log('🔍 原始考試結果:', examResult);
             }
 
