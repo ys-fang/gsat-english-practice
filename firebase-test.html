@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Firebase Connection Test</title>
+    <script type="module">
+        import { db } from './firebase/config.js';
+        import { collection, addDoc, getDocs } from 'firebase/firestore';
+        
+        async function testFirebase() {
+            try {
+                console.log('Testing Firebase connection...');
+                
+                // Test write
+                const docRef = await addDoc(collection(db, 'test'), {
+                    message: 'Firebase connection successful!',
+                    timestamp: new Date()
+                });
+                console.log('✅ Write test passed, Document ID:', docRef.id);
+                
+                // Test read
+                const querySnapshot = await getDocs(collection(db, 'test'));
+                console.log('✅ Read test passed, Documents count:', querySnapshot.size);
+                
+                document.getElementById('result').innerHTML = '🎉 Firebase connection successful!';
+                
+            } catch (error) {
+                console.error('❌ Firebase test failed:', error);
+                document.getElementById('result').innerHTML = '❌ Firebase connection failed: ' + error.message;
+            }
+        }
+        
+        // Run test when page loads
+        testFirebase();
+    </script>
+</head>
+<body>
+    <h1>Firebase Connection Test</h1>
+    <div id="result">Testing...</div>
+    <p>Check browser console for detailed logs</p>
+</body>
+</html>

@@ -1,0 +1,18 @@
+rules_version = '2';
+
+// Basic storage rules for GSAT system
+// Currently not used, but prepared for future file uploads
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Allow anonymous read access to public files
+    match /public/{allPaths=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+    
+    // Deny all other access
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

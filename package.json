@@ -1,0 +1,52 @@
+{
+  "name": "gsat-english-practice",
+  "version": "1.0.0",
+  "description": "學測英文歷年試題練習系統",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:unit": "jest --testPathPattern=tests/unit",
+    "test:integration": "jest --testPathPattern=tests/integration",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:debug": "playwright test --debug",
+    "test:all": "npm run test && npm run test:e2e",
+    "serve": "http-server -p 3000 -c-1",
+    "serve:test": "concurrently \"npm run serve\" \"npm run test:e2e\"",
+    "lint:js": "eslint scripts/**/*.js tests/**/*.js",
+    "lint:html": "htmlhint **/*.html",
+    "validate": "npm run lint:js && npm run lint:html && npm run test:all"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "concurrently": "^8.2.0",
+    "eslint": "^8.50.0",
+    "htmlhint": "^1.1.4",
+    "http-server": "^14.1.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jsdom": "^22.1.0",
+    "jsdom-global": "^3.0.2"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": ["<rootDir>/tests/setup/test-setup.js"],
+    "testMatch": [
+      "<rootDir>/tests/unit/**/*.test.js",
+      "<rootDir>/tests/integration/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "scripts/gsat-*.js",
+      "!scripts/exam-*.js",
+      "!scripts/question-generator.js",
+      "!scripts/year-template-generator.js"
+    ],
+    "coverageReporters": ["text", "lcov", "html"],
+    "coverageDirectory": "coverage",
+    "testTimeout": 30000
+  },
+  "keywords": ["gsat", "english", "exam", "practice", "taiwan"],
+  "author": "GSAT English Practice Team",
+  "license": "MIT"
+}

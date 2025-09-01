@@ -1,0 +1,36 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read/write access to user-specific answer data
+    match /user-answers/{userId} {
+      allow read, write: if true; // Anonymous access for learning analytics
+    }
+    
+    // Allow read access to exam data
+    match /exam-data/{examId} {
+      allow read: if true; // Public read access for exam content
+      allow write: if false; // No direct writes to exam data
+    }
+    
+    // Allow read/write to anonymous analytics
+    match /analytics/{userId} {
+      allow read, write: if true; // Anonymous analytics data
+    }
+    
+    // Allow read/write to session data
+    match /sessions/{sessionId} {
+      allow read, write: if true; // Anonymous session tracking
+    }
+    
+    // Allow test collection access for connection testing
+    match /test/{testId} {
+      allow read, write: if true; // Testing purposes
+    }
+    
+    // Default deny all other access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

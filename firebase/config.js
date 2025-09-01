@@ -3,15 +3,14 @@
  * 學測英文練習系統 - 數據收集後端
  */
 
-// Firebase 配置 - 需要從 Firebase Console 獲取
+// Firebase 配置 - gsat-analytics-2025 專案
 const firebaseConfig = {
-  // 🚨 請替換為你的 Firebase 專案配置
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com", 
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyAH9vf-drMA6o2itFJJPQNH4zTbuYHMCxI",
+  authDomain: "gsat-analytics-2025.firebaseapp.com",
+  projectId: "gsat-analytics-2025",
+  storageBucket: "gsat-analytics-2025.firebasestorage.app",
+  messagingSenderId: "863633123721",
+  appId: "1:863633123721:web:56e3b8a4267534c9b29958"
 };
 
 // Firebase 服務初始化
