@@ -4,7 +4,42 @@
  * 
  * 提供詳細的學習分析和跨年度比較功能
  * Enhanced learning analytics with cross-year comparison
+ * 支援 Firebase Firestore 後端整合
  */
+
+// Firebase 動態匯入 - 避免阻塞頁面載入
+let firebaseApp = null;
+let firestore = null;
+
+async function initializeFirebase() {
+    try {
+        if (firebaseApp) return { app: firebaseApp, db: firestore };
+        
+        // 動態載入 Firebase 模組
+        const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js');
+        const { getFirestore, collection, addDoc, doc, setDoc, serverTimestamp } = await import('https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js');
+        
+        // Firebase 配置
+        const firebaseConfig = {
+            apiKey: "AIzaSyAH9vf-drMA6o2itFJJPQNH4zTbuYHMCxI",
+            authDomain: "gsat-analytics-2025.firebaseapp.com",
+            projectId: "gsat-analytics-2025",
+            storageBucket: "gsat-analytics-2025.firebasestorage.app",
+            messagingSenderId: "863633123721",
+            appId: "1:863633123721:web:56e3b8a4267534c9b29958"
+        };
+        
+        // 初始化 Firebase
+        firebaseApp = initializeApp(firebaseConfig);
+        firestore = getFirestore(firebaseApp);
+        
+        console.log('🔥 Firebase Firestore 已連接');
+        return { app: firebaseApp, db: firestore };
+    } catch (error) {
+        console.warn('⚠️ Firebase 初始化失敗，使用離線模式:', error);
+        return null;
+    }
+}
 
 class GSATAnalytics {
     constructor() {
@@ -180,9 +215,9 @@ class GSATAnalytics {
     }
 
     /**
-     * 儲存考試結果和詳細分析
+     * 儲存考試結果和詳細分析 (包含 Firebase 後端)
      */
-    saveExamResult(year, examData) {
+    async saveExamResult(year, examData) {
         const results = this.getExamResults();
         const timestamp = Date.now();
         const date = new Date(timestamp).toISOString().split('T')[0];
@@ -224,7 +259,106 @@ class GSATAnalytics {
         // 更新練習統計
         this.updatePracticeStats(examResult);
 
+        // Firebase 後端同步 (非同步，不阻塞用戶體驗)
+        this.syncToFirestore(examResult).catch(error => {
+            console.warn('⚠️ Firebase 同步失敗，數據已保存至本地:', error);
+        });
+
         return examResult;
+    }
+
+    /**
+     * 同步數據到 Firebase Firestore
+     */
+    async syncToFirestore(examResult) {
+        try {
+            const firebase = await initializeFirebase();
+            if (!firebase) {
+                throw new Error('Firebase 未初始化');
+            }
+
+            const { addDoc, collection, doc, setDoc, serverTimestamp } = await import('https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js');
+            
+            // 生成唯一用戶 ID (基於瀏覽器指紋)
+            const userId = await this.generateUserId();
+            
+            // 準備要儲存的數據 (過濾 undefined 值)
+            const firestoreData = {
+                userId: userId,
+                year: examResult.year || 0,
+                score: examResult.totalScore || examResult.score || 0,
+                maxScore: examResult.maxScore || 100,
+                percentage: parseFloat(examResult.percentage) || 0,
+                timeSpent: examResult.timeSpent || 0,
+                completedAt: serverTimestamp(),
+                date: examResult.date || new Date().toISOString().split('T')[0],
+                answers: Array.isArray(examResult.answers) ? examResult.answers : [],
+                sessionId: examResult.sessionId || `session_${Date.now()}`,
+                sectionResults: examResult.sectionResults || {},
+                createdAt: serverTimestamp()
+            };
+
+            // 移除任何 undefined 值
+            Object.keys(firestoreData).forEach(key => {
+                if (firestoreData[key] === undefined) {
+                    delete firestoreData[key];
+                }
+            });
+
+            // Debug 日誌
+            if (this.debugMode) {
+                console.log('🔍 準備發送到 Firebase 的數據:', firestoreData);
+                console.log('🔍 原始考試結果:', examResult);
+            }
+
+            // 儲存到 Firestore
+            const docRef = await addDoc(collection(firebase.db, 'exam_results'), firestoreData);
+            
+            console.log(`🔥 考試結果已同步到 Firebase: ${docRef.id}`);
+            return docRef.id;
+            
+        } catch (error) {
+            console.warn('⚠️ Firebase 同步失敗:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * 生成匿名用戶 ID (基於瀏覽器指紋)
+     */
+    async generateUserId() {
+        try {
+            // 使用現有的用戶 ID 或生成新的
+            let userId = localStorage.getItem('gsat_anonymous_user_id');
+            
+            if (!userId) {
+                // 生成基於瀏覽器特徵的匿名 ID
+                const fingerprint = [
+                    navigator.userAgent,
+                    navigator.language,
+                    screen.width,
+                    screen.height,
+                    new Date().getTimezoneOffset(),
+                    navigator.platform
+                ].join('|');
+                
+                // 創建簡單哈希
+                let hash = 0;
+                for (let i = 0; i < fingerprint.length; i++) {
+                    const char = fingerprint.charCodeAt(i);
+                    hash = ((hash << 5) - hash) + char;
+                    hash = hash & hash; // 轉換為 32-bit 整數
+                }
+                
+                userId = `user_${Math.abs(hash)}_${Date.now()}`;
+                localStorage.setItem('gsat_anonymous_user_id', userId);
+            }
+            
+            return userId;
+        } catch (error) {
+            console.warn('生成用戶 ID 失敗:', error);
+            return `user_${Date.now()}_${Math.random().toString(36).substring(2)}`;
+        }
     }
 
     /**
