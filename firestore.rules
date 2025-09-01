@@ -28,6 +28,13 @@ service cloud.firestore {
       allow read, write: if true; // Testing purposes
     }
     
+    // Allow exam results collection for anonymous analytics
+    match /exam_results/{resultId} {
+      allow create: if true; // Allow anonymous users to create exam results
+      allow read: if false; // No read access (privacy protection)
+      allow update, delete: if false; // No modifications after creation
+    }
+    
     // Default deny all other access
     match /{document=**} {
       allow read, write: if false;
