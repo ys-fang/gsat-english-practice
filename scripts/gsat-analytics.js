@@ -287,7 +287,7 @@ class GSATAnalytics {
             stats.yearlyStats[year] = {
                 examsCompleted: 0,
                 totalTime: 0,
-                yearsCovered: new Set(),
+                yearsCovered: [],
                 sectionProgress: {}
             };
         }
@@ -296,10 +296,14 @@ class GSATAnalytics {
             const yearlyStat = stats.yearlyStats[year];
             yearlyStat.examsCompleted++;
             yearlyStat.totalTime += examResult.timeSpent;
-            yearlyStat.yearsCovered.add(examResult.year);
             
-            // 轉換Set為Array以便JSON儲存
-            yearlyStat.yearsCovered = Array.from(yearlyStat.yearsCovered);
+            // 確保 yearsCovered 是陣列，並且避免重複年份
+            if (!Array.isArray(yearlyStat.yearsCovered)) {
+                yearlyStat.yearsCovered = [];
+            }
+            if (!yearlyStat.yearsCovered.includes(examResult.year)) {
+                yearlyStat.yearsCovered.push(examResult.year);
+            }
         }
     }
 
