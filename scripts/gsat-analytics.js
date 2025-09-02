@@ -7,7 +7,39 @@
  * Enhanced learning analytics with cross-year comparison
  * 支援 Firebase Firestore 後端整合
  */
-console.log('🔧 gsat-analytics.js VERSION 7.2 已載入 - timestamp fix');
+console.log('🔧 gsat-analytics.js VERSION 8.0 已載入 - dual environment support');
+
+/**
+ * 環境檢測功能
+ * 根據網域名稱判斷當前運行環境
+ */
+function getEnvironment() {
+    const hostname = window.location.hostname;
+    const pathname = window.location.pathname;
+    
+    // 檢測正式環境
+    if ((hostname.includes('storage.googleapis.com') && pathname.includes('/event/gsat/')) ||
+        (hostname.includes('www.jutor.ai') && pathname.includes('/event/gsat/'))) {
+        return 'production';
+    }
+    
+    // 檢測 Firebase 測試環境  
+    if (hostname.includes('firebase') || hostname.includes('web.app')) {
+        return 'staging';
+    }
+    
+    // 本地開發環境
+    if (hostname.includes('localhost') || hostname === '127.0.0.1') {
+        return 'development';
+    }
+    
+    // 預設為測試環境
+    return 'staging';
+}
+
+// 獲取環境信息並記錄
+const CURRENT_ENVIRONMENT = getEnvironment();
+console.log(`🌍 運行環境: ${CURRENT_ENVIRONMENT}`);
 
 // Firebase 動態匯入 - 避免阻塞頁面載入
 let firebaseApp = null;
@@ -309,6 +341,7 @@ class GSATAnalytics {
             
             const firestoreData = {
                 userId: userId,
+                environment: CURRENT_ENVIRONMENT,  // 環境標籤
                 year: examResult.year || 0,
                 score: score,
                 maxScore: maxScore,
@@ -321,7 +354,13 @@ class GSATAnalytics {
                 sessionId: examResult.sessionId || `session_${Date.now()}`,
                 sectionResults: examResult.sectionResults || {},
                 createdAt: currentTime,
-                timestamp: Date.now() // 額外添加 Unix 時間戳用於排序
+                timestamp: Date.now(), // 額外添加 Unix 時間戳用於排序
+                deployment: {  // 部署資訊
+                    hostname: window.location.hostname,
+                    pathname: window.location.pathname,
+                    origin: window.location.origin,
+                    userAgent: navigator.userAgent.substring(0, 200) // 截取前200字元
+                }
             };
 
             // 移除任何 undefined 值
